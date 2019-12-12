@@ -1,0 +1,19 @@
+{
+  "name": "dictadata-client",
+  "version": "0.5.0",
+  "description": "Dicta Data Javascript Client library",
+  "main": "index.js",
+  "scripts": {
+    "debug": "SET VUE_APP_DICTA_API=http://localhost:8089& node test/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com/dictadata/dictadata-client.git"
+  },
+  "author": "Drew O. Letcher",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
