@@ -3,8 +3,9 @@
  */
 "use strict";
 
-
 exports.Roles = require("./lib/roles")
+exports.User = require('./lib/user')
+
 exports.Account = require("./lib/account")
 exports.Settings = require("./lib/settings")
 exports.Storage = require("./lib/storage")
