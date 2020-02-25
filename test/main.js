@@ -5,7 +5,7 @@
 const client = require('../index');
 
 async function main() {
-  console.log("dictadata-client test");
+  console.log("dicta.io-client test");
 
   let user = new client.User('drewlab')
   user.password = 'pi7za1'

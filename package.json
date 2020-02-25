@@ -1,5 +1,5 @@
 {
-  "name": "dictadata-client",
+  "name": "dicta.io-client",
   "version": "0.5.0",
   "description": "Dicta Data Javascript Client library",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com/dictadata/dictadata-client.git"
+    "url": "git@gitlab.com/dictadata/dicta.io-client.git"
   },
   "author": "Drew O. Letcher",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.0"
+    "axios": "^0.19.2"
   },
   "devDependencies": {
-    "eslint": "^6.7.2"
+    "eslint": "^6.8.0"
   }
 }

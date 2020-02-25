@@ -1,5 +1,5 @@
 /**
- * @dictadata/dictadata-client
+ * @dictadata/dicta.io-client
  */
 "use strict";
 
