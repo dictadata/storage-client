@@ -1,5 +1,5 @@
 {
-  "name": "dicta.io-client",
+  "name": "@dictadata/dicta.io-client",
   "version": "0.5.0",
   "description": "Dicta Data Javascript Client library",
   "main": "index.js",
