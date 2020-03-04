@@ -13,11 +13,12 @@
         "run-script",
         "debug"
       ],
-      "port": 9229,
+      "envFile": "${workspaceFolder}/.env.development",
+      "port": 9232,
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "autoAttachChildProcesses": true
+      "outputCapture": "std"
     }
   ]
 }

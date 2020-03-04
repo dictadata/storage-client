@@ -4,15 +4,40 @@
 
 const client = require('../index');
 
-async function main() {
-  console.log("dicta.io-client test");
+console.log("dicta.io-client tests");
+console.log(process.env.NODE_ENV);
+console.log(process.env.VUE_APP_DICTA_API);
 
-  let user = new client.User('drewlab')
-  user.password = 'pi7za1'
+let user = new client.User('drewlab', 'pi7za1')
 
-  let account = new client.Account()
-  let response = await account.login(user)
-  console.log(JSON.stringify(response,null,"  "))
+/**
+ * login
+ */
+async function accountTests() {
+  console.log("=== register test");
+  try {
+    let account = new client.Account(user)
+    let result = await account.register()
+    console.log("result: " + JSON.stringify(result, null, "  "))
+  }
+  catch (err) {
+    console.log(err);
+  }
+
+  console.log("=== login test");
+  try {
+    let account = new client.Account(user)
+    let result = await account.login()
+    console.log("result: " + JSON.stringify(result, null, "  "))
+  }
+  catch (err) {
+    console.log(err);
+  }
 }
 
-main();
+/**
+ * 
+ */
+
+// test runners
+accountTests();
