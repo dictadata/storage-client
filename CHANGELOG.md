@@ -1,0 +1,2 @@
+- version 0.6.1
+  - update newDoc definition to match new schema encoding
