@@ -1,0 +1,130 @@
+.markdown {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  resize: none;
+  outline: none;
+  text-align: left;
+
+  /* Font Smoothing */
+  h1, h2, h3, h4, h5, h6, p, td, textarea { 
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4 {
+    margin: 30px 0 0;
+  }
+  h1 {
+    font-family: 'Shanti', Helvetica, Arial, sans-serif;
+    font-size: 3.6em;
+    line-height: 1.2em;
+    margin: 0.33em 0 0;
+  }
+  h2 {
+    font-size: 2.8em;
+    line-height: 1.2em;
+    margin: 0.33em 0 0;
+  }
+  h3 {
+    font-size: 1.825em;
+    line-height: 1.2em;
+    margin: 0.33em 0 0;
+  }
+  h4 {
+    font-size: 1.6em;
+    line-height: 1.2em;
+    margin: 0.33em 0 0;
+  }
+  h5 {
+    font-size: 1.35em;
+    line-height: 1.2em;
+    margin: 0.33em 0 0;
+  }
+  h6 {
+    font-size: 1.0em;
+    line-height: 1.2em;
+    margin: 0.33em 0 0;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  p {
+    font-size: 15px;
+    line-height: 1.5em;
+    margin-bottom: 5px;
+  }
+
+  pre > code {
+    border-left: 0 none;
+    font-weight: 300;
+    margin: 15px 0 10px;
+    text-align: left;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  a {
+    color: darkslateblue !important;
+    font-weight: 400;
+    &:hover, &:focus {
+       color: darken($info-color, 10%) !important;
+       text-decoration: none;
+    }
+  }
+
+	img {
+    margin-bottom: 5px;
+    border-radius: 0%;
+    max-width: none;
+	}
+
+  hr {
+    border-color: #DDD;
+    border-width: 1px 0 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  table {
+    thead,
+    tbody,
+    tfoot {
+      tr > th,
+      tr > td {
+        border-top: 1px solid #CCC;
+      }
+    }
+    > thead > tr > th {
+      border-bottom-width: 0;
+      font-size: 1.35em;
+      font-weight: 400;
+    }
+    > thead > tr > th,
+    > thead > tr > td,
+    > tbody > tr > th,
+    > tbody > tr > td,
+    > tfoot > tr > th,
+    > tfoot > tr > td {
+      padding: 12px 8px;
+      vertical-align: middle;
+    }
+    > tbody > tr {
+      position: relative;
+    }
+    > tbody > tr:nth-of-type(2n+1) {
+      background-color: #FFF;
+    }
+  }
+}

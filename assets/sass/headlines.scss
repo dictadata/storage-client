@@ -1,0 +1,33 @@
+.headline-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headline-group {
+
+  .card .card-body {
+    padding: 5px 20px;
+  }
+
+  .headline-cell {
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 5px;
+
+    .headline-image {
+      border-radius: 0%;
+      max-width: 50px;
+    }
+
+    .headline-title {
+      color: darkslategrey;
+      font-weight: bold;
+    }
+    .headline-tagline {
+      color: lightslategray;
+      font-weight: 350;
+    }
+  }
+}

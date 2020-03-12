@@ -1,0 +1,34 @@
+.docs-list {
+  text-align: left;
+}
+.docs-list {
+  .docs-image {
+    margin-bottom: 5px;
+    border-radius: 0%;
+    max-width: 120;
+  }
+  .docs-title {
+    color: darkslategrey;
+    font-weight: 450;
+  }
+  .docs-tagline {
+    color: lightslategray;
+    font-weight: 350;
+  }
+}
+
+.docs-section {
+  font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  color: #2c3e50;
+}
+.docs-section {
+  .compilation {
+    font-size: smaller;
+  }
+  .tags {
+    font-size: smaller;
+  }
+}
