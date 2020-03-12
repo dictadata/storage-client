@@ -79,7 +79,7 @@
     color: darkslateblue !important;
     font-weight: 400;
     &:hover, &:focus {
-       color: darken($info-color, 10%) !important;
+       color: darken(darkslateblue, 10%) !important;
        text-decoration: none;
     }
   }
