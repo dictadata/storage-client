@@ -5,7 +5,7 @@
  * Access in Vue components with this.$user
  */
 
-import { User } from '../lib/user'
+import { User } from '..'
 
 const userPlugin = {
   install(Vue) {
