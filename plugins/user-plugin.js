@@ -5,7 +5,7 @@
  * Access in Vue components with this.$user
  */
 
-import { User } from 'dicta.io-client'
+import { User } from '../lib'
 
 const userPlugin = {
   install(Vue) {
