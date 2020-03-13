@@ -75,3 +75,25 @@
    font-weight: bolder;
  }
  
+ .blurb_light {
+  margin: 15px auto;
+  padding: 15px;
+  color: rgb(7,20,51);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 25px;
+
+  h3,
+  .h3 {
+    font-weight: bold;;
+  }
+
+  h5,
+  .h5 {
+    font-weight: bolder;
+
+    a,
+    .a {
+      font-weight: bolder;
+    }
+  }
+}
