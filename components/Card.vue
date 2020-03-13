@@ -1,6 +1,8 @@
 <template>
   <div class="card" :class="[type && `card-${type}`]">
-    <div class="card-image" v-if="$slots.image"><slot name="image"></slot></div>
+    <div class="card-image" v-if="$slots.image">
+      <slot name="image"></slot>
+    </div>
     <div
       class="card-header"
       v-if="$slots.header || title"
