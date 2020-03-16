@@ -43,7 +43,7 @@
   </div>
 </template>
 <script>
-import { Notify, User } from '@/client'
+import { Notify, User } from '../client'
 
 export default {
   name: 'contact-form',
