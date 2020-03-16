@@ -1,5 +1,5 @@
 /**
- * dicta.io-client/account.js
+ * dicta.io-lib/account.js
  */
 
 const dictaAPI = require('./dictaAPI')
@@ -26,9 +26,9 @@ module.exports = class Account {
         return
       }
 
-      let body = { 
-        userid: this.user.userid, 
-        password: this.user.password 
+      let body = {
+        userid: this.user.userid,
+        password: this.user.password
       }
 
       let api = dictaAPI(this.user);
@@ -65,8 +65,8 @@ module.exports = class Account {
         return
       }
 
-      let body = { 
-        data: this.user 
+      let body = {
+        data: this.user
       }
 
       dictaAPI(this.user).post('/node/register', body)
@@ -102,8 +102,8 @@ module.exports = class Account {
         return
       }
 
-      let body = { 
-        data: this.user 
+      let body = {
+        data: this.user
       }
 
       dictaAPI(this.user).put('/node/account', body)
@@ -138,7 +138,7 @@ module.exports = class Account {
         return
       }
 
-      let body = { 
+      let body = {
         data: {
           userid: this.user.userid,
           password: this.user.password

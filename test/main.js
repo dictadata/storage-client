@@ -2,9 +2,9 @@
  * test/main.js
  */
 
-const client = require('../index');
+const client = require('../client/index');
 
-console.log("dicta.io-client tests");
+console.log("dicta.io-lib tests");
 console.log(process.env.NODE_ENV);
 console.log(process.env.VUE_APP_DICTA_API);
 

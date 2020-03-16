@@ -1,2 +1,4 @@
+- version 1.0.0
+  - refactor project as @dictadata/dicta.io-lib
 - version 0.6.1
   - update newDoc definition to match new schema encoding

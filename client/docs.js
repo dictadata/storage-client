@@ -1,5 +1,5 @@
 /**
- * dicta.io-client/docs.js
+ * dicta.io-lib/docs.js
  */
 
 const dictaAPI = require('./dictaAPI')
@@ -64,7 +64,7 @@ module.exports = class Docs {
       dictaAPI(this.user).get('/api/docs/' + encodeURIComponent(docid))
       .then( (response) => {
         //console.log(response);
-        let results = response.data;        
+        let results = response.data;
         if (results.result === 'ok')
           resolve(results.data[docid])
         else

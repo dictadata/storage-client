@@ -1,5 +1,5 @@
 /**
- * dicta.io-client/notify.js
+ * dicta.io-lib/notify.js
  */
 
 const dictaAPI = require('./dictaAPI')
@@ -19,10 +19,10 @@ module.exports = class Notify {
         return
       }
 
-      let body = { 
+      let body = {
         data: message
       }
-      
+
       dictaAPI(this.user)
         .post('/api/notify', body)
         .then(response => {

@@ -1,5 +1,9 @@
 /**
  * /services/dictaAPI.js
+ *
+ * Create an axios instance pointing to a dicta API server
+ * with user authorization credentials.
+ *
  */
 
 const axios = require('axios')

@@ -1,11 +1,11 @@
-# dicta.io-client 
+# dicta.io-lib
 
-Dicta Data API Javascript client library.
+dicta.io Javascript library for client API, components, assets, ...
 
 # Installation
 
 ```bash
-npm i @dictadata/dicta.io-client
+npm i @dictadata/dicta.io-lib
 ```
 
 # Usage
