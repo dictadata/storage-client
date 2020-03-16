@@ -5,7 +5,9 @@
 
       <slot name="toggle-button">
         <button v-if="hasMenu" class="navbar-toggler collapsed" type="button" data-toggle="collapse" @click="toggleMenu" :aria-expanded="ariaExpanded" aria-label="Toggle navigation" ref="toggler">
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+          <span class="navbar-toggler-bar navbar-kebab"></span>
         </button>
       </slot>
 
