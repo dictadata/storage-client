@@ -8,7 +8,7 @@
 import SimpleMDE from 'simplemde'
 
 export default {
-  name: 'markdown-edit',
+  name: 'MarkdownEdit',
   components: {
   },
   props: {

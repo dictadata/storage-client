@@ -7,7 +7,7 @@
 
           <figure v-if="showImage" class="docs-image">
             <img v-if="doc.imageURL" :src="doc.imageURL" alt="" height="32">
-            <img v-else src="/img/dicta_neuron_orange.png" alt="" height="32">
+            <img v-else src="/img/dicta_neuron_sml.png" alt="" height="32">
           </figure>
 
           <p class="docs-title">
@@ -28,7 +28,7 @@
 <script>
 
 export default {
-  name: 'docs-list',
+  name: 'DocsList',
   props: {
     docs: {
       type: Array,

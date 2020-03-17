@@ -1,5 +1,6 @@
 import ContactForm from './ContactForm.vue'
 import DocsList from './DocsList.vue'
+import DocsCard from './DocsCard.vue'
 import HeadlinesHorizontal from './HeadlinesHorizontal.vue'
 import HeadlinesVertical from './HeadlinesVertical.vue'
 import MarkdownEdit from './MarkdownEdit.vue'
@@ -18,6 +19,7 @@ import Splash from './Splash.vue'
 export {
   ContactForm,
   DocsList,
+  DocsCard,
   HeadlinesHorizontal,
   HeadlinesVertical,
   MarkdownEdit,

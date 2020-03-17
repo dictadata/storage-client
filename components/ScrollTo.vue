@@ -12,7 +12,7 @@
 <script>
 
 export default {
-  name: 'scroll-to',
+  name: 'ScrollTo',
   props: {
     target: {
       type: String,

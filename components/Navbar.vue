@@ -23,7 +23,7 @@
 import { CollapseTransition } from 'vue2-transitions'
 
 export default {
-  name: 'dicta-nav',
+  name: 'Navbar',
   props: {
     showMenu: {
       type: Boolean,

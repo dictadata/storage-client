@@ -6,9 +6,7 @@
 import marked from 'marked'
 
 export default {
-  name: 'markdown-view',
-  components: {
-  },
+  name: 'MarkdownView',
   props: {
     source: {
       type: String,
@@ -24,7 +22,7 @@ export default {
 
   computed: {
     markedHTML() {
-      return marked(this.source, { breaks: true, baseUrl: '/viewer/' })
+      return marked(this.source, { breaks: true, baseUrl: '/' })
     }
   },
 

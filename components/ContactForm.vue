@@ -46,7 +46,7 @@
 import { Notify, User } from '../client'
 
 export default {
-  name: 'contact-form',
+  name: 'ContactForm',
   data() {
     return {
       contactInfo: {

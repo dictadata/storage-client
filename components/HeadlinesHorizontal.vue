@@ -1,7 +1,7 @@
 <template>
-  <section class="headline-group">
+  <section class="headlines-horizontal">
 
-    <div class="row">
+    <div class="row headline-group">
       <div v-for="(doc, index) in docs" :key="doc.docid">
         <div v-if="index < maxDocs" class="col" @click="onClick(doc)">
 
@@ -10,7 +10,7 @@
               <div v-if="showImage" class="col-auto headline-cell">
                 <figure class="headline-image">
                   <img v-if="doc.imageURL" :src="doc.imageURL" alt="" height="32" width="32">
-                  <img v-else src="/img/dicta_neuron_orange.png" alt="" height="32" width="32">
+                  <img v-else src="/img/dicta_neuron_sml.png" alt="" height="32" width="32">
                 </figure>
               </div>
               <div class="col headline-cell">
@@ -33,7 +33,7 @@
 <script>
 
 export default {
-  name: 'headlines-horizontal',
+  name: 'HeadlinesHorizontal',
   components: {
 
   },
