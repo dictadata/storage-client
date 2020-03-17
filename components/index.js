@@ -1,15 +1,16 @@
 // dictadata.org components
 
 import ContactForm from './ContactForm.vue'
-import DocsList from './DocsList.vue'
-import DocsCard from './DocsCard.vue'
-import HeadlinesHorizontal from './HeadlinesHorizontal.vue'
-import HeadlinesVertical from './HeadlinesVertical.vue'
-import MarkdownEdit from './MarkdownEdit.vue'
-import MarkdownView from './MarkdownView.vue'
-import Navbar from './Navbar.vue'
+import Navbar from './Navbar/Navbar.vue'
 import ScrollTo from './ScrollTo.vue'
 import Splash from './Splash.vue'
+
+import DocsList from './Docs/DocsList.vue'
+import DocsCard from './Docs/DocsCard.vue'
+import HeadlinesHorizontal from './Docs/HeadlinesHorizontal.vue'
+import HeadlinesVertical from './Docs/HeadlinesVertical.vue'
+import MarkdownEdit from './Docs/MarkdownEdit.vue'
+import MarkdownView from './Docs/MarkdownView.vue'
 
 //import InfoCard from './Cards/InfoCard.vue'
 //import FilesInput from './Inputs/FilesInput.vue'

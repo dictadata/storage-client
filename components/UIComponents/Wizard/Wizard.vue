@@ -80,7 +80,7 @@
   </div>
 </template>
 <script>
-  import {throttle} from 'src/util/throttle';
+  import {throttle} from '@/util/throttle';
 
   function randomString(maxChars = 7) {
     const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
