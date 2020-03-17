@@ -1,56 +1,50 @@
 /*!
- * dicta.io sass for paper-kit projects
- *
- * Copyright 2020 dictadata.org
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- */
 
- @import 'dicta/general.scss';
- @import 'dicta/docs.scss';
- @import 'dicta/headlines.scss';
- @import 'dicta/markdown.scss';
- @import 'dicta/worksheet.scss';
- 
- /*!
  =========================================================
- * The dicta blend of the following designs:
- *
- *    Paper Kit 2 Pro - v2.3.0
- *    Vue Paper Dashboard PRO - V2.0.0
+ * Paper Kit 2 Pro - v2.3.0
  =========================================================
+
  * Product Page: https://www.creative-tim.com/product/paper-kit-2-pro
  * Copyright 2019 Creative Tim (http://www.creative-tim.com)
+
  * Designed by www.invisionapp.com Coded by www.creative-tim.com
+
  =========================================================
+
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
  */
 
-//@import 'paper/variables';
-@import "paper-kit/variables";
-@import "paper-kit/mixins";
+@import 'paper-kit/variables';
+@import 'paper-kit/mixins';
 
-// Nucleo Icons
-@import "paper-kit/nucleo-icons";
-@import "paper-kit/nucleo-outline";
+// Plugins CSS
+@import "paper-kit/plugins/plugin-bootstrap-switch";
+@import "paper-kit/plugins/plugin-nouislider";
+@import "paper-kit/plugins/plugin-bootstrap-select";
+@import "paper-kit/plugins/plugin-tagsinput";
+@import "paper-kit/plugins/plugin-fileupload";
+@import "paper-kit/plugins/plugin-datetimepicker";
 
 // Core CSS
-//@import "paper-kit/alerts";
-//@import "paper-kit/checkbox-radio";
-//@import "paper-kit/badges";
+@import "paper-kit/nucleo-outline";
+@import "paper-kit/alerts";
+@import "paper-kit/checkbox-radio";
+@import "paper-kit/badges";
 @import "paper-kit/pagination";
 @import "paper-kit/typography";
 @import "paper-kit/misc";
-//@import "paper-kit/misc-extended";
+@import "paper-kit/misc-extended";
 @import "paper-kit/buttons";
 @import "paper-kit/social-buttons";
 @import "paper-kit/inputs";
-//@import "paper-kit/progress-bars";
+@import "paper-kit/progress-bars";
 @import "paper-kit/tooltips-and-popovers";
 
 // components
+@import "paper-kit/tabs-navs";
 @import "paper-kit/navbars";
 @import "paper-kit/navbar-extend";
-@import "paper-kit/tabs-navs";
 @import "paper-kit/dropdown-extend";
 @import "paper-kit/images";
 @import "paper-kit/tags";
@@ -60,15 +54,10 @@
 @import "paper-kit/info-areas";
 @import "paper-kit/media";
 @import "paper-kit/modal";
-//@import "paper-kit/carousel";
+@import "paper-kit/carousel";
 @import "paper-kit/footers";
 @import "paper-kit/headers";
 @import "paper-kit/collapse";
-
-@import "paper-kit/responsive";
-
-@import "paper-kit/sections";
-@import "paper-kit/sections-extend";
 
 // cards
 @import "paper-kit/cards";
@@ -76,24 +65,13 @@
 @import "paper-kit/cards/card-blog";
 @import "paper-kit/cards/card-contact";
 @import "paper-kit/cards/card-image";
+@import "paper-kit/cards/card-register";
 @import "paper-kit/cards/card-plain";
-//@import "paper-kit/cards/card-pricing";
-//@import "paper-kit/cards/card-profile";
-//@import "paper-kit/cards/card-product";
-//@import "paper-kit/cards/card-register";
+@import "paper-kit/cards/card-pricing";
+@import "paper-kit/cards/card-profile";
+@import "paper-kit/cards/card-product";
 @import "paper-kit/cards/card-signup";
-//@import "paper-kit/cards/card-testimonials";
-
-// Plugins CSS
-//@import "paper-kit/plugins/plugin-bootstrap-switch";
-//@import "paper-kit/plugins/plugin-nouislider";
-//@import "paper-kit/plugins/plugin-bootstrap-select";
-//@import "paper-kit/plugins/plugin-tagsinput";
-//@import "paper-kit/plugins/plugin-fileupload";
-//@import "paper-kit/plugins/plugin-datetimepicker";
-
-// Isometric cards plugin
-//@import "paper-kit/plugins/plugin-isometricGrids";
+@import "paper-kit/cards/card-testimonials";
 
 // For gallery, using PhotoSwipe
 //@import "paper-kit/plugins/photo-swipe/main.scss";
@@ -101,5 +79,15 @@
 //@import "paper-kit/plugins/photo-swipe/gallery.scss";
 //@import "paper-kit/plugins/photo-swipe/main.scss";
 
+// Isometric cards plugin
+//@import "paper-kit/plugins/plugin-isometricGrids";
+
 // example pages and sections
-//@import "paper-kit/examples";
+@import "paper-kit/examples";
+@import "paper-kit/sections";
+@import "paper-kit/sections-extend";
+
+@import "paper-kit/responsive";
+
+// Nucleo Icons
+@import "paper-kit/nucleo-icons";
