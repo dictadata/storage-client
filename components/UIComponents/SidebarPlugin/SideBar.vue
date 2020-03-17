@@ -65,7 +65,7 @@
       },
       logo: {
         type: String,
-        default: 'static/img/vue-logo.png',
+        default: '@/assets/img/app-logo.png',
         description: 'Sidebar Logo'
       },
       sidebarLinks: {
