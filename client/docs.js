@@ -35,6 +35,7 @@ module.exports = class Docs {
         reject(new Error('Not Authorized'))
         return
       }
+
       let body = {
         data: doc
       }
@@ -57,7 +58,7 @@ module.exports = class Docs {
 
   recallDoc(docid) {
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.User)) {
+      if (!(this.user.isAuthorized(Roles.Docs) || this.user.isAuthorized(Roles.User)) ) {
         reject(new Error('Not Authorized'))
         return
       }
@@ -103,7 +104,7 @@ module.exports = class Docs {
 
   retrieveDocs(pattern) {
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.User)) {
+      if (!(this.user.isAuthorized(Roles.Docs) || this.user.isAuthorized(Roles.User)) ) {
         reject(new Error('Not Authorized'))
         return
       }

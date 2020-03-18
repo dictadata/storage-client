@@ -6,6 +6,7 @@
 module.exports = Object.freeze({
   Public: 'Public',
   User: 'User',
+  Docs: 'Docs',
   Editor: 'Editor',
   Notify: 'Notify',
   Admin: 'Admin',
