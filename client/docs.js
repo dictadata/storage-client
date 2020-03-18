@@ -114,7 +114,7 @@ module.exports = class Docs {
 
       dictaAPI(this.user).post('/api/docs', body)
         .then((response) => {
-          //console.log(response);
+          //console.log("docs: ", JSON.stringify(response.data));
           let results = response.data;
           if (results.result === 'ok')
             resolve(results.data)

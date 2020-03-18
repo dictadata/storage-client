@@ -50,6 +50,12 @@ export default {
       default: false
     }
   },
+  model: {
+    prop: "docs"
+  },
+  mounted: function () {
+    //console.log("list: ", JSON.stringify(this.docs))
+  },
   methods: {
     onClick(doc) {
       if (doc)
