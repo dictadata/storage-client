@@ -78,6 +78,29 @@ module.exports = class Docs {
     })
   }
 
+  dullDoc(docid) {
+    return new Promise((resolve, reject) => {
+      if (!this.user.isAuthorized(Roles.Editor)) {
+        reject(new Error('Not Authorized'))
+        return
+      }
+
+      dictaAPI(this.user).delete('/api/docs/' + encodeURIComponent(docid))
+        .then((response) => {
+          //console.log(response);
+          let result = response.data;
+          if (result === 'ok')
+            resolve(result)
+          else
+            reject(result);
+        })
+        .catch((error) => {
+          reject(error.message);
+        });
+
+    })
+  }
+
   retrieveDocs(pattern) {
     return new Promise((resolve, reject) => {
       if (!this.user.isAuthorized(Roles.User)) {
