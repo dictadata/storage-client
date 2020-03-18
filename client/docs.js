@@ -11,6 +11,7 @@ module.exports = class Docs {
     this.user = user
   }
 
+  // get the encoding and create an object from the engram.fields
   static newDoc() {
     return {
       "docid": '',
@@ -34,22 +35,22 @@ module.exports = class Docs {
         reject(new Error('Not Authorized'))
         return
       }
-      let body ={
+      let body = {
         data: doc
       }
 
       dictaAPI(this.user).put('/api/docs/' + encodeURIComponent(doc.docid), body)
-      .then( (response) => {
-        //console.log(response)
-        let results = response.data;
-        if (results.result === 'ok')
-          resolve(results.data)
-        else
-          reject(results.result);
-      })
-      .catch( (error) => {
-        reject(error.message)
-      });
+        .then((response) => {
+          //console.log(response)
+          let results = response.data;
+          if (results.result === 'ok')
+            resolve(results.data)
+          else
+            reject(results.result);
+        })
+        .catch((error) => {
+          reject(error.message)
+        });
 
     })
   }
@@ -62,22 +63,22 @@ module.exports = class Docs {
       }
 
       dictaAPI(this.user).get('/api/docs/' + encodeURIComponent(docid))
-      .then( (response) => {
-        //console.log(response);
-        let results = response.data;
-        if (results.result === 'ok')
-          resolve(results.data[docid])
-        else
-          reject(results.result);
-      })
-      .catch( (error) => {
-        reject(error.message);
-      });
+        .then((response) => {
+          //console.log(response);
+          let results = response.data;
+          if (results.result === 'ok')
+            resolve(results.data[docid])
+          else
+            reject(results.result);
+        })
+        .catch((error) => {
+          reject(error.message);
+        });
 
     })
   }
 
-  retrieveDocs (pattern) {
+  retrieveDocs(pattern) {
     return new Promise((resolve, reject) => {
       if (!this.user.isAuthorized(Roles.User)) {
         reject(new Error('Not Authorized'))
@@ -85,21 +86,21 @@ module.exports = class Docs {
       }
 
       let body = {
-        pattern: pattern
+        pattern: pattern.pattern || pattern
       }
 
       dictaAPI(this.user).post('/api/docs', body)
-      .then( (response) => {
-        //console.log(response);
-        let results = response.data;
-        if (results.result === 'ok')
-          resolve(results.data)
-        else
-          reject(results.result);
-      })
-      .catch( (error) => {
-        reject(error.message);
-      });
+        .then((response) => {
+          //console.log(response);
+          let results = response.data;
+          if (results.result === 'ok')
+            resolve(results.data)
+          else
+            reject(results.result);
+        })
+        .catch((error) => {
+          reject(error.message);
+        });
 
     })
   }
