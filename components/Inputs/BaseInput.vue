@@ -1,31 +1,24 @@
 <template>
-  <div
-    class="form-group"
-    :class="{
+  <div class="form-group" :class="{
       'input-group-focus': focused,
       'has-danger': error,
       'has-success': !error && touched,
       'has-label': label,
       'has-icon': hasIcon,
-    }"
-  >
-    <slot name="label">
-      <label v-if="label"> {{ label }} {{ required ? '*' : '' }} </label>
-    </slot>
-    <div class="mb-0" :class="{'input-group': hasIcon}">
+    }">
+    <div class="mb-0" :class="{'input-group': labelLeft || hasIcon}">
+      <slot name="label">
+        <span v-if="label" class="mb-0">
+          <label> {{ label }} {{ required ? '*' : '' }} </label>
+        </span>
+      </slot>
       <slot name="addonLeft">
         <span v-if="addonLeftIcon" class="input-group-prepend">
           <div class="input-group-text"><i :class="addonLeftIcon"></i></div>
         </span>
       </slot>
       <slot>
-        <input
-          :value="value"
-          v-bind="$attrs"
-          v-on="listeners"
-          class="form-control"
-          aria-describedby="addon-right addon-left"
-        />
+        <input :value="value" v-bind="$attrs" v-on="listeners" class="form-control" aria-describedby="addon-right addon-left" />
       </slot>
       <slot name="addonRight">
         <span v-if="addonRightIcon" class="input-group-append">
@@ -46,6 +39,7 @@ export default {
   name: 'base-input',
   props: {
     required: Boolean,
+    labelLeft: Boolean,
     label: {
       type: String,
       description: 'Input label'
