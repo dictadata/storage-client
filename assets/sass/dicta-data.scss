@@ -1,5 +1,5 @@
 /*!
- * dictadata sass for dictadata and dicta.io projects
+ * dictadata sass for dictadata.org and dicta.io projects
  *
  * Copyright 2020 dictadata.org
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -22,7 +22,22 @@
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
 
-// Core
+/*!
+ =========================================================
+ * Vue Black Dashboard PRO - v1.2.1
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/vue-black-dashboard-pro
+ * Copyright 2019 Creative Tim (https://www.creative-tim.com)
+
+ * Coded by Creative Tim
+
+ =========================================================
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ */
+
+
+ // Core definitions
 
 @import "dashboard/functions";
 @import "~bootstrap/scss/functions";
@@ -35,7 +50,7 @@
 @import "paper-kit/mixins";
 @import "~bootstrap/scss/mixins";
 
-// Bootstrap components
+// Bootstrap 4 components
 
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
@@ -72,7 +87,13 @@
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/print";
 
-// Core CSS
+// Custom
+
+@import "dashboard/reboot";
+@import "dashboard/global";
+@import "dashboard/utilities";
+
+// Core CSS (prefer paper-kit)
 
 @import "paper-kit/alerts";
 @import "paper-kit/badges";
@@ -87,7 +108,19 @@
 @import "paper-kit/tooltips-and-popovers";
 @import "paper-kit/typography";
 
-// components
+//@import "dashboard/alerts";
+//@import "dashboard/badge";
+//@import "dashboard/buttons";
+//@import "dashboard/checkboxes-radio";
+//@import "dashboard/input-group";
+@import "dashboard/misc";
+//@import "dashboard/pagination";
+//@import "dashboard/popover";
+//@import "dashboard/progress";
+//@import "dashboard/rtl";
+//@import "dashboard/type";
+
+// Components (prefer paper-kit)
 
 @import "paper-kit/animated-buttons";
 @import "paper-kit/carousel";
@@ -98,7 +131,7 @@
 @import "paper-kit/images";
 @import "paper-kit/info-areas";
 @import "paper-kit/media";
-@import "paper-kit/modal";
+//@import "paper-kit/modal";
 @import "paper-kit/navbar-extend";
 @import "paper-kit/navbars";
 @import "paper-kit/preloaders";
@@ -106,13 +139,32 @@
 @import "paper-kit/tabs-navs";
 @import "paper-kit/tags";
 
-@import "dicta/responsive";
-//@import "paper-kit/responsive";
+//@import "dicta/responsive";
+
+@import "dashboard/avatars";
+@import "dashboard/close";
+@import "dashboard/custom-forms";
+//@import "dashboard/dropdown";
+@import "dashboard/fixed-plugin";
+//@import "dashboard/footer";
+//@import "dashboard/forms";
+@import "dashboard/grid";
+@import "dashboard/icons";
+//@import "dashboard/images";
+//@import "dashboard/info-areas";
+@import "dashboard/modal";
+//@import "dashboard/nav";
+//@import "dashboard/navbar";
+@import "dashboard/pills";
+//@import "dashboard/sidebar-and-main-panel";
+//@import "dashboard/tables";
+//@import "dashboard/tabs";
+@import "dashboard/timeline";
 
 @import "paper-kit/sections";
 @import "paper-kit/sections-extend";
 
-// cards
+// Cards (prefer paper-kit)
 
 @import "paper-kit/cards";
 @import "paper-kit/cards/card-background";
@@ -127,25 +179,65 @@
 @import "paper-kit/cards/card-signup";
 @import "paper-kit/cards/card-testimonials";
 
-// Plugins CSS
+//@import "dashboard/card";
+@import "dashboard/cards/card-animation-on-hover";
+@import "dashboard/cards/card-chart";
+@import "dashboard/cards/card-collapse";
+@import "dashboard/cards/card-contributions";
+@import "dashboard/cards/card-lock";
+@import "dashboard/cards/card-map";
+//@import "dashboard/cards/card-plain";
+//@import "dashboard/cards/card-pricing";
+//@import "dashboard/cards/card-profile";
+//@import "dashboard/cards/card-register";
+@import "dashboard/cards/card-stats";
+@import "dashboard/cards/card-subcategories";
+@import "dashboard/cards/card-task";
+//@import "dashboard/cards/card-testimonials";
+@import "dashboard/cards/card-user";
+@import "dashboard/cards/card-wizard";
 
-@import "paper-kit/plugins/plugin-bootstrap-switch";
-@import "paper-kit/plugins/plugin-bootstrap-select";
-@import "paper-kit/plugins/plugin-datetimepicker";
-@import "paper-kit/plugins/plugin-tagsinput";
-@import "paper-kit/plugins/plugin-fileupload";
-@import "paper-kit/plugins/plugin-nouislider";
+// light mode
+
+@import "dashboard/white-content";
+
+// Vendor Element UI plugins
+
+@import "dashboard/vendor/element-ui/plugin-datepicker";
+@import "dashboard/vendor/element-ui/plugin-inputs";
+@import "dashboard/vendor/element-ui/plugin-select";
+@import "dashboard/vendor/element-ui/plugin-slider";
+@import "dashboard/vendor/element-ui/plugin-tables";
+@import "dashboard/vendor/element-ui/plugin-tags";
+
+// Vendor Plugins (prefer dashboard?)
+
+@import "dashboard/vendor/plugin-bootstrap-switch";
+@import "dashboard/vendor/plugin-card-wizard";
+//@import "dashboard/vendor/plugin-fullcalendar";
+@import "dashboard/vendor/plugin-jasny-fileupload";
+@import "dashboard/vendor/plugin-nouislider";
+@import "dashboard/vendor/plugin-perfect-scrollbar";
+@import "dashboard/vendor/plugin-sweetalert2";
+
+//@import "paper-kit/plugins/plugin-bootstrap-switch";
+//@import "paper-kit/plugins/plugin-bootstrap-select";
+//@import "paper-kit/plugins/plugin-datetimepicker";
+//@import "paper-kit/plugins/plugin-tagsinput";
+//@import "paper-kit/plugins/plugin-fileupload";
+//@import "paper-kit/plugins/plugin-nouislider";
 
 // Isometric cards plugin
 //@import "paper-kit/plugins/plugin-isometricGrids";
 
 // For gallery, using PhotoSwipe
-//@import "paper-kit/plugins/photo-swipe/main.scss";
-//@import "paper-kit/plugins/photo-swipe/default-skin.scss";
-//@import "paper-kit/plugins/photo-swipe/gallery.scss";
-//@import "paper-kit/plugins/photo-swipe/main.scss";
+//@import "paper-kit/plugins/photo-swipe/main";
+//@import "paper-kit/plugins/photo-swipe/default-skin";
+//@import "paper-kit/plugins/photo-swipe/gallery";
+//@import "paper-kit/plugins/photo-swipe/main";
 
 // example pages and sections
+//@import "dashboard/example-pages";
 //@import "paper-kit/examples";
 
 // Nucleo Icons
@@ -158,8 +250,8 @@
  =========================================================
  */
 
-@import "dicta/general.scss";
-@import "dicta/docs.scss";
-@import "dicta/headlines.scss";
-@import "dicta/markdown.scss";
-@import "dicta/worksheet.scss";
+@import "dicta/general";
+@import "dicta/docs";
+@import "dicta/headlines";
+@import "dicta/markdown";
+@import "dicta/worksheet";

@@ -1,5 +1,5 @@
 /*!
- * dictadata sass for dictadata and dicta.io projects
+ * dictadata sass for dictadata.org and dicta.io projects
  *
  * Copyright 2020 dictadata.org
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -13,7 +13,7 @@
  * Vue Black Dashboard PRO - v1.2.1
  =========================================================
 
- * Product Page: https://www.creative-tim.com/product/material-kit-pro
+ * Product Page: https://www.creative-tim.com/product/vue-black-dashboard-pro
  * Copyright 2019 Creative Tim (https://www.creative-tim.com)
 
  * Coded by Creative Tim
@@ -28,9 +28,11 @@
 @import "~bootstrap/scss/functions";
 
 @import "dashboard/variables";
+@import "paper-kit/variables";
 @import "~bootstrap/scss/variables";
 
 @import "dashboard/mixins";
+//@import "paper-kit/mixins";
 @import "~bootstrap/scss/mixins";
 
 // Bootstrap components
@@ -70,51 +72,81 @@
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/print";
 
-// Custom components
+// Custom
 
 @import "dashboard/reboot.scss";
 @import "dashboard/global.scss";
 @import "dashboard/utilities.scss";
+
+// Core CSS
+
 @import "dashboard/alerts.scss";
-@import "dashboard/avatars.scss";
 @import "dashboard/badge.scss";
 @import "dashboard/buttons.scss";
+@import "dashboard/checkboxes-radio";
+@import "dashboard/input-group.scss";
+@import "dashboard/misc.scss";
+@import "dashboard/pagination.scss";
+@import "dashboard/popover.scss";
+@import "dashboard/progress.scss";
+@import "dashboard/rtl.scss";
+@import "dashboard/type.scss";
+
+// Custom components
+
+@import "dashboard/avatars.scss";
 @import "dashboard/close.scss";
 @import "dashboard/custom-forms.scss";
 @import "dashboard/dropdown.scss";
+@import "dashboard/fixed-plugin";
 @import "dashboard/footer.scss";
 @import "dashboard/forms.scss";
 @import "dashboard/grid.scss";
 @import "dashboard/icons.scss";
 @import "dashboard/images.scss";
-@import "dashboard/input-group.scss";
 @import "dashboard/info-areas.scss";
 @import "dashboard/modal.scss";
 @import "dashboard/nav.scss";
 @import "dashboard/navbar.scss";
-@import "dashboard/pagination.scss";
-@import "dashboard/tabs.scss";
 @import "dashboard/pills.scss";
-@import "dashboard/popover.scss";
-@import "dashboard/progress.scss";
-@import "dashboard/type.scss";
-@import "dashboard/tables";
-@import "dashboard/checkboxes-radio";
-@import "dashboard/fixed-plugin";
 @import "dashboard/sidebar-and-main-panel.scss";
-@import "dashboard/misc.scss";
-@import "dashboard/rtl.scss";
+@import "dashboard/tables";
+@import "dashboard/tabs.scss";
 @import "dashboard/timeline.scss";
+
+// Cards
+
+@import "dashboard/card";
+@import "dashboard/cards/card-animation-on-hover";
+@import "dashboard/cards/card-chart";
+@import "dashboard/cards/card-collapse";
+@import "dashboard/cards/card-contributions";
+@import "dashboard/cards/card-lock";
+@import "dashboard/cards/card-map";
+@import "dashboard/cards/card-plain";
+@import "dashboard/cards/card-pricing";
+@import "dashboard/cards/card-profile";
+@import "dashboard/cards/card-register";
+@import "dashboard/cards/card-stats";
+@import "dashboard/cards/card-subcategories";
+@import "dashboard/cards/card-task";
+@import "dashboard/cards/card-testimonials";
+@import "dashboard/cards/card-user";
+@import "dashboard/cards/card-wizard";
+
+// light mode
+
+@import "dashboard/white-content.scss";
 
 // Vendor / Plugins
 
-@import "dashboard/vendor/plugin-nouislider.scss";
-@import "dashboard/vendor/plugin-fullcalendar.scss";
-@import "dashboard/vendor/plugin-sweetalert2.scss";
 @import "dashboard/vendor/plugin-bootstrap-switch.scss";
-@import "dashboard/vendor/plugin-jasny-fileupload.scss";
-@import "dashboard/vendor/plugin-perfect-scrollbar.scss";
 @import "dashboard/vendor/plugin-card-wizard.scss";
+//@import "dashboard/vendor/plugin-fullcalendar.scss";
+@import "dashboard/vendor/plugin-jasny-fileupload.scss";
+@import "dashboard/vendor/plugin-nouislider.scss";
+@import "dashboard/vendor/plugin-perfect-scrollbar.scss";
+@import "dashboard/vendor/plugin-sweetalert2.scss";
 
 // Vendor Element UI plugins
 @import "dashboard/vendor/element-ui/plugin-tags";
@@ -126,31 +158,7 @@
 
 // example pages and sections
 
-@import "dashboard/example-pages.scss";
-
-// light mode
-
-@import "dashboard/white-content.scss";
-
-// Cards
-
-@import "dashboard/card";
-@import "dashboard/cards/card-chart";
-@import "dashboard/cards/card-map";
-@import "dashboard/cards/card-user";
-@import "dashboard/cards/card-task";
-@import "dashboard/cards/card-animation-on-hover";
-@import "dashboard/cards/card-collapse";
-@import "dashboard/cards/card-contributions";
-@import "dashboard/cards/card-lock";
-@import "dashboard/cards/card-pricing";
-@import "dashboard/cards/card-profile";
-@import "dashboard/cards/card-plain";
-@import "dashboard/cards/card-register";
-@import "dashboard/cards/card-stats";
-@import "dashboard/cards/card-subcategories";
-@import "dashboard/cards/card-testimonials";
-@import "dashboard/cards/card-wizard";
+//@import "dashboard/example-pages.scss";
 
 /*!
  =========================================================
