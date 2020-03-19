@@ -1,18 +1,14 @@
 /*!
- * dicta.io sass for paper-kit projects
+ * dictadata sass for dictadata and dicta.io projects
  *
  * Copyright 2020 dictadata.org
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ *
+ * dictdata custom components added at the end of the file.
+ *
  */
 
- @import 'dicta/general.scss';
- @import 'dicta/docs.scss';
- @import 'dicta/headlines.scss';
- @import 'dicta/markdown.scss';
- @import 'dicta/worksheet.scss';
-
- /*!
-
+/*!
  =========================================================
  * Vue Black Dashboard PRO - v1.2.1
  =========================================================
@@ -23,11 +19,10 @@
  * Coded by Creative Tim
 
  =========================================================
-
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
 
- // Core
+// Core
 
 @import "dashboard/functions";
 @import "~bootstrap/scss/functions";
@@ -38,7 +33,7 @@
 @import "dashboard/mixins";
 @import "~bootstrap/scss/mixins";
 
- // Bootstrap components
+// Bootstrap components
 
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
@@ -66,50 +61,52 @@
 @import "~bootstrap/scss/media";
 @import "~bootstrap/scss/list-group";
 @import "~bootstrap/scss/close";
+@import "~bootstrap/scss/toasts";
 @import "~bootstrap/scss/modal";
 @import "~bootstrap/scss/tooltip";
 @import "~bootstrap/scss/popover";
 @import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/spinners";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/print";
 
- // Custom components
+// Custom components
 
- @import "dashboard/reboot.scss";
- @import "dashboard/global.scss";
- @import "dashboard/utilities.scss";
- @import "dashboard/alerts.scss";
- @import "dashboard/avatars.scss";
- @import "dashboard/badge.scss";
- @import "dashboard/buttons.scss";
- @import "dashboard/close.scss";
- @import "dashboard/custom-forms.scss";
- @import "dashboard/dropdown.scss";
- @import "dashboard/footer.scss";
- @import "dashboard/forms.scss";
- @import "dashboard/grid.scss";
- @import "dashboard/icons.scss";
- @import "dashboard/images.scss";
- @import "dashboard/input-group.scss";
- @import "dashboard/info-areas.scss";
- @import "dashboard/modal.scss";
- @import "dashboard/nav.scss";
- @import "dashboard/navbar.scss";
- @import "dashboard/pagination.scss";
- @import "dashboard/tabs.scss";
- @import "dashboard/pills.scss";
- @import "dashboard/popover.scss";
- @import "dashboard/progress.scss";
- @import "dashboard/type.scss";
- @import "dashboard/tables";
- @import "dashboard/checkboxes-radio";
- @import "dashboard/fixed-plugin";
- @import "dashboard/sidebar-and-main-panel.scss";
- @import "dashboard/misc.scss";
- @import "dashboard/rtl.scss";
- @import "dashboard/timeline.scss";
+@import "dashboard/reboot.scss";
+@import "dashboard/global.scss";
+@import "dashboard/utilities.scss";
+@import "dashboard/alerts.scss";
+@import "dashboard/avatars.scss";
+@import "dashboard/badge.scss";
+@import "dashboard/buttons.scss";
+@import "dashboard/close.scss";
+@import "dashboard/custom-forms.scss";
+@import "dashboard/dropdown.scss";
+@import "dashboard/footer.scss";
+@import "dashboard/forms.scss";
+@import "dashboard/grid.scss";
+@import "dashboard/icons.scss";
+@import "dashboard/images.scss";
+@import "dashboard/input-group.scss";
+@import "dashboard/info-areas.scss";
+@import "dashboard/modal.scss";
+@import "dashboard/nav.scss";
+@import "dashboard/navbar.scss";
+@import "dashboard/pagination.scss";
+@import "dashboard/tabs.scss";
+@import "dashboard/pills.scss";
+@import "dashboard/popover.scss";
+@import "dashboard/progress.scss";
+@import "dashboard/type.scss";
+@import "dashboard/tables";
+@import "dashboard/checkboxes-radio";
+@import "dashboard/fixed-plugin";
+@import "dashboard/sidebar-and-main-panel.scss";
+@import "dashboard/misc.scss";
+@import "dashboard/rtl.scss";
+@import "dashboard/timeline.scss";
 
- // Vendor / Plugins
+// Vendor / Plugins
 
 @import "dashboard/vendor/plugin-nouislider.scss";
 @import "dashboard/vendor/plugin-fullcalendar.scss";
@@ -137,7 +134,7 @@
 
 // Cards
 
-@import 'dashboard/card';
+@import "dashboard/card";
 @import "dashboard/cards/card-chart";
 @import "dashboard/cards/card-map";
 @import "dashboard/cards/card-user";
@@ -154,3 +151,15 @@
 @import "dashboard/cards/card-subcategories";
 @import "dashboard/cards/card-testimonials";
 @import "dashboard/cards/card-wizard";
+
+/*!
+ =========================================================
+ *  dictadata custom components
+ =========================================================
+ */
+
+@import "dicta/general.scss";
+@import "dicta/docs.scss";
+@import "dicta/headlines.scss";
+@import "dicta/markdown.scss";
+@import "dicta/worksheet.scss";
