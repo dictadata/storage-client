@@ -8,10 +8,10 @@
 import { User } from '../client'
 
 const userPlugin = {
-  install(Vue) {
-    var user = new User('dicta')
-    user.password = 'data'
-    user.roles = ["Public", "Docs", "Notify"]
+  install(Vue, options) {
+    var user = new User()
+    if (options && options.user)
+      user.copy(options.user)
     Vue.prototype.$user = user
   }
 }

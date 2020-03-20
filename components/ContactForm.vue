@@ -81,8 +81,8 @@ export default {
 
       // console.log(message);
       // console.log(process.env.VUE_APP_DICTA_API);
-      let user = new User('dictaweb')
-      user.password = 'dicta'
+      let user = new User('dicta')
+      user.password = 'data'
       user.roles = ['Public', 'Notify']
 
       let notify = new Notify(user)

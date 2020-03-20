@@ -63,7 +63,7 @@ module.exports = class User {
   isAuthorized(roles) {
     if (Array.isArray(roles)) {
       for (let i = 0; i < roles.length; i++)
-        if (this.roles.includes(roles[i])) 
+        if (this.roles.includes(roles[i]))
           return true
     } else if (roles)
       return this.roles.includes(roles)

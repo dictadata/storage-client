@@ -44,7 +44,7 @@ module.exports = class Account {
               resolve(results.result)
             }
             else
-              reject(results.result);
+              reject(results.result)
           }
         })
         .catch(error => {
