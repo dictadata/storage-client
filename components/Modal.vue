@@ -19,7 +19,7 @@
             <slot name="header"></slot>
             <slot name="close-button">
               <button type="button" class="close" v-if="showClose" @click="closeModal" data-dismiss="modal" aria-label="Close">
-                <i class="nc2-icon icon-simple-remove"></i>
+                <i class="nc-icon nc-simple-remove"></i>
               </button>
             </slot>
           </div>
