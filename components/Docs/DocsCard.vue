@@ -1,5 +1,5 @@
 <template>
-  <card class="card-refine">
+  <card v-if="doc" class="card-refine">
 
     <template #header>
       <div class="row">
@@ -45,7 +45,7 @@ export default {
   },
   computed: {
     pdfurl() {
-      let u = '/api/docs/' + encodeURIComponent(this.docid) + '.pdf'
+      //let u = '/api/docs/' + encodeURIComponent(this.docid) + '.pdf'
       // console.log(u);
       return u
     }
