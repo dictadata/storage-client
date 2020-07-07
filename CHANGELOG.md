@@ -1,4 +1,6 @@
+- version 1.1.0
+  - refactor project as @dictadata/dictadata-client
 - version 1.0.0
-  - refactor project as @dictadata/dicta.io-lib
+  - refactor project as @dictadata/dictadata-client
 - version 0.6.1
   - update newDoc definition to match new schema encoding

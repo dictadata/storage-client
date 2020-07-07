@@ -1,5 +1,5 @@
 /**
- * dicta.io-lib/notify.js
+ * dictadata-client/notify.js
  */
 
 const dictaAPI = require('./dictaAPI')

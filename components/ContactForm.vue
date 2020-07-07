@@ -73,7 +73,7 @@ export default {
       that.send_status = 'sending message'
 
       let message = {
-        subject: "Message from www.dicta.io",
+        subject: "Message from www.dictadata.org",
         text: this.contactInfo.name + "\n" +
           this.contactInfo.email + "\n" +
           this.contactInfo.message + "\n"

@@ -1,5 +1,5 @@
 /**
- * dicta.io-lib/roles.js
+ * dictadata-client/roles.js
  */
 'use strict'
 

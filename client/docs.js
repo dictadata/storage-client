@@ -1,5 +1,5 @@
 /**
- * dicta.io-lib/docs.js
+ * dictadata-client/docs.js
  */
 
 const dictaAPI = require('./dictaAPI')

@@ -1,18 +1,18 @@
-# dicta.io-lib
+# dictadata-client
 
-dicta.io Javascript library for client API, components, assets, ...
+dictadata Javascript library for client API, components, assets, ...
 
 # Installation
 
 ```bash
-npm i @dictadata/dicta.io-lib
+npm i @dictadata/dictadata-client
 ```
 
 # Usage
 
 configure
 
-process.env.VUE_APP_DICTA_API = https://api.dicta.io/api
+process.env.VUE_APP_DICTA_API = https://api.dictadata.org/api
 
 # Features
 

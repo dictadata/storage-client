@@ -27,7 +27,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'dicta.io',
+      default: 'dictadata',
       description: 'Sidebar title'
     },
     shortTitle: {
