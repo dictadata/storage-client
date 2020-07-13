@@ -15,7 +15,5 @@ module.exports = Object.freeze({
   SysOps: 'SysOps',
   Demo: 'Demo',
   Import: 'Import',
-  Export: 'Export',
-  PBI: 'PBI',
-  HUPP: 'HUPP'
+  Export: 'Export'
 })
