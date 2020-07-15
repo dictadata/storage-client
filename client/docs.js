@@ -7,8 +7,8 @@ const Roles = require('./roles')
 
 module.exports = class Docs {
 
-  constructor(user) {
-    this.user = user
+  constructor(account) {
+    this.account = account
   }
 
   // get the encoding and create an object from the engram.fields
@@ -31,7 +31,7 @@ module.exports = class Docs {
 
   storeDoc(doc) {
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.Editor)) {
+      if (!this.account.isAuthorized(Roles.Editor)) {
         reject(new Error('Not Authorized'))
         return
       }
@@ -40,7 +40,7 @@ module.exports = class Docs {
         data: doc
       }
 
-      dictaAPI(this.user).put('/api/docs/' + encodeURIComponent(doc.docid), body)
+      dictaAPI(this.account).put('/api/docs/' + encodeURIComponent(doc.docid), body)
         .then((response) => {
           //console.log(response)
           let results = response.data;
@@ -58,12 +58,12 @@ module.exports = class Docs {
 
   recallDoc(docid) {
     return new Promise((resolve, reject) => {
-      if (!(this.user.isAuthorized(Roles.Docs) || this.user.isAuthorized(Roles.User)) ) {
+      if (!(this.account.isAuthorized(Roles.Docs) || this.account.isAuthorized(Roles.User)) ) {
         reject(new Error('Not Authorized'))
         return
       }
 
-      dictaAPI(this.user).get('/api/docs/' + encodeURIComponent(docid))
+      dictaAPI(this.account).get('/api/docs/' + encodeURIComponent(docid))
         .then((response) => {
           //console.log(response);
           let results = response.data;
@@ -81,12 +81,12 @@ module.exports = class Docs {
 
   dullDoc(docid) {
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.Editor)) {
+      if (!this.account.isAuthorized(Roles.Editor)) {
         reject(new Error('Not Authorized'))
         return
       }
 
-      dictaAPI(this.user).delete('/api/docs/' + encodeURIComponent(docid))
+      dictaAPI(this.account).delete('/api/docs/' + encodeURIComponent(docid))
         .then((response) => {
           //console.log(response);
           let result = response.data;
@@ -104,7 +104,7 @@ module.exports = class Docs {
 
   retrieveDocs(pattern) {
     return new Promise((resolve, reject) => {
-      if (!(this.user.isAuthorized(Roles.Docs) || this.user.isAuthorized(Roles.User)) ) {
+      if (!(this.account.isAuthorized(Roles.Docs) || this.account.isAuthorized(Roles.User)) ) {
         reject(new Error('Not Authorized'))
         return
       }
@@ -113,7 +113,7 @@ module.exports = class Docs {
         pattern: pattern.pattern || pattern
       }
 
-      dictaAPI(this.user).post('/api/docs', body)
+      dictaAPI(this.account).post('/api/docs', body)
         .then((response) => {
           //console.log("docs: ", JSON.stringify(response.data));
           let results = response.data;

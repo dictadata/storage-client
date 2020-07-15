@@ -7,8 +7,8 @@ const Roles = require('./roles')
 
 module.exports = class Import {
 
-  constructor(user) {
-    this.user = user
+  constructor(account) {
+    this.account = account
   }
 
   CSV_import(formData) {
@@ -16,13 +16,13 @@ module.exports = class Import {
 
     return new Promise( (resolve, reject) => {
 
-      if (!this.user.isAuthorized(Roles.Import) && !this.user.isAuthorized(Roles.Admin)) {
+      if (!this.account.isAuthorized(Roles.Import) && !this.account.isAuthorized(Roles.Admin)) {
         console.log("not authorized")
         reject(new Error('Not Authorized'))
         return
       }
 
-      dictaAPI(this.user)
+      dictaAPI(this.account)
         .post('/import/csv', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'

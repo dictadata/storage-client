@@ -7,19 +7,19 @@ const Roles = require('./roles')
 
 module.exports = class Settings {
 
-  constructor(user) {
-    this.user = user
+  constructor(account) {
+    this.account = account
   }
 
   getSettings(ID) {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.User)) {
+      if (!this.account.isAuthorized(Roles.User)) {
         reject(new Error('Not Authorized'))
         return
       }
 
-      dictaAPI(this.user)
+      dictaAPI(this.account)
         .get('/api/settings/' + ID)
         .then(response => {
           let results = response.data;
@@ -38,7 +38,7 @@ module.exports = class Settings {
   putSettings(ID, settings) {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.User)) {
+      if (!this.account.isAuthorized(Roles.User)) {
         reject(new Error('Not Authorized'))
         return
       }
@@ -46,7 +46,7 @@ module.exports = class Settings {
         data: settings
       }
 
-      dictaAPI(this.user)
+      dictaAPI(this.account)
         .post('/api/settings/' + ID, body)
         .then(response => {
           let results = response.data;

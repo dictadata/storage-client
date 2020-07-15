@@ -7,19 +7,19 @@ const Roles = require('./roles')
 
 module.exports = class Storage {
 
-  constructor(user) {
-    this.user = user
+  constructor(account) {
+    this.account = account
   }
 
   setEncoding(smt, encoding) {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.User)) {
+      if (!this.account.isAuthorized(Roles.User)) {
         reject(new Error('Not Authorized'))
         return
       }
 
-      dictaAPI(this.user)
+      dictaAPI(this.account)
         .put('/node/encoding/' + smt, encoding)
         .then(response => {
           let results = response.data;
@@ -27,7 +27,7 @@ module.exports = class Storage {
             resolve(results.data)
           else
             reject(results.result);
-          })
+        })
         .catch(error => {
           console.log(error.message)
           reject(error)
@@ -38,12 +38,12 @@ module.exports = class Storage {
   getEncoding(smt) {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.User)) {
+      if (!this.account.isAuthorized(Roles.User)) {
         reject(new Error('Not Authorized'))
         return
       }
 
-      dictaAPI(this.user)
+      dictaAPI(this.account)
         .get('/node/encoding/' + smt)
         .then(response => {
           let results = response.data;
@@ -51,7 +51,7 @@ module.exports = class Storage {
             resolve(results.data)
           else
             reject(results.result);
-          })
+        })
         .catch(error => {
           console.log(error.message)
           reject(error)
@@ -59,10 +59,10 @@ module.exports = class Storage {
     })
   }
 
-  store(smt, construct, key='') {
+  store(smt, construct, key = '') {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.User)) {
+      if (!this.account.isAuthorized(Roles.User)) {
         reject(new Error('Not Authorized'))
         return
       }
@@ -75,7 +75,7 @@ module.exports = class Storage {
       else
         body.data = [construct]
 
-      dictaAPI(this.user)
+      dictaAPI(this.account)
         .put('/node/store/' + smt, body)
         .then(response => {
           let results = response.data;
@@ -83,7 +83,7 @@ module.exports = class Storage {
             resolve(results.data)
           else
             reject(results.result);
-          })
+        })
         .catch(error => {
           console.log(error.message)
           reject(error)
@@ -94,12 +94,12 @@ module.exports = class Storage {
   recall(smt) {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.User)) {
+      if (!this.account.isAuthorized(Roles.User)) {
         reject(new Error('Not Authorized'))
         return
       }
 
-      dictaAPI(this.user)
+      dictaAPI(this.account)
         .get('/node/retrieve/' + smt)
         .then(response => {
           let results = response.data;
@@ -107,7 +107,7 @@ module.exports = class Storage {
             resolve(results.data)
           else
             reject(results.result);
-          })
+        })
         .catch(error => {
           console.log(error.message)
           reject(error)
@@ -118,7 +118,7 @@ module.exports = class Storage {
   retrieve(smt, pattern) {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.User)) {
+      if (!this.account.isAuthorized(Roles.User)) {
         reject(new Error('Not Authorized'))
         return
       }
@@ -127,7 +127,7 @@ module.exports = class Storage {
         pattern: pattern
       }
 
-      dictaAPI(this.user)
+      dictaAPI(this.account)
         .post('/node/retrieve/' + smt, body)
         .then(response => {
           let results = response.data;
@@ -135,7 +135,7 @@ module.exports = class Storage {
             resolve(results.data)
           else
             reject(results.result);
-          })
+        })
         .catch(error => {
           console.log(error.message)
           reject(error)
@@ -146,12 +146,12 @@ module.exports = class Storage {
   dull(smt) {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.User)) {
+      if (!this.account.isAuthorized(Roles.User)) {
         reject(new Error('Not Authorized'))
         return
       }
 
-      dictaAPI(this.user)
+      dictaAPI(this.account)
         .delete('/node/dull/' + smt)
         .then(response => {
           let results = response.data;
@@ -159,7 +159,7 @@ module.exports = class Storage {
             resolve(results.data)
           else
             reject(results.result);
-          })
+        })
         .catch(error => {
           console.log(error.message)
           reject(error)

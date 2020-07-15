@@ -43,7 +43,7 @@
   </div>
 </template>
 <script>
-import { Notify, User } from '../client'
+import { Notify, Account } from '../client'
 
 export default {
   name: 'ContactForm',
@@ -81,11 +81,11 @@ export default {
 
       // console.log(message);
       // console.log(process.env.VUE_APP_DICTA_API);
-      let user = new User('dicta')
-      user.password = 'data'
-      user.roles = ['Public', 'Notify']
+      let account = new Account('dicta')
+      account.password = 'data'
+      account.roles = ['Public', 'Notify']
 
-      let notify = new Notify(user)
+      let notify = new Notify(account)
       notify.sendMessage(message)
         .then(function (result) {
           // console.log(response.data.result);

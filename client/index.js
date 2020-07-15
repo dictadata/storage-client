@@ -4,9 +4,9 @@
 "use strict";
 
 exports.Roles = require("./roles")
-exports.User = require('./user')
+exports.Account = require('./account')
 
-exports.Account = require("./account")
+exports.Accounts = require("./accounts")
 exports.Settings = require("./settings")
 exports.Notify = require("./notify")
 exports.Storage = require("./storage")

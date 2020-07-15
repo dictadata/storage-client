@@ -7,14 +7,14 @@ const Roles = require('./roles')
 
 module.exports = class Notify {
 
-  constructor(user) {
-    this.user = user
+  constructor(account) {
+    this.account = account
   }
 
   sendMessage(message) {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
-      if (!this.user.isAuthorized(Roles.Notify)) {
+      if (!this.account.isAuthorized(Roles.Notify)) {
         reject(new Error('Not Authorized'))
         return
       }
@@ -23,7 +23,7 @@ module.exports = class Notify {
         data: message
       }
 
-      dictaAPI(this.user)
+      dictaAPI(this.account)
         .post('/api/notify', body)
         .then(response => {
           let results = response.data;

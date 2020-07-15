@@ -8,9 +8,9 @@
 
 const axios = require('axios')
 
-module.exports = (user) => {
-  let userid = user.userid || 'guest'
-  let password = user.password || 'guest'
+module.exports = (account) => {
+  let userid = account.userid || 'guest'
+  let password = account.password || 'guest'
 
   return axios.create({
     baseURL: process.env.VUE_APP_DICTA_API,
@@ -24,8 +24,8 @@ module.exports = (user) => {
 
 const my_btoa = (str) => {
   try {
-      return btoa(str);
-  } catch(err) {
-      return Buffer.from(str).toString('base64')
+    return btoa(str)
+  } catch (err) {
+    return Buffer.from(str).toString('base64')
   }
-};
+}
