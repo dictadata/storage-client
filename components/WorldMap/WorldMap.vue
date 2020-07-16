@@ -6,7 +6,7 @@ import 'd3';
 import * as d3 from 'd3';
 import 'topojson';
 import DataMap from 'datamaps';
-import { throttle } from '../../util/throttle';
+import { throttle } from '../util/throttle';
 
 export default {
   data() {

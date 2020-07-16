@@ -95,7 +95,7 @@
   </div>
 </template>
 <script>
-import { throttle } from './throttle'
+import { throttle } from '../util/throttle'
 
 export default {
   name: 'simple-wizard',

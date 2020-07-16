@@ -16,8 +16,8 @@ import MarkdownView from './Docs/MarkdownView.vue'
 //import FilesInput from './Inputs/FilesInput.vue'
 //import FormGroupInput from './Inputs/FormGroupInput.vue'
 //import MarkdownInput from './Inputs/MarkdownInput.vue'
-//import Spinner from './Spinner.vue'
-//import Worksheet from './Worksheet.vue'
+import Spinner from './Spinner.vue'
+import Worksheet from './Worksheet.vue'
 
 // Creative Tim components
 import BaseCheckbox from './Inputs/BaseCheckbox.vue'
@@ -76,6 +76,8 @@ export {
   Navbar,
   ScrollTo,
   Splash,
+  Spinner,
+  Worksheet,
 
   // Creative Tim components
   BaseCheckbox,
