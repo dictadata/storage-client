@@ -1,0 +1,79 @@
+/*!
+ * Dicta Data
+ * Copyright 2020 dictadata.org
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ */
+
+ @import 'dashboard/variables';
+ @import 'dashboard/mixins';
+
+ h1,
+.h1 {
+  font-family: "kingthings_organica", Impact, "Arial Black", sans-serif;
+}
+
+.downbelow {
+  position: absolute;
+  bottom: 0;
+}
+
+.separator-type,
+.title-type,
+.content-type
+.scroller-type,
+.scroller-type p {
+  position: relative;
+}
+
+.scroller-type .container {
+  padding: 107px 0px 102px 0px !important;
+}
+.scroller-btn {
+  width: 49px;
+  height: 49px;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding-top: 50px;
+  z-index: 9;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.blurb {
+  padding: 30px 0 30px 0;
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+
+  .icon{
+      margin-top: 0;
+      font-size: 3.4em;
+      &.icon-sm{
+          font-size: h4-font-size;
+      }
+      .fa{
+          width: 48px;
+      }
+  }
+  h4,
+  .h4{
+      margin-top: 15px;
+      margin-bottom: 15px;
+  }
+}
+
+.blurb_dark {
+  margin: 15px auto;
+  padding: 15px;
+  background-color: rgba(7, 20, 51, 0.4);
+  border-radius: 25px;
+}
+
+.blurb_big {
+  font-size: 1.6em;
+  font-weight: bolder;
+}
