@@ -1,5 +1,5 @@
 /*!
- * dictadata sass for dictadata.org and dicta.io projects
+ * dictadata sass for dictadata.org and dictadata projects
  *
  * Copyright 2020 dictadata.org
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -166,7 +166,9 @@
  =========================================================
  */
 
+@import "dicta/variables.scss";
 @import "dicta/general.scss";
+@import "dicta/dashboard.scss";
 @import "dicta/docs.scss";
 @import "dicta/headlines.scss";
 @import "dicta/markdown.scss";

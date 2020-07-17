@@ -5,8 +5,12 @@
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
 
- h1,
- .h1 {
+ h1,h2,h3,h4,h5,h6{
+  color: $headings-color;
+}
+
+h1,
+.h1 {
    font-family: "kingthings_organica", Impact, "Arial Black", sans-serif;
  }
 
