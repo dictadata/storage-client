@@ -80,7 +80,7 @@ export default {
   mounted() {
     this.addItem(this)
   },
-  destroyed() {
+  unmounted() {
     if (this.$el && this.$el.parentNode)
       this.$el.parentNode.removeChild(this.$el)
 

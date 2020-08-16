@@ -1,5 +1,5 @@
 <template>
-  <div class="markdown">
+  <div>
     <textarea ref="area"></textarea>
   </div>
 </template>
@@ -8,7 +8,7 @@
 import SimpleMDE from 'simplemde'
 
 export default {
-  name: 'MarkdownEdit',
+  name: 'markdown-input',
   components: {
   },
   props: {
@@ -21,15 +21,12 @@ export default {
 
   mounted() {
     this.mde = new SimpleMDE({
-      element: this.$refs.area, // Tie SimpleMDE to your textarea
+      element: this.$refs.area // Tie SimpleMDE to your textarea
       // Set your SimpleMDE configuration here
       // e.g. remove the status bar (status: false), customise the
       // toolbar (toolbar: ["bold", "italic", "heading"]) or similar
-      showIcons: ["code", "table", "horizontal rule"],
-      initialValue: this.value
     })
-    // this.mde.value(this.value)
-
+    this.mde.value(this.value)
     var self = this
     this.mde.codemirror.on('change', function() {
       // Catch on change events
@@ -55,8 +52,5 @@ export default {
 </script>
 
 <style>
-@import '~simplemde/dist/simplemde.min.css';
-.editor-toolbar {
-  text-align: center;
-}
+  @import '~simplemde/dist/simplemde.min.css';
 </style>

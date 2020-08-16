@@ -85,7 +85,6 @@ export default {
   computed: {
     listeners() {
       return {
-        ...this.$listeners,
         input: this.updateValue,
         focus: this.onFocus,
         blur: this.onBlur
@@ -96,31 +95,30 @@ export default {
     },
     hasIcon() {
       const { addonRight, addonLeft } = this.$slots
-      return addonRight !== undefined || addonLeft !== undefined || this.addonRightIcon !== undefined || this.addonLeftIcon !== undefined
+      return addonRight !== undefined || addonLeft !== undefined ||
+        this.addonRightIcon !== undefined || this.addonLeftIcon !== undefined
     }
   },
   methods: {
     updateValue(evt) {
       let value = evt.target.value
-      if (!this.touched && value) {
+      if (!this.touched && value)
         this.touched = true
-      }
       this.$emit('input', value)
     },
     onFocus(value) {
-      this.focused = true;
-      this.$emit('focus', value);
+      this.focused = true
+      this.$emit('focus', value)
     },
     onBlur(value) {
-      this.focused = false;
-      this.$emit('blur', value);
+      this.focused = false
+      this.$emit('blur', value)
     }
   },
   created() {
     this.$watch('error', (newVal) => {
-      if (newVal) {
-        this.hadError = true;
-      }
+      if (newVal)
+        this.hadError = true
     }, { immediate: true })
   }
 }

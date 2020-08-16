@@ -99,7 +99,7 @@ export default {
   },
   computed: {
     show() {
-      return this.showMenu;
+      return this.showMenu
     },
     hasMenu() {
       return this.$slots.default
@@ -129,24 +129,21 @@ export default {
     navMenuClasses() {
       let classes = ['navbar-collapse', 'collapse']
 
-      if (this.showMenu) {
+      if (this.showMenu)
         classes.push('show')
-      } else {
-        //
-      }
 
       classes.push(this.menuClasses.split(' '))
       return classes
     }
   },
   watch: {
-    showMenu: function (newVal, oldVal) {
-      /*if (newVal) {
+    showMenu: function(newVal, oldVal) {
+      /* if (newVal) {
         this.$refs.toggler.classList.remove("collapsed")
       } else {
         this.$refs.toggler.classList.add("collapsed")
-      }*/
-      //console.log(JSON.stringify(this.$refs.navMenu.classList, null, "  "))
+      } */
+      // console.log(JSON.stringify(this.$refs.navMenu.classList, null, "  "))
     }
   },
   methods: {

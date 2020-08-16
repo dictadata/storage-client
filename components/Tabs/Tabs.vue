@@ -130,7 +130,7 @@ export default {
       })
     },
     addTab(tab) {
-      const index = this.$slots.default.indexOf(tab.$vnode)
+      const index = this.$slots.default().indexOf(tab.$vnode)
       if (!this.activeTab && index === 0)
         tab.active = true
 

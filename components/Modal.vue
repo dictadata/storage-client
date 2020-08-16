@@ -121,7 +121,7 @@ export default {
     if (this.appendToBody)
       document.body.appendChild(this.$el)
   },
-  destroyed() {
+  unmounted() {
     if (this.appendToBody && this.$el && this.$el.parentNode)
       this.$el.parentNode.removeChild(this.$el)
   },
