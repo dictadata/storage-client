@@ -7,7 +7,16 @@ module.exports = {
   },
 
   plugins: [],
-  extends: ["plugin:vue/vue3-essential"],
+
+  'extends': [
+    'plugin:vue/essential',
+    'eslint:recommended'
+  ],
+
+  parserOptions: {
+    parser: 'babel-eslint',
+    ecmaVersion: 2020
+  },
 
   rules: {
     'arrow-parens': 0,
@@ -32,9 +41,5 @@ module.exports = {
     'linebreak-style': 'off',
     'vue/no-unused-components': 'warn',
     'vue/no-unused-vars': 'warn'
-  },
-
-  parserOptions: {
-    parser: 'babel-eslint'
   }
 }
