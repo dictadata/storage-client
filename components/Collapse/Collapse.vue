@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     addItem(item) {
-      const index = this.$slots.default().indexOf(item.$vnode)
+      const index = this.$slots.default.indexOf(item.$vnode)
       if (index !== -1)
         this.items.splice(index, 0, item)
     },

@@ -66,12 +66,12 @@
                 v-if="activeTabIndex < tabCount - 1"
                 type="primary"
                 wide
-                @click="nextTab"
+                @click.native="nextTab"
                 class="btn-next"
               >
                 {{ nextButtonText }}
               </base-button>
-              <base-button v-else wide @click="nextTab">{{
+              <base-button v-else wide @click.native="nextTab">{{
                 finishButtonText
               }}</base-button>
             </div>
@@ -81,7 +81,7 @@
                 v-if="activeTabIndex > 0"
                 wide
                 type="primary"
-                @click="prevTab"
+                @click.native="prevTab"
                 class="btn-previous"
               >
                 {{ prevButtonText }}
@@ -134,8 +134,8 @@ export default {
       props: ['tab'],
       render(h, { props }) {
         let content = props.tab.$slots.label
-        if (content && content().length)
-          return content()
+        if (content && content.length)
+          return content
 
         return h('span', [props.tab.$slots.label, props.tab.label])
       }
@@ -191,7 +191,7 @@ export default {
   },
   methods: {
     addTab(tab) {
-      const index = this.$slots.default().indexOf(tab.$vnode)
+      const index = this.$slots.default.indexOf(tab.$vnode)
       let tabTitle = tab.title || ''
       tab.tabId = `${tabTitle.replace(/ /g, '')}${index}`
       if (!this.activeTab && index === 0) {

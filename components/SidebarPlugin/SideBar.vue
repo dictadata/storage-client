@@ -78,13 +78,15 @@ export default {
   },
   methods: {
     minimizeSidebar() {
-      if (this.$sidebar)
+      if (this.$sidebar) {
         this.$sidebar.toggleMinimize()
+      }
     }
   },
-  beforeUnmount() {
-    if (this.$sidebar.showSidebar)
+  beforeDestroy() {
+    if (this.$sidebar.showSidebar) {
       this.$sidebar.showSidebar = false
+    }
   }
 }
 </script>

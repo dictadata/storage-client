@@ -46,7 +46,7 @@ export default {
     }
   },
 
-  beforeUnmount() {
+  beforeDestroy() {
     // Clean up when the component gets destroyed
     this.mde.toTextArea()
   }

@@ -79,17 +79,20 @@ export default {
     hasLeftAddon() {
       const { addonLeft } = this.$slots
       return (
-        addonLeft !== undefined || this.addonLeftIcon !== undefined
+        addonLeft !== undefined ||
+        this.addonLeftIcon !== undefined
       )
     },
     hasRightAddon() {
       const { addonRight } = this.$slots
       return (
-        addonRight !== undefined || this.addonRightIcon !== undefined
+        addonRight !== undefined ||
+        this.addonRightIcon !== undefined
       )
     },
     listeners() {
       return {
+        ...this.$listeners,
         input: this.onInput,
         blur: this.onBlur,
         focus: this.onFocus

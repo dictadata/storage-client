@@ -143,7 +143,7 @@ export default {
       // console.log("cellStyles", params);
       // let { row, column, rowIndex, columnIndex } = params;
 
-      if (this.rows.length === 0)
+      if (this.rows.length == 0)
         return ''
 
       let row = this.rows[params.rowIndex]
@@ -241,7 +241,7 @@ export default {
 
     // events
     clickedRow(value) {
-      this.$emit('clicked-row', value)
+      this.$emit('clickedRow', value)
     }
   }
 }
