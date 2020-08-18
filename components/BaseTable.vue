@@ -2,16 +2,18 @@
   <table class="table tablesorter" :class="tableClass">
     <thead :class="theadClasses">
       <tr>
-        <slot name="columns" :columns="columns">
+        <slot name="columns">
           <th v-for="column in columns" :key="column">{{ column }}</th>
         </slot>
       </tr>
     </thead>
     <tbody :class="tbodyClasses">
       <tr v-for="(item, index) in data" :key="index">
-        <slot :row="item" :index="index">
-          <td v-if="hasValue(item, column)" v-for="(column, index) in columns" :key="index">
-            {{ itemValue(item, column) }}
+        <slot name="row" :row="item" :index="index">
+          <td v-for="(column, index) in columns" :key="index">
+            <span v-if="hasValue(item, column)">
+              {{ itemValue(item, column) }}
+            </span>
           </td>
         </slot>
       </tr>

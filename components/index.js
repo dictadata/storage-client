@@ -12,10 +12,10 @@ import HeadlinesVertical from './Docs/HeadlinesVertical.vue'
 import MarkdownEdit from './Docs/MarkdownEdit.vue'
 import MarkdownView from './Docs/MarkdownView.vue'
 
-//import InfoCard from './Cards/InfoCard.vue'
-//import FilesInput from './Inputs/FilesInput.vue'
-//import FormGroupInput from './Inputs/FormGroupInput.vue'
-//import MarkdownInput from './Inputs/MarkdownInput.vue'
+import InfoCard from './Cards/InfoCard.vue'
+import FilesInput from './Inputs/FilesInput.vue'
+import FormGroupInput from './Inputs/FormGroupInput.vue'
+import MarkdownInput from './Inputs/MarkdownInput.vue'
 import Spinner from './Spinner.vue'
 import Worksheet from './Worksheet.vue'
 
@@ -69,10 +69,14 @@ export {
   ContactForm,
   DocsList,
   DocsCard,
+  InfoCard,
   HeadlinesHorizontal,
   HeadlinesVertical,
   MarkdownEdit,
   MarkdownView,
+  FilesInput,
+  FormGroupInput,
+  MarkdownInput,
   Navbar,
   ScrollTo,
   Splash,
@@ -113,7 +117,7 @@ export {
   BaseButton,
   Collapse,
   CollapseItem,
-  LoadingPanel,
+  LoadingPanel
   //AsyncWorldMap
 
 }
