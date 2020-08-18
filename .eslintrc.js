@@ -6,9 +6,7 @@ module.exports = {
     node: true
   },
 
-  plugins: [],
-
-  'extends': [
+  extends: [
     'plugin:vue/essential',
     'eslint:recommended'
   ],
@@ -17,6 +15,8 @@ module.exports = {
     parser: 'babel-eslint',
     ecmaVersion: 2020
   },
+
+  plugins: [],
 
   rules: {
     'arrow-parens': 0,
