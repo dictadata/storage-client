@@ -7,7 +7,7 @@ module.exports = {
   },
 
   extends: [
-    'plugin:vue/essential',
+    'plugin:vue/recommended',
     'eslint:recommended'
   ],
 
@@ -23,11 +23,14 @@ module.exports = {
     'generator-star-spacing': 0,
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    quotes: [ 'off', 'single' ],
+    quotes: ['off', 'single'],
     indent: ['warn', 2],
     semi: ['warn', 'never'],
     'space-before-function-paren': ['warn', 'never'],
-    'comma-spacing': ['warn', { before: false, after: true }],
+    'comma-spacing': ['warn', {
+      before: false,
+      after: true
+    }],
     'padded-blocks': ['warn', 'never'],
     'space-in-parens': ['warn', 'never'],
     'spaced-comment': ['warn', 'always'],
