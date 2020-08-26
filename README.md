@@ -1,6 +1,6 @@
 # dictadata-client
 
-dictadata Javascript library for client API, components, assets, ...
+Javascript library for dictadata API client
 
 # Installation
 

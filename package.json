@@ -1,45 +1,20 @@
 {
-  "name": "@dictadata/dictadata-client",
-  "version": "1.1.9",
-  "description": "Vue.js library for shared components and files.",
+  "name": "@dictadata/client",
+  "version": "1.2.5",
+  "description": "dictadata API client library",
   "author": "Drew O. Letcher",
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
-  },
-  "main": "index.js",
+  "license": "MIT",
+  "repository": "github:dictadata/dictadata-client",
+  "scripts": {},
+  "main": "lib/index.js",
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "core-js": "^3.6.5",
-    "element-ui": "^2.4.5",
-    "vue": "^2.6.12",
-    "vue-router": "^3.2.0"
+    "axios": "^0.20.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.4",
-    "@vue/cli-plugin-eslint": "^4.5.4",
-    "@vue/cli-plugin-router": "^4.5.4",
-    "@vue/cli-plugin-unit-jest": "^4.5.4",
-    "@vue/cli-service": "^4.5.4",
-    "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.7.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.9.2",
-    "sass": "^1.19.0",
-    "sass-loader": "^10.0.1",
-    "vue-cli-plugin-element": "~1.0.1",
-    "vue-template-compiler": "^2.6.12"
+    "eslint": "^7.7.0"
   },
   "engines": {
     "node": ">=12.0.0"
-  },
-  "license": "MIT",
-  "repository": "github:dictadata/dictadata-client"
+  }
 }
