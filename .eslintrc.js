@@ -31,7 +31,7 @@ module.exports = {
       'before': false,
       'after': true
     }],
-    'padded-blocks': ['warn', 'never'],
+    'padded-blocks': ['warn', { 'blocks': 'never', 'classes': 'always', 'switches': 'never' }],
     'space-in-parens': ['warn', 'never'],
     'spaced-comment': ['warn', 'always'],
     'comma-dangle': ['warn', 'never'],
