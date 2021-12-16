@@ -1,3 +1,6 @@
+- version 1.2.0
+  - implement leaflet map
+  - query geojson files from node-server
 - version 1.1.0
   - refactor project as @dictadata/dictadata-client
 - version 1.0.0
