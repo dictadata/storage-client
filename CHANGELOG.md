@@ -1,8 +1,11 @@
 # CHANGELOG for @dictadata/client
 
+- version 2.2.0
+  - update for storage-node 2.2
+  - refactor for codex
 - version 2.1.0
   - update for storage-node 2.1
-  - refactor codex to cortex
+  - refactor for cortex
 - version 2.0.0
   - updates for storage-node 2.0
   - implement Codex API
