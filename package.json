@@ -1,6 +1,7 @@
 {
   "name": "@dictadata/client",
   "version": "2.2.0",
+  "type": "module",
   "description": "dictadata API client library",
   "author": "Drew O. Letcher",
   "license": "MIT",
