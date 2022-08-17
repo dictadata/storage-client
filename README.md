@@ -5,14 +5,18 @@ Javascript library for dictadata API client
 # Installation
 
 ```bash
-npm i @dictadata/dictadata-client
+npm i ../dictadata-client
 ```
 
 # Usage
 
 configure
 
-process.env.VUE_APP_DICTA_API = https://api.dictadata.org/api
+```javascript
+DictaDataAPI.baseURL = import.meta.env.VITE_DICTADATA_API
+DictaDataAPI.$user.userid = "dicta"
+DictaDataAPI.$user.password = "data"
+```
 
 # Features
 

@@ -1,5 +1,7 @@
 # CHANGELOG for @dictadata/client
 
+- version 2.3.1
+  - fix issue with using default $user for login
 - version 2.2.0
   - update for storage-node 2.2
   - refactor for codex
