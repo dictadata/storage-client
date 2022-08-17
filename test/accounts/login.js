@@ -3,6 +3,7 @@
  */
 "use strict"
 
+import DictaDataAPI from "../../lib/dictaDataAPI.js"
 import Accounts from "../../lib/accounts.js"
 import $user from "../../lib/user.js"
 
@@ -22,6 +23,30 @@ async function test_1() {
   console.log($user.userid)
 }
 
+async function test_2() {
+  // login into api.dictadata.org as dicta user
+  DictaDataAPI.baseURL = "http://localhost:8089"
+  DictaDataAPI.$user.userid = "dicta"
+  DictaDataAPI.$user.password = "data"
+
+  console.log($user.userid)
+
+  // login into api.dictadata.org as default user (dicta)
+  let accounts = new Accounts()
+  // console.log("login: ...")
+  accounts
+    .login()
+    .then((result) => {
+      console.log("login: " + result)
+    })
+    .catch((error) => {
+      console.error("login: " + error)
+    })
+
+  console.log($user.userid)
+}
+
 (async () => {
   if (await test_1()) return
+  if (await test_2()) return
 })()
