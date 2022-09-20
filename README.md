@@ -1,4 +1,4 @@
-# dictadata-client
+# dictadata-client 2.5.x
 
 Javascript library for dictadata API client
 

@@ -1,5 +1,8 @@
 # CHANGELOG for @dictadata/client
 
+- version 2.5.0
+  - stable version of codex, smt_urn, authStash
+  - update for @dictadata/storage-node 2.5.0
 - version 2.3.1
   - fix issue with using default $user for login
 - version 2.2.0
