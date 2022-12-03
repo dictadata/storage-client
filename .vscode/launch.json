@@ -5,13 +5,31 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "pwa-node",
+      "type": "node",
       "request": "launch",
       "name": "accounts login",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}\\test\\accounts\\login.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "storage recall",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\test\\storage\\recall.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "storage retrieve",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\test\\storage\\retrieve.js"
     }
   ]
 }

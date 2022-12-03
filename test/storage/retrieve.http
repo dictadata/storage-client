@@ -1,0 +1,56 @@
+###
+POST http://dev.dictadata.org:8089/node/retrieve/:es_foo_schema HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "pattern": {
+    "match": {},
+    "count": 100
+  }
+}
+
+###
+POST http://dev.dictadata.org:8089/node/retrieve/:es_foo_schema HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "pattern": {
+    "match": {
+      "Foo": {
+        "wc": "first"
+      }
+    },
+    "count": 100
+  }
+}
+
+###
+POST http://dev.dictadata.org:8089/node/retrieve/:es_foo_schema HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "pattern": {
+    "match": {
+      "_": {
+        "search": "row",
+        "fields": [ "Foo", "Bar" ]
+      }
+    },
+    "count": 100
+  }
+}
+
+###
+POST http://dev.dictadata.org:8089/node/retrieve/:es_foo_schema HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "pattern": {
+    "order": {"Foo": "asc"},
+    "count": 100
+  }
+}

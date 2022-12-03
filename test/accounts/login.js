@@ -12,7 +12,7 @@ console.log("=== tests: accounts login")
 async function test_1() {
   // login into api.dictadata.org as dicta user
   let accounts = new Accounts({
-    baseURL: "http://localhost:8089"
+    baseURL: "http://dev.dictadata.org:8089"
   })
 
   console.log($user.userid)

@@ -1,0 +1,12 @@
+###
+POST http://dev.dictadata.org:8089/node/recall/:es_foo_schema HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "pattern": {
+    "match": {
+      "key": "first"
+    }
+  }
+}
