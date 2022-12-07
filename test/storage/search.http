@@ -1,0 +1,32 @@
+###
+POST http://dev.dictadata.org:8089/node/retrieve/:es_foo_schema HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "pattern": {
+    "match": {
+      "Bar": {
+        "search": "data"
+      }
+    },
+    "count": 10
+  }
+}
+
+###
+POST http://dev.dictadata.org:8089/node/retrieve/:es_foo_schema HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "pattern": {
+    "match": {
+      "~search": {
+        "search": "row",
+        "fields": [ "Foo", "Bar" ]
+      }
+    },
+    "count": 100
+  }
+}

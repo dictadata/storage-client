@@ -7,11 +7,19 @@ import DictaDataAPI from "../../lib/dictaDataAPI.js"
 import Storage from "../../lib/storage.js"
 import $user from "../../lib/user.js"
 
-const smt_urn = ":es_foo_schema"
-
 console.log("=== tests: storage recall")
 
-async function test_1(keyValue) {
+function replacer(key, value) {
+  if (value instanceof Map) {
+    return Object.fromEntries(value.entries())
+  } else if (value instanceof Set) {
+    return [ ...value ]
+  } else {
+    return value;
+  }
+}
+
+async function test_recall(smt_urn, keyValue) {
   console.log("recallFoo")
   let retCode = 0
 
@@ -32,7 +40,8 @@ async function test_1(keyValue) {
       pattern.match[ "Foo" ] = keyValue
       
     let constructs = await storage.recall(smt_urn, pattern)
-    console.log(JSON.stringify(constructs))
+
+    console.log(smt_urn + " " + JSON.stringify(constructs, replacer))
   }
   catch (err) {
     console.log(err)
@@ -43,7 +52,10 @@ async function test_1(keyValue) {
 }
 
 (async () => {
-  if (await test_1('first')) return
-  if (await test_1('seventh')) return
-  if (await test_1('twenty')) return
+  if (await test_recall(":es_foo_schema", 'first')) return
+  if (await test_recall(":es_foo_schema", 'seventh')) return
+  if (await test_recall(":es_foo_schema", 'twenty')) return
+
+  if (await test_recall(":mssql_foo_schema", 'second')) return
+  if (await test_recall(":mysql_foo_schema", 'second')) return
 })()

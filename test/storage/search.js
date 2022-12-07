@@ -1,5 +1,5 @@
 /**
- * test/storage/retrieve.js
+ * test/storage/search.js
  */
 "use strict"
 
@@ -7,9 +7,11 @@ import DictaDataAPI from "../../lib/dictaDataAPI.js"
 import Storage from "../../lib/storage.js"
 import $user from "../../lib/user.js"
 
-console.log("=== tests: storage retrieve")
+const smt_urn = ":es_foo_schema"
 
-async function test_retrieve(smt_urn, field, value, op) {
+console.log("=== tests: storage retrieve w/ search")
+
+async function test_search(fields, value, op) {
   console.log("retrieveFoo")
   let retCode = 0
 
@@ -21,18 +23,16 @@ async function test_retrieve(smt_urn, field, value, op) {
     // console.log('call storage.retrieve')
     let pattern = {
       "match": {},  // default is match all
-      "count": 10
+      "count": 100
     }
-    if (op) {
-      let expression = pattern.match[ field ] = {}
-      expression[op] = value
+    if (fields) {
+      let expression = pattern.match[ "~search" ] = {}
+      expression[ "search" ] = value
+      expression[ "fields" ] = fields
+      if (op)
+        expression["op"] = op
     }
-    else if (value) {
-      pattern.match[ field ] = value
-    }
-    else if (field) {
-      throw new Error("What do you want me to do with this?");
-    }
+      
 
     let constructs = await storage.retrieve(smt_urn, pattern)
     console.log(JSON.stringify(constructs))
@@ -46,7 +46,8 @@ async function test_retrieve(smt_urn, field, value, op) {
 }
 
 (async () => {
-  if (await test_retrieve(":es_foo_schema")) return
-  if (await test_retrieve(":es_foo_schema", 'Foo', 'first')) return
-  if (await test_retrieve(":es_foo_schema", 'Bar', 'row*', "wc")) return
+  if (await test_search()) return
+  if (await test_search('Foo', 'first')) return
+  if (await test_search([ 'Foo', 'Bar' ], 'row boat')) return
+  if (await test_search([ 'Foo', 'Bar' ], 'row boat', 'AND')) return
 })()

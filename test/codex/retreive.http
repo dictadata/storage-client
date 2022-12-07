@@ -1,0 +1,17 @@
+###
+POST http://dev.dictadata.org:8089/node/codex HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "pattern": {
+    "match": {
+      "type": ["alias","engram"],
+      "~search": {
+        "search": "foo",
+        "fields": [ "name", "domain", "tags", "title", "type", "source", "description" ],
+        "op": "AND"
+      }
+    }
+  }
+}
