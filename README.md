@@ -14,8 +14,6 @@ configure
 
 ```javascript
 DictaDataAPI.baseURL = import.meta.env.VITE_DICTADATA_API
-DictaDataAPI.$user.userid = "dicta"
-DictaDataAPI.$user.password = "data"
 ```
 
 # Features
