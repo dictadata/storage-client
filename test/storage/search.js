@@ -3,7 +3,7 @@
  */
 "use strict"
 
-import DictaDataAPI from "../../lib/dictaDataAPI.js"
+import DictaDataAPI from "../../lib/dictadata-api.js"
 import Storage from "../../lib/storage.js"
 import $user from "../../lib/user.js"
 
@@ -32,7 +32,7 @@ async function test_search(fields, value, op) {
       if (op)
         expression["op"] = op
     }
-      
+
 
     let constructs = await storage.retrieve(smt_urn, pattern)
     console.log(JSON.stringify(constructs))

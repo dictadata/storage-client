@@ -3,7 +3,7 @@
  */
 "use strict"
 
-import DictaDataAPI from "../../lib/dictaDataAPI.js"
+import DictaDataAPI from "../../lib/dictadata-api.js"
 import Storage from "../../lib/storage.js"
 import $user from "../../lib/user.js"
 
@@ -38,7 +38,7 @@ async function test_recall(smt_urn, keyValue) {
       pattern.match[ "key" ] = keyValue
     else
       pattern.match[ "Foo" ] = keyValue
-      
+
     let constructs = await storage.recall(smt_urn, pattern)
 
     console.log(smt_urn + " " + JSON.stringify(constructs, replacer))

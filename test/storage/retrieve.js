@@ -3,7 +3,7 @@
  */
 "use strict"
 
-import DictaDataAPI from "../../lib/dictaDataAPI.js"
+import DictaDataAPI from "../../lib/dictadata-api.js"
 import Storage from "../../lib/storage.js"
 import $user from "../../lib/user.js"
 
