@@ -26,7 +26,7 @@ async function test_1() {
     console.log("$user: " + JSON.stringify($user))
     console.log()
     console.log("isAuthenticated: " + $user.isAuthenticated)
-    console.log("isGuest: " + $user.isGuest)
+    console.log("isLocal: " + $user.isLocal)
   }
   catch (err) {
     console.warn("error: " + err.message);
@@ -45,7 +45,7 @@ async function test_2() {
       console.log("$user: " + JSON.stringify($user))
       console.log()
       console.log("isAuthenticated: " + $user.isAuthenticated)
-      console.log("isGuest: " + $user.isGuest)
+      console.log("isLocal: " + $user.isLocal)
       })
     .catch((error) => {
       console.warn("error: " + error)
