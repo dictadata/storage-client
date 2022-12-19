@@ -7,11 +7,20 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "accounts login",
+      "name": "$user tests",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\test\\accounts\\login.js"
+      "program": "${workspaceFolder}\\test\\user\\dicta_user.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "guest login",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\test\\user\\user_login.js"
     },
     {
       "type": "node",
