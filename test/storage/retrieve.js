@@ -15,7 +15,7 @@ async function test_retrieve(smt_urn, field, value, op) {
 
   try {
     let storage = new Storage({
-      baseURL: "http://dev.dictadata.org:8089"
+      baseURL: "http://dev.dictadata.org"
     })
 
     // console.log('call storage.retrieve')

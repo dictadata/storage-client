@@ -25,7 +25,7 @@ async function test_recall(smt_urn, keyValue) {
 
   try {
     let storage = new Storage({
-      baseURL: "http://dev.dictadata.org:8089"
+      baseURL: "http://dev.dictadata.org"
     })
 
     // console.log('call storage.retrieve')

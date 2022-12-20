@@ -17,7 +17,7 @@ async function test_search(fields, value, op) {
 
   try {
     let storage = new Storage({
-      baseURL: "http://dev.dictadata.org:8089"
+      baseURL: "http://dev.dictadata.org"
     })
 
     // console.log('call storage.retrieve')
