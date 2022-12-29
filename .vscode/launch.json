@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\test\\user\\user_login.js"
+      "program": "${workspaceFolder}/test/user/user_login.js"
     },
     {
       "type": "node",
@@ -20,7 +20,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\test\\user\\user_tests.js"
+      "program": "${workspaceFolder}/test/user/user_tests.js"
     },
     {
       "type": "node",
@@ -29,7 +29,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\test\\accounts\\retrieve.js"
+      "program": "${workspaceFolder}/test/accounts/retrieve.js"
     },
     {
       "type": "node",
@@ -38,7 +38,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\test\\settings\\settings.js"
+      "program": "${workspaceFolder}/test/settings/settings.js"
     },
     {
       "type": "node",
@@ -47,7 +47,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\test\\storage\\recall.js"
+      "program": "${workspaceFolder}/test/storage/recall.js"
     },
     {
       "type": "node",
@@ -56,7 +56,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\test\\storage\\retrieve.js"
+      "program": "${workspaceFolder}/test/storage/retrieve.js"
     },
     {
       "type": "node",
@@ -65,7 +65,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\test\\storage\\search.js"
+      "program": "${workspaceFolder}/test/storage/search.js"
     },
     {
       "type": "node",
@@ -74,7 +74,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\test\\codex\\recall.js"
+      "program": "${workspaceFolder}/test/codex/recall.js"
     },
     {
       "type": "node",
@@ -83,7 +83,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\test\\codex\\retrieve.js"
+      "program": "${workspaceFolder}/test/codex/retrieve.js"
     }
   ]
 }
