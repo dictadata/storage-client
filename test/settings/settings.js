@@ -3,47 +3,41 @@
  */
 "use strict"
 
-import DictaDataAPI from "../../lib/dictadata-api.js"
+import { login } from "../lib/client.js"
 import Settings from "../../lib/settings.js"
-import $user from '../../lib/user.js'
 
-DictaDataAPI.baseURL = "http://dev.dictadata.org"
-
-/**
- * User
- */
 async function testSettings() {
 
   try {
-    console.log("--- user login")
-    let user = { userid: "user", password: "user" }
-    let account = await $user.login(user)
-
     let settings = new Settings()
+
+    let key = 'words'
     let props = {
       hello: 'world',
       guden: 'dach',
       languages: [ 'english', 'german' ]
     }
+
+    console.log("--- store settings")
     console.log(JSON.stringify(props))
+    let results = await settings.store(key, props)
+    console.log(results.status + " " + results.message)
 
-    console.log("--- put settings")
-    let message = await settings.store('words', props)
-    console.log(message)
-
-    let rProps = await settings.recall('words')
-    console.log(JSON.stringify(rProps))
+    console.log("--- recall settings")
+    results = await settings.recall(key)
+    console.log(results.status + " " + results.message)
+    console.log(JSON.stringify(results.data[key]))
   }
   catch (err) {
     console.warn(err.message)
     return
   }
-
 }
 
 // test runner
 (async () => {
   console.log("dictadata-client tests")
+  await login()
   await testSettings()
   console.log("--- done")
 })()

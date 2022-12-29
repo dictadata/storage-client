@@ -27,10 +27,10 @@ async function userTests() {
 
   console.log("=== user register")
   try {
-    account = await $user.register(account)
+    let results = await $user.register(account)
     console.log("user: " + JSON.stringify(user))
     console.log()
-    console.log("account: " + JSON.stringify(account))
+    console.log("results: " + JSON.stringify(results.data[account.userid]))
     console.log()
     console.log("$user: ", JSON.stringify($user))
     console.log()
@@ -41,11 +41,11 @@ async function userTests() {
 
   console.log("=== user login")
   try {
-    account = await $user.login(user)
+    let results = await $user.login(user)
     $user.password = user.password  // since there is no auth handler in test mode
     console.log("user: " + JSON.stringify(user))
     console.log()
-    console.log("account: " + JSON.stringify(account))
+    console.log("results: " + JSON.stringify(results.data[user.userid]))
     console.log()
     console.log("$user: ", JSON.stringify($user))
     console.log()
@@ -58,10 +58,10 @@ async function userTests() {
   console.log("=== user update")
   try {
     $user.profile.displayName = "Tester the Testy"
-    account = await $user.update()
+    let results = await $user.update()
     console.log("user: " + JSON.stringify(user))
     console.log()
-    console.log("account: " + JSON.stringify(account))
+    console.log("results: " + JSON.stringify(results.data[$user.userid]))
     console.log()
     console.log("$user: ", JSON.stringify($user))
     console.log()
@@ -73,11 +73,11 @@ async function userTests() {
 
   console.log("=== user logout")
   try {
-    let result = await $user.logout()
+    let results = await $user.logout()
     //$user.password = user.password  // since there is no auth handler in test mode
     console.log("user: " + JSON.stringify(user))
     console.log()
-    console.log("result: " + JSON.stringify(result))
+    console.log("results: " + JSON.stringify(results.message))
     console.log()
     console.log("$user: ", JSON.stringify($user))
     console.log()
@@ -92,10 +92,10 @@ async function userTests() {
     await $user.login(new Account({ userid: "admin", password: "admin" }))
 
     let accounts = new Accounts()
-    let result = await accounts.dull(user)
+    let results = await accounts.dull(user)
     console.log("user: " + JSON.stringify(user))
     console.log()
-    console.log("result: " + JSON.stringify(result))
+    console.log("results: " + JSON.stringify(results.message))
     console.log()
     console.log("$user: ", JSON.stringify($user))
     console.log()

@@ -3,29 +3,18 @@
  */
 "use strict"
 
-import DictaDataAPI from "../../lib/dictadata-api.js"
+import { login }from "../lib/client.js"
 import Accounts from "../../lib/accounts.js"
-import Account from "../../lib/account.js"
-import $user from '../../lib/user.js'
-
-DictaDataAPI.baseURL = "http://dev.dictadata.org"
-DictaDataAPI.$user.userid = "admin"
-DictaDataAPI.$user.password = "admin"
-DictaDataAPI.$user.roles = [ "User", "Admin" ]
 
 /**
  * User
  */
-async function removePublic() {
+async function retrieveGuests() {
 
   try {
-    console.log("--- user login")
-    let user = { userid: "admin", password: "admin" }
-    let admin = await $user.login(user)
-
-    console.log("--- accounts retrieve Guest")
-
+    console.log("--- accounts with role 'Guest'")
     let accounts = new Accounts()
+
     let results = await accounts.retrieve({ match: { roles: [ "Guest" ] } })
     console.log(results.status + " " + results.message)
 
@@ -42,7 +31,9 @@ async function removePublic() {
 
 // test runner
 (async () => {
-  console.log("dictadata-client tests")
-  await removePublic()
+  console.log("accounts retrieve tests")
+  await login({ userid: "admin", password: "admin" })
+
+  await retrieveGuests()
   console.log("--- done")
 })()

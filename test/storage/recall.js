@@ -3,9 +3,8 @@
  */
 "use strict"
 
-import DictaDataAPI from "../../lib/dictadata-api.js"
+import { login } from "../lib/client.js"
 import Storage from "../../lib/storage.js"
-import $user from "../../lib/user.js"
 
 console.log("=== tests: storage recall")
 
@@ -20,13 +19,11 @@ function replacer(key, value) {
 }
 
 async function test_recall(smt_urn, keyValue) {
-  console.log("recallFoo")
+  console.log("recall " + smt_urn)
   let retCode = 0
 
   try {
-    let storage = new Storage({
-      baseURL: "http://dev.dictadata.org"
-    })
+    let storage = new Storage()
 
     // console.log('call storage.retrieve')
     let pattern = {
@@ -39,9 +36,11 @@ async function test_recall(smt_urn, keyValue) {
     else
       pattern.match[ "Foo" ] = keyValue
 
-    let constructs = await storage.recall(smt_urn, pattern)
+    let results = await storage.recall(smt_urn, pattern)
+    if (results.status !== 0)
+      throw new Error(results.message)
 
-    console.log(smt_urn + " " + JSON.stringify(constructs, replacer))
+    console.log(smt_urn + " " + JSON.stringify(results.data, replacer))
   }
   catch (err) {
     console.log(err)
@@ -52,6 +51,8 @@ async function test_recall(smt_urn, keyValue) {
 }
 
 (async () => {
+  await login()
+
   if (await test_recall(":es_foo_schema", 'first')) return
   if (await test_recall(":es_foo_schema", 'seventh')) return
   if (await test_recall(":es_foo_schema", 'twenty')) return

@@ -3,22 +3,19 @@
  */
 "use strict"
 
-import DictaDataAPI from "../../lib/dictadata-api.js"
+import { login } from "../lib/client.js"
 import Storage from "../../lib/storage.js"
-import $user from "../../lib/user.js"
 
 const smt_urn = ":es_foo_schema"
 
 console.log("=== tests: storage retrieve w/ search")
 
 async function test_search(fields, value, op) {
-  console.log("retrieveFoo")
+  console.log("search " + smt_urn)
   let retCode = 0
 
   try {
-    let storage = new Storage({
-      baseURL: "http://dev.dictadata.org"
-    })
+    let storage = new Storage()
 
     // console.log('call storage.retrieve')
     let pattern = {
@@ -34,8 +31,11 @@ async function test_search(fields, value, op) {
     }
 
 
-    let constructs = await storage.retrieve(smt_urn, pattern)
-    console.log(JSON.stringify(constructs))
+    let results = await storage.retrieve(smt_urn, pattern)
+    if (results.status !== 0)
+      throw new Error(results.message)
+
+    console.log(JSON.stringify(results.data))
   }
   catch (err) {
     console.log(err)
@@ -46,6 +46,8 @@ async function test_search(fields, value, op) {
 }
 
 (async () => {
+  await login()
+
   if (await test_search()) return
   if (await test_search('Foo', 'first')) return
   if (await test_search([ 'Foo', 'Bar' ], 'row boat')) return

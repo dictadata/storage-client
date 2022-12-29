@@ -1,17 +1,3 @@
 ###
-POST http://dev.dictadata.org/node/codex HTTP/1.1
+GET http://dev.dictadata.org/node/codex/foo:foo_schema HTTP/1.1
 Authorization: Basic user user
-Content-Type: application/json; charset=utf-8
-
-{
-  "pattern": {
-    "match": {
-      "type": ["alias","engram"],
-      "~search": {
-        "search": "foo",
-        "fields": [ "name", "domain", "tags", "title", "type", "source", "description" ],
-        "op": "AND"
-      }
-    }
-  }
-}

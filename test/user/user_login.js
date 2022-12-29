@@ -8,20 +8,15 @@ import Account from "../../lib/account.js"
 import $user from '../../lib/user.js'
 
 DictaDataAPI.baseURL = "http://dev.dictadata.org"
-/*
-DictaDataAPI.$user.userid = "admin"
-DictaDataAPI.$user.password = "admin"
-DictaDataAPI.$user.roles = [ "User", "Admin" ]
-*/
 
 async function test_1() {
-  console.log("=== login with account")
+  console.log("=== $user.login authenticate")
 
   try {
     let user = { userid: "user", password: "user" }
 
-    let account = await $user.login(user)
-    console.log("account: " + JSON.stringify(account))
+    let results = await $user.login(user)
+    console.log("results: " + JSON.stringify(results.data[user.userid]))
     console.log()
     console.log("$user: " + JSON.stringify($user))
     console.log()
@@ -34,13 +29,13 @@ async function test_1() {
 }
 
 async function test_2() {
-  console.log("=== login with guest")
+  console.log("=== $user.login local guest")
 
   let user = { userid: "dicta", password: "data" }
 
   $user.login(user, true)
-    .then((account) => {
-      console.log("account: " + JSON.stringify(account))
+    .then((results) => {
+      console.log("results: " + JSON.stringify(results.data[user.userid]))
       console.log()
       console.log("$user: " + JSON.stringify($user))
       console.log()

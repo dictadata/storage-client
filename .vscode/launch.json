@@ -7,20 +7,38 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "$user tests",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}\\test\\user\\dicta_user.js"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "guest login",
+      "name": "user login",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}\\test\\user\\user_login.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "user tests",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\test\\user\\user_tests.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "accounts retrieve",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\test\\accounts\\retrieve.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "settings",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\test\\settings\\settings.js"
     },
     {
       "type": "node",
@@ -48,6 +66,24 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}\\test\\storage\\search.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "codex recall",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\test\\codex\\recall.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "codex retrieve",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\test\\codex\\retrieve.js"
     }
   ]
 }
