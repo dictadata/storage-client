@@ -34,7 +34,7 @@ async function test_retrieve(term) {
     console.log(JSON.stringify(results.data))
   }
   catch (err) {
-    console.log(err)
+    console.warn(err)
     retCode = 1
   }
 

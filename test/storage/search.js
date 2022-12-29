@@ -38,7 +38,7 @@ async function test_search(fields, value, op) {
     console.log(JSON.stringify(results.data))
   }
   catch (err) {
-    console.log(err)
+    console.warn(err)
     retCode = 1
   }
 

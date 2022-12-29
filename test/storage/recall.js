@@ -43,7 +43,7 @@ async function test_recall(smt_urn, keyValue) {
     console.log(smt_urn + " " + JSON.stringify(results.data, replacer))
   }
   catch (err) {
-    console.log(err)
+    console.warn(err)
     retCode = 1
   }
 

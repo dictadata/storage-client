@@ -22,7 +22,7 @@ async function test_recall(smt_urn) {
     console.log(JSON.stringify(results.data))
   }
   catch (err) {
-    console.log(err)
+    console.warn(err)
     retCode = 1
   }
 
