@@ -10,7 +10,7 @@ import $user from '../../lib/user.js'
 DictaDataAPI.baseURL = "http://dev.dictadata.org"
 
 async function test_1() {
-  console.log("=== $user.login authenticate")
+  console.log("--- $user.login")
 
   try {
     let user = { userid: "user", password: "user" }
@@ -29,27 +29,19 @@ async function test_1() {
 }
 
 async function test_2() {
-  console.log("=== $user.login local guest")
+  console.log("--- $user.setDefaultUser")
 
   let user = { userid: "dicta", password: "data" }
 
-  $user.login(user, true)
-    .then((results) => {
-      console.log("results: " + JSON.stringify(results.data[user.userid]))
-      console.log()
-      console.log("$user: " + JSON.stringify($user))
-      console.log()
-      console.log("isAuthenticated: " + $user.isAuthenticated)
-      console.log("isLocal: " + $user.isLocal)
-      })
-    .catch((error) => {
-      console.warn("error: " + error)
-    })
-
+  $user.setDefaultUser(user)
+  console.log("$user: " + JSON.stringify($user))
+  console.log()
+  console.log("isAuthenticated: " + $user.isAuthenticated)
+  console.log("isLocal: " + $user.isLocal)
 }
 
 (async () => {
-  console.log("=== tests: user login")
+  console.log("=== test: $user logins")
   console.log("$user: " + JSON.stringify($user))
 
   if (await test_1()) return
