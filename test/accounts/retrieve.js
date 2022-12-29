@@ -27,7 +27,7 @@ async function removePublic() {
 
     let accounts = new Accounts()
     let results = await accounts.retrieve({ match: { roles: [ "Guest" ] } })
-    console.log(results.resultCode + " " + results.resultMessage)
+    console.log(results.status + " " + results.message)
 
     for (let [ name, account ] of Object.entries(results.data)) {
       console.log(name)
@@ -41,7 +41,7 @@ async function removePublic() {
 }
 
 // test runner
-(async function main() {
+(async () => {
   console.log("dictadata-client tests")
   await removePublic()
   console.log("--- done")
