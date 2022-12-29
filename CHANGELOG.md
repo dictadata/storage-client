@@ -1,5 +1,10 @@
 # CHANGELOG for @dictadata/client
 
+- version 0.9.18
+  - feature: add $user.setDefaultUser(), use instead of $user.login(local)
+  - testing: added/updated tests for $user, codex, storage
+  - feature: settings uses window.localStorage as cache
+
 - version 2.5.1
   - updated: @dictadata/storage-node 2.5.2
   - feature: transfer tracts module
