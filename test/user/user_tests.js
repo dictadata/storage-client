@@ -28,9 +28,14 @@ async function userTests() {
   console.log("=== user register")
   try {
     let results = await $user.register(account)
+    if (results.status !== 0)
+      throw new Error(results.message)
+
+    account.update(results.data[ account.userid ])
+
     console.log("user: " + JSON.stringify(user))
     console.log()
-    console.log("results: " + JSON.stringify(results.data[account.userid]))
+    console.log("results: " + JSON.stringify(account))
     console.log()
     console.log("$user: ", JSON.stringify($user))
     console.log()
@@ -42,6 +47,9 @@ async function userTests() {
   console.log("=== user login")
   try {
     let results = await $user.login(user)
+    if (results.status !== 0)
+      throw new Error(results.message)
+
     $user.password = user.password  // since there is no auth handler in test mode
     console.log("user: " + JSON.stringify(user))
     console.log()
@@ -55,10 +63,13 @@ async function userTests() {
     return
   }
 
-  console.log("=== user update")
+  console.log("=== user store")
   try {
     $user.profile.displayName = "Tester the Testy"
-    let results = await $user.update()
+    let results = await $user.store()
+    if (results.status !== 0)
+      throw new Error(results.message)
+
     console.log("user: " + JSON.stringify(user))
     console.log()
     console.log("results: " + JSON.stringify(results.data[$user.userid]))
@@ -74,7 +85,9 @@ async function userTests() {
   console.log("=== user logout")
   try {
     let results = await $user.logout()
-    //$user.password = user.password  // since there is no auth handler in test mode
+    if (results.status !== 0)
+      throw new Error(results.message)
+
     console.log("user: " + JSON.stringify(user))
     console.log()
     console.log("results: " + JSON.stringify(results.message))
@@ -89,10 +102,16 @@ async function userTests() {
 
   console.log("=== user dull")
   try {
-    await $user.login(new Account({ userid: "admin", password: "admin" }))
+    let results = await $user.login({ userid: "admin", password: "admin" })
+    if (results.status !== 0)
+      throw new Error(results.message)
+    $user.password = "admin"
 
     let accounts = new Accounts()
-    let results = await accounts.dull(user)
+    results = await accounts.dull(user)
+    if (results.status !== 0)
+      throw new Error(results.message)
+
     console.log("user: " + JSON.stringify(user))
     console.log()
     console.log("results: " + JSON.stringify(results.message))
@@ -100,7 +119,9 @@ async function userTests() {
     console.log("$user: ", JSON.stringify($user))
     console.log()
 
-    await $user.logout()
+    results = await $user.logout()
+    if (results.status !== 0)
+      throw new Error(results.message)
   }
   catch (err) {
     console.warn(err.message)

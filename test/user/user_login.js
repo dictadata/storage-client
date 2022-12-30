@@ -16,6 +16,9 @@ async function test_1() {
     let user = { userid: "user", password: "user" }
 
     let results = await $user.login(user)
+    if (results.status !== 0)
+      throw new Error(results.message)
+
     console.log("results: " + JSON.stringify(results.data[user.userid]))
     console.log()
     console.log("$user: " + JSON.stringify($user))
@@ -29,15 +32,25 @@ async function test_1() {
 }
 
 async function test_2() {
-  console.log("--- $user.setDefaultUser")
+  console.log("--- $user.changeUser")
 
-  let user = { userid: "dicta", password: "data" }
+  try {
+    let user = { userid: "user", password: "user" }
 
-  $user.setDefaultUser(user)
-  console.log("$user: " + JSON.stringify($user))
-  console.log()
-  console.log("isAuthenticated: " + $user.isAuthenticated)
-  console.log("isLocal: " + $user.isLocal)
+    let results = await $user.login(user, true)
+    if (results.status !== 0)
+      throw new Error(results.message)
+
+    console.log("results: " + JSON.stringify(results.data[user.userid]))
+    console.log()
+    console.log("$user: " + JSON.stringify($user))
+    console.log()
+    console.log("isAuthenticated: " + $user.isAuthenticated)
+    console.log("isLocal: " + $user.isLocal)
+  }
+  catch (err) {
+    console.warn("error: " + err.message);
+  }
 }
 
 (async () => {

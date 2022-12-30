@@ -1,0 +1,3 @@
+###
+DELETE http://dev.dictadata.org/node/accounts/tester HTTP/1.1
+Authorization: Basic admin admin
