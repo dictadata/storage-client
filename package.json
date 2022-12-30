@@ -1,6 +1,6 @@
 {
   "name": "@dictadata/client",
-  "version": "0.9.18",
+  "version": "0.9.19",
   "type": "module",
   "description": "dictadata API client library",
   "author": "Drew O. Letcher",

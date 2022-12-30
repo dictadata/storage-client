@@ -1,5 +1,9 @@
 # CHANGELOG for @dictadata/client
 
+- version 0.9.19
+  - refactor: separate defaultUser and local user logic
+  - refactor: rename update/store methods to reduce confusion
+  - refactor: move Roles to types folder
 - version 0.9.18
   - feature: add $user.setDefaultUser(), use instead of $user.login(local)
   - testing: added/updated tests for $user, codex, storage
