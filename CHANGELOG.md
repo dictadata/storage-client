@@ -1,32 +1,34 @@
 # CHANGELOG for @dictadata/client
 
+- version 0.9.20
+  - refactor for Codex engrams, tracts
 - version 0.9.19
   - refactor: separate defaultUser and local user logic
   - refactor: rename update/store methods to reduce confusion
   - refactor: move Roles to types folder
 - version 0.9.18
   - feature: add $user.setDefaultUser(), use instead of $user.login(local)
-  - testing: added/updated tests for $user, codex, storage
+  - testing: added/updated tests for $user, engrams, storage
   - feature: settings uses window.localStorage as cache
 
 - version 2.5.1
   - updated: @dictadata/storage-node 2.5.2
-  - feature: transfer tracts module
+  - feature: transfer module
   - refactor: results wrapper removed from API response body
 - version 2.5.0
   - updated: @dictadata/storage-node 2.5.0
-  - stable version of codex, smt_urn, authStash
+  - stable version of engrams, urn, authStash
 - version 2.3.1
   - fix issue with using default $user for login
 - version 2.2.0
   - update for storage-node 2.2
-  - refactor for codex
+  - refactor for engrams
 - version 2.1.0
   - update for storage-node 2.1
-  - refactor for cortex
+  - refactor for tracts
 - version 2.0.0
   - updates for storage-node 2.0
-  - implement Codex API
+  - implement Engrams API
 - version 1.8.1
   - refactor using dictaDataAPI as base class
   - adjust default roles for authorizing client api methods
@@ -34,7 +36,7 @@
   - use guest as default userid
 - version 1.3.0
   - updates for vue3, vite
-  - add module for codex API
+  - add module for engrams API
 - version 1.2.0
   - convert from CommonJS to ESM
   - refactor library to only contain API client

@@ -43,6 +43,24 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "engrams recall",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/test/engrams/recall.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "engrams retrieve",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/test/engrams/retrieve.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "storage recall",
       "skipFiles": [
         "<node_internals>/**"
@@ -70,20 +88,29 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "codex recall",
+      "name": "tracts recall",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/test/codex/recall.js"
+      "program": "${workspaceFolder}/test/tracts/recall.js"
     },
     {
       "type": "node",
       "request": "launch",
-      "name": "codex retrieve",
+      "name": "tracts retrieve",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/test/codex/retrieve.js"
+      "program": "${workspaceFolder}/test/tracts/retrieve.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "transfer transfer",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/test/transfer/transfer.js"
     }
   ]
 }

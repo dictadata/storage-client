@@ -1,5 +1,5 @@
 ###
-POST http://dev.dictadata.org/node/codex HTTP/1.1
+POST http://dev.dictadata.org/node/engrams HTTP/1.1
 Authorization: Basic user user
 Content-Type: application/json; charset=utf-8
 

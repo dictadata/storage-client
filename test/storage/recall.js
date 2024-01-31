@@ -18,8 +18,8 @@ function replacer(key, value) {
   }
 }
 
-async function test_recall(smt_urn, keyValue) {
-  console.log("recall " + smt_urn)
+async function test_recall(urn, keyValue) {
+  console.log("recall " + urn)
   let retCode = 0
 
   try {
@@ -36,11 +36,11 @@ async function test_recall(smt_urn, keyValue) {
     else
       pattern.match[ "Foo" ] = keyValue
 
-    let results = await storage.recall(smt_urn, pattern)
+    let results = await storage.recall(urn, pattern)
     if (results.status !== 0)
       throw new Error(results.message)
 
-    console.log(smt_urn + " " + JSON.stringify(results.data, replacer))
+    console.log(urn + " " + JSON.stringify(results.data, replacer))
   }
   catch (err) {
     console.warn(err)

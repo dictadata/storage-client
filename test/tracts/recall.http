@@ -1,0 +1,3 @@
+###
+GET http://dev.dictadata.org/node/tracts/foo:foo_transfer HTTP/1.1
+Authorization: Basic user user

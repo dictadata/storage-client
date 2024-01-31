@@ -8,8 +8,8 @@ import Storage from "../../lib/storage.js"
 
 console.log("=== tests: storage retrieve")
 
-async function test_retrieve(smt_urn, field, value, op) {
-  console.log("retrieve " + smt_urn)
+async function test_retrieve(urn, field, value, op) {
+  console.log("retrieve " + urn)
   let retCode = 0
 
   try {
@@ -31,7 +31,7 @@ async function test_retrieve(smt_urn, field, value, op) {
       throw new Error("What do you want me to do with this?");
     }
 
-    let results = await storage.retrieve(smt_urn, pattern)
+    let results = await storage.retrieve(urn, pattern)
     if (results.status !== 0)
       throw new Error(results.message)
 

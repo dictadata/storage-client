@@ -1,21 +1,21 @@
 /**
- * test/codex/recall.js
+ * test/engrams/recall.js
  */
 "use strict"
 
 import { login } from "../lib/client.js"
-import Codex from "../../lib/codex.js"
+import Engrams from "../../lib/engrams.js"
 
-console.log("=== tests: codex recall")
+console.log("=== tests: engrams recall")
 
-async function test_recall(smt_urn) {
-  console.log("recall " + smt_urn)
+async function test_recall(urn) {
+  console.log("recall " + urn)
   let retCode = 0
 
   try {
-    let codex = new Codex()
+    let engrams = new Engrams()
 
-    let results = await codex.recall(smt_urn)
+    let results = await engrams.recall(urn)
     if (results.status !== 0)
       throw new Error(results.message)
 

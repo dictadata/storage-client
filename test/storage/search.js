@@ -6,12 +6,12 @@
 import { login } from "../lib/client.js"
 import Storage from "../../lib/storage.js"
 
-const smt_urn = ":es_foo_schema"
+const urn = ":es_foo_schema"
 
 console.log("=== tests: storage retrieve w/ search")
 
 async function test_search(fields, value, op) {
-  console.log("search " + smt_urn)
+  console.log("search " + urn)
   let retCode = 0
 
   try {
@@ -31,7 +31,7 @@ async function test_search(fields, value, op) {
     }
 
 
-    let results = await storage.retrieve(smt_urn, pattern)
+    let results = await storage.retrieve(urn, pattern)
     if (results.status !== 0)
       throw new Error(results.message)
 

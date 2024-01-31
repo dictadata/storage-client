@@ -1,24 +1,24 @@
 /**
- * test/codex/retrieve.js
+ * test/tracts/retrieve.js
  */
 "use strict"
 
 import { login } from "../lib/client.js"
-import Codex from "../../lib/codex.js"
+import Tracts from "../../lib/tracts.js"
 
-console.log("=== tests: codex retrieve")
+console.log("=== tests: tracts retrieve")
 
 async function test_retrieve(term) {
   console.log("retrieve " + term)
   let retCode = 0
 
   try {
-    let codex = new Codex()
+    let tracts = new Tracts()
 
-    // console.log('call codex.retrieve')
+    // console.log('call tracts.retrieve')
     let pattern = {
       "match": {
-        "type": ["alias","engram"],
+        "type": ["alias","tract"],
         "~search": {
           "search": term,
           "fields": [ "name", "domain", "tags", "title", "type", "source", "description" ],
@@ -27,7 +27,7 @@ async function test_retrieve(term) {
       }
     }
 
-    let results = await codex.retrieve(pattern)
+    let results = await tracts.retrieve(pattern)
     if (results.status !== 0)
       throw new Error(results.message)
 
@@ -45,6 +45,6 @@ async function test_retrieve(term) {
   await login()
 
   if (await test_retrieve("foo")) return
-  if (await test_retrieve("census.gov")) return
+  //if (await test_retrieve("census.gov")) return
 
 })()
