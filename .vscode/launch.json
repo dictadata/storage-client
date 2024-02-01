@@ -111,6 +111,16 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/test/transfer/transfer.js"
+    },
+    ,
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "test_objCopy",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/test/test_objCopy.js"
     }
   ]
 }
