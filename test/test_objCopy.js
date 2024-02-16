@@ -3,7 +3,7 @@
 import objCopy from '../lib/utils/objCopy.js'
 
 let tracts = {
-  "template": {
+  "_base": {
     "action": "transfer",
     "description": "See API examples at https://api.census.gov/data/2020/dec/pl/examples.html",
     "origin": {
@@ -145,6 +145,6 @@ let tracts = {
   }
 }
 
-let tract = objCopy({}, tracts[ "template" ], tracts[ "county" ])
+let tract = objCopy({}, tracts[ "_base" ], tracts[ "county" ])
 
 console.log(JSON.stringify(tract,null,2))

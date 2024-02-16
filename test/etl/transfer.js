@@ -1,22 +1,22 @@
 /**
- * test/transfer/transfer.js
+ * test/etl/transfer.js
  */
 "use strict"
 
 import { login } from "../lib/client.js"
-import Transfer from "../../lib/transfer.js"
+import ETL from "../../lib/etl.js"
 
-console.log("=== tests: transfer")
+console.log("=== tests: ETL transfer")
 
-async function test_transfer(tract) {
+async function test_transfer(tract, params) {
   console.log("transfer " + tract)
   let retCode = 0
 
   try {
-    let transfer = new Transfer()
+    let etl = new ETL()
 
-    // console.log('call transfer.transfer')
-    let results = await transfer.transfer(tract)
+    // console.log('call etl.perform')
+    let results = await etl.perform(tract, params)
     if (results.status !== 0)
       throw new Error(results.message)
 
@@ -33,6 +33,6 @@ async function test_transfer(tract) {
 (async () => {
   await login()
 
-  if (await test_transfer("foo:foo_transfer")) return
+  if (await test_transfer("foo:foo_transfer", {})) return
 
 })()

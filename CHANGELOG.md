@@ -13,7 +13,7 @@
 
 - version 2.5.1
   - updated: @dictadata/storage-node 2.5.2
-  - feature: transfer module
+  - feature: ETL module
   - refactor: results wrapper removed from API response body
 - version 2.5.0
   - updated: @dictadata/storage-node 2.5.0

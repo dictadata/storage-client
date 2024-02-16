@@ -106,11 +106,11 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "transfer transfer",
+      "name": "ETL transfer",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/test/transfer/transfer.js"
+      "program": "${workspaceFolder}/test/etl/transfer.js"
     },
     ,
     {
