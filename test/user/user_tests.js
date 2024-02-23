@@ -8,7 +8,7 @@ import Account from "../../lib/account.js"
 import $user from '../../lib/user.js'
 import Accounts from "../../lib/accounts.js"
 
-DictaDataAPI.baseURL = "http://dev.dictadata.org"
+DictaDataAPI.baseURL = "http://dev.dictadata.net"
 /*
 DictaDataAPI.$user.userid = "admin"
 DictaDataAPI.$user.password = "admin"

@@ -11,7 +11,7 @@ async function testFiles() {
   try {
     let files = new Files()
 
-    let url = "https://www.dictadata.org/robots.txt"
+    let url = "https://www.dictadata.net/robots.txt"
 
     console.log("--- get file")
     let contents = await files.getFile(url)

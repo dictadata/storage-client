@@ -1,7 +1,7 @@
 # CHANGELOG for @dictadata/client
 
 - version 0.9.20
-  - refactor for Codex engrams, tracts
+  - refactor for engrams, tracts Coders
 - version 0.9.19
   - refactor: separate defaultUser and local user logic
   - refactor: rename update/store methods to reduce confusion

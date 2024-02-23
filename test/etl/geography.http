@@ -1,0 +1,13 @@
+### with urn
+POST http://dev.dictadata.net/node/etl/dicta:geography HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "action": "boundaries",
+  "params": {
+    "tag": "boundary",
+    "lng": -91.4613761135469,
+    "lat": 41.65835958166854
+  }
+}

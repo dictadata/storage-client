@@ -7,7 +7,7 @@ import DictaDataAPI from "../../lib/dictadata-api.js"
 import Account from "../../lib/account.js"
 import $user from '../../lib/user.js'
 
-DictaDataAPI.baseURL = "http://dev.dictadata.org"
+DictaDataAPI.baseURL = "http://dev.dictadata.net"
 
 async function test_1() {
   console.log("--- $user.login")
