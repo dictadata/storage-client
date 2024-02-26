@@ -1,5 +1,10 @@
 # CHANGELOG for @dictadata/client
 
+- version 0.9.21
+  - feature: add etl API module
+  - refactor: Engrams and Tracts API
+  - refactor: replace upload with new Files API
+  - refactor: move project to @dictadata/storage-client
 - version 0.9.20
   - refactor for engrams, tracts Coders
 - version 0.9.19

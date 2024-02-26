@@ -1,7 +1,7 @@
 {
   "name": "@dictadata/storage-client",
   "version": "0.9.21",
-  "description": "dictadata storage-client API library for accessing a dictadata/storage-node",
+  "description": "Javascript client API library for accessing a dictadata/storage-node.",
   "author": "Drew O. Letcher",
   "license": "MIT",
   "type": "module",
