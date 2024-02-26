@@ -30,7 +30,7 @@
   - updates for storage-node 2.0
   - implement Engrams API
 - version 1.8.1
-  - refactor using dictaDataAPI as base class
+  - refactor using StorageAPI as base class
   - adjust default roles for authorizing client api methods
   - add Roles.Coder needed to store encodings
   - use guest as default userid
@@ -41,8 +41,8 @@
   - convert from CommonJS to ESM
   - refactor library to only contain API client
 - version 1.1.0
-  - refactor project as @dictadata/dictadata-client
+  - refactor project as @dictadata/storage-client
 - version 1.0.0
-  - refactor project as @dictadata/dictadata-client
+  - refactor project as @dictadata/storage-client
 - version 0.6.1
   - update newDoc definition to match new schema encoding

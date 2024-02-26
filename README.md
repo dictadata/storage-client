@@ -1,11 +1,11 @@
-# dictadata-client 2.5.x
+# @dictadata/storage-client 0.9.x
 
-Javascript library for dictadata API client
+Javascript client library for dictadata/storage-node API
 
 # Installation
 
 ```bash
-npm i ../dictadata-client
+npm i @dictadata/storage-client
 ```
 
 # Usage
@@ -13,7 +13,7 @@ npm i ../dictadata-client
 configure
 
 ```javascript
-DictaDataAPI.baseURL = import.meta.env.VITE_DICTADATA_API
+StorageAPI.baseURL = import.meta.env.VITE_STORAGE_API
 ```
 
 # Features

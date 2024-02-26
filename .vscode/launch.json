@@ -8,119 +8,183 @@
       "type": "node",
       "request": "launch",
       "name": "user login",
+      "program": "${workspaceFolder}/test/user/user_login.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/user/user_login.js"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "user tests",
+      "program": "${workspaceFolder}/test/user/user_tests.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/user/user_tests.js"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "accounts retrieve",
+      "program": "${workspaceFolder}/test/accounts/retrieve.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/accounts/retrieve.js"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "settings",
+      "program": "${workspaceFolder}/test/settings/settings.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/settings/settings.js"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "engrams recall",
+      "program": "${workspaceFolder}/test/engrams/recall.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/engrams/recall.js"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "engrams retrieve",
+      "program": "${workspaceFolder}/test/engrams/retrieve.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/engrams/retrieve.js"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "storage recall",
+      "program": "${workspaceFolder}/test/storage/recall.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/storage/recall.js"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "storage retrieve",
+      "program": "${workspaceFolder}/test/storage/retrieve.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/storage/retrieve.js"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "storage search",
+      "program": "${workspaceFolder}/test/storage/search.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/storage/search.js"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "tracts recall",
+      "program": "${workspaceFolder}/test/tracts/recall.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/tracts/recall.js"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "tracts retrieve",
+      "program": "${workspaceFolder}/test/tracts/retrieve.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/tracts/retrieve.js"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "ETL transfer",
+      "program": "${workspaceFolder}/test/etl/transfer.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/etl/transfer.js"
+      ]
     },
-    ,
     {
       "type": "node",
       "request": "launch",
       "name": "test_objCopy",
+      "program": "${workspaceFolder}/test/test_objCopy.js",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "verbose"
+      },
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/test/test_objCopy.js"
+      ]
     }
   ]
 }

@@ -3,10 +3,10 @@
  */
 "use strict"
 
-import DictaDataAPI from "../../lib/dictadata-api.js"
+import StorageAPI from "../../lib/storage-api.js"
 import $user from '../../lib/user.js'
 
-DictaDataAPI.baseURL = "http://dev.dictadata.net"
+StorageAPI.baseURL = "http://dev.dictadata.net"
 
 export async function login( user = { userid: "user", password: "user" }) {
   try {

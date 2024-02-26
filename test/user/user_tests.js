@@ -3,16 +3,16 @@
  */
 "use strict"
 
-import DictaDataAPI from "../../lib/dictadata-api.js"
+import StorageAPI from "../../lib/storage-api.js"
 import Account from "../../lib/account.js"
 import $user from '../../lib/user.js'
 import Accounts from "../../lib/accounts.js"
 
-DictaDataAPI.baseURL = "http://dev.dictadata.net"
+StorageAPI.baseURL = "http://dev.dictadata.net"
 /*
-DictaDataAPI.$user.userid = "admin"
-DictaDataAPI.$user.password = "admin"
-DictaDataAPI.$user.roles = [ "User", "Admin" ]
+StorageAPI.$user.userid = "admin"
+StorageAPI.$user.password = "admin"
+StorageAPI.$user.roles = [ "User", "Admin" ]
 */
 
 /**
@@ -132,7 +132,7 @@ async function userTests() {
 
 // test runner
 (async function main() {
-  console.log("dictadata-client tests")
+  console.log("storage-client tests")
   await userTests()
   console.log("done.")
 })()

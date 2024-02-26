@@ -3,11 +3,11 @@
  */
 "use strict"
 
-import DictaDataAPI from "../../lib/dictadata-api.js"
+import StorageAPI from "../../lib/storage-api.js"
 import Account from "../../lib/account.js"
 import $user from '../../lib/user.js'
 
-DictaDataAPI.baseURL = "http://dev.dictadata.net"
+StorageAPI.baseURL = "http://dev.dictadata.net"
 
 async function test_1() {
   console.log("--- $user.login")

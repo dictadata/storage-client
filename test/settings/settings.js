@@ -36,7 +36,7 @@ async function testSettings() {
 
 // test runner
 (async () => {
-  console.log("dictadata-client tests")
+  console.log("storage-client tests")
   await login()
   await testSettings()
   console.log("--- done")
