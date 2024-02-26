@@ -1,6 +1,8 @@
 # @dictadata/storage-client 0.9.x
 
-Javascript client library for dictadata/storage-node API
+Javascript client API library for accessing a dictadata/storage-node. Provides wrapper classes around the storage-node REST API's.
+
+documentation TBD
 
 # Installation
 
