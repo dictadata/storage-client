@@ -171,20 +171,6 @@
       "skipFiles": [
         "<node_internals>/**"
       ]
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "test_objCopy",
-      "program": "${workspaceFolder}/test/test_objCopy.js",
-      "outputCapture": "std",
-      "env": {
-        "NODE_ENV": "production",
-        "LOG_LEVEL": "verbose"
-      },
-      "skipFiles": [
-        "<node_internals>/**"
-      ]
     }
   ]
 }

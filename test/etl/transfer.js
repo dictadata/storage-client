@@ -4,7 +4,7 @@
 "use strict"
 
 import { login } from "../lib/client.js"
-import ETL from "../../lib/etl.js"
+import ETL from "../../storage/client/etl.js"
 
 console.log("=== tests: ETL transfer")
 

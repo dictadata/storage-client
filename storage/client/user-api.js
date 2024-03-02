@@ -1,54 +1,44 @@
 /**
- * storage-client/lib/accounts.js
+ * storage/client/lib/accounts.js
  */
 
 import StorageAPI from './storage-api.js'
 import Account from './account.js'
 import Roles from './types/roles.js'
 
-export default class Accounts extends StorageAPI {
+export default class UserAPI extends StorageAPI {
 
   constructor(options) {
     super(options)
   }
 
   /**
-  * store
-  */
-  store(user) {
-    // eslint-disable-next-line space-in-parens
+   * Add a new user account to the Accounts datastore.
+   * @param {Object} user new user account to create
+   * @param {String} user.userid required
+   * @param {String} user.password required
+   * @returns Promise that resolves with an Account record.
+   */
+  register(user) {
     return new Promise((resolve, reject) => {
       if (!(user instanceof Account)) {
         reject(new Error("Invalid parameter expected Account"))
         return
       }
+      // role is Public
 
-      let url
-      let config
-      if (this.$user.isAuthorized([ Roles.Admin ])) {
-        url = '/node/accounts/' + user.userid
-        config = this.axiosConfig()
-      }
-      else if (this.$user.isAuthorized([ Roles.User ]) && user.userid === this.$user.userid) {
-        // user is updating itself
-        url = '/node/accounts'
-        config = this.axiosConfig(user)
-      }
-      else {
-        reject(new Error('Not Authorized'))
-        return
-      }
-
-      config.headers["Content-Type"] = "application/json; charset=utf-8"
+      let config = this.axiosConfig(user, {
+        "Content-Type": "application/json; charset=utf-8"
+      })
 
       let body = {
         account: user
       }
 
-      this.axios.put(url, body, config)
+      this.axios.post('/node/register', body, config)
         .then(res => {
           // check HTTP response
-          if (res.status !== 200) {
+          if (res.status !== 200 && res.status !== 201) {
             reject("HTTP " + new Error(res.statusText))
           }
           // check storage results
@@ -57,16 +47,17 @@ export default class Accounts extends StorageAPI {
             reject(new Error(results.message))
             return
           }
+          // check return type
           if (results.type !== "map") {
             reject(new Error("Wrong results type " + results.type + " expecting map"))
             return
           }
+          // check for account record
           if (!results.data[ user.userid ]) {
             reject(new Error("Missing account record in results"))
             return
           }
 
-          // process results
           resolve(results)
         })
         .catch(error => {
@@ -77,74 +68,24 @@ export default class Accounts extends StorageAPI {
   }
 
   /**
-   * dull
+   * Check for the user account in the Accounts datastore.
+   * @param {Object} user new user account to create
+   * @param {String} user.userid required
+   * @param {String} user.password required
+   * @returns Promise that resolves with an Account record.
    */
-  dull(user) {
-    // eslint-disable-next-line space-in-parens
-    return new Promise((resolve, reject) => {
-      let url
-      let config
-      if (this.$user.isAuthorized([ Roles.Admin ])) {
-        url = '/node/accounts/' + user.userid
-        config = this.axiosConfig()
-      }
-      else if (this.$user.isAuthorized([ Roles.User ]) && user.userid === this.$user.userid) {
-        // user is trying to delete itself
-        url = '/node/accounts'
-        config = this.axiosConfig(user)
-      }
-      else {
-        reject(new Error('Not Authorized'))
-        return
-      }
-
-      this.axios.delete(url, config)
-        .then(res => {
-          // check HTTP response
-          if (res.status !== 200) {
-            reject("HTTP " + new Error(res.statusText))
-          }
-          // check storage results
-          let results = res.data
-          if (results.status !== 0) {
-            reject(new Error(results.message))
-            return
-          }
-          if (results.type !== "message") {
-            reject(new Error("Wrong results type " + results.type + " expecting message"))
-            return
-          }
-
-          // process results
-          resolve(results)
-        })
-        .catch(error => {
-          // console.warn(error.message)
-          reject(error)
-        })
-    })
-  }
-
-  recall(user) {
+  login(user) {
     return new Promise((resolve, reject) => {
       // console.log(JSON.stringify(user))
-      let url
-      let config
-      if (this.$user.isAuthorized([ Roles.Admin ])) {
-        url = '/node/accounts/' + user.userid
-        config = this.axiosConfig()
-      }
-      else if (this.$user.isAuthorized([ Roles.User ]) && user.userid === this.$user.userid) {
-        // user is trying to request itself
-        url = '/node/accounts'
-        config = this.axiosConfig(user)
-      }
-      else {
-        reject(new Error('Not Authorized'))
+      if (typeof user !== "object" || !user.userid || !user.password) {
+        reject(new Error("Invalid parameter expected Account"))
         return
       }
+      // role is Public
 
-      this.axios.get(url, config)
+      let config = this.axiosConfig(user)
+
+      this.axios.post('/node/login', null, config)
         .then(res => {
           // check HTTP response
           if (res.status !== 200) {
@@ -157,17 +98,18 @@ export default class Accounts extends StorageAPI {
             reject(new Error(results.message))
             return
           }
+          // check return type
           if (results.type !== "map") {
             reject(new Error("Wrong results type " + results.type + " expecting map."))
             return
           }
+          // check for account record
           if (!results.data[ user.userid ]) {
             // console.log(JSON.stringify(results))
             reject(new Error("Missing account record in results."))
             return
           }
 
-          // return account record
           resolve(results)
         })
         .catch(error => {
@@ -177,23 +119,23 @@ export default class Accounts extends StorageAPI {
     })
   }
 
-  retrieve(pattern) {
+  /**
+   * Notify server user is logging out.
+   * @returns Promise that resolves to a string with results message
+   */
+  logout(user) {
     return new Promise((resolve, reject) => {
       // console.log(JSON.stringify(user))
-      if (!this.$user.isAuthorized([ Roles.Admin ])) {
+      if (!(user instanceof Account)) {
+        reject(new Error("Invalid parameter expected Account"))
+        return
+      }
+      if (!user.isAuthorized([ Roles.Guest, Roles.User ])) {
         reject(new Error('Not Authorized'))
         return
       }
 
-      let config = this.axiosConfig(null, {
-        "Content-Type": "application/json; charset=utf-8"
-      })
-
-      let body = {
-        pattern: pattern
-      }
-
-      this.axios.post('/node/accounts', body, config)
+      this.axios.post('/node/logout', null, this.axiosConfig(user))
         .then(res => {
           // check HTTP response
           if (res.status !== 200) {
@@ -206,12 +148,65 @@ export default class Accounts extends StorageAPI {
             reject(new Error(results.message))
             return
           }
+
+          resolve(results)
+        })
+        .catch(error => {
+          // console.warn(error.message)
+          reject(error)
+        })
+    })
+  }
+
+  /**
+   * Stores the user account information in Accounts datastore.
+   * @returns Promise that resolves to a string with results message
+   */
+  store(user) {
+    return new Promise((resolve, reject) => {
+      // console.log(JSON.stringify(user))
+      if (!(user instanceof Account)) {
+        reject(new Error("Invalid parameter expected Account"))
+        return
+      }
+      if (!user.isAuthorized([ Roles.User ])) {
+        reject(new Error('Not Authorized'))
+        return
+      }
+
+      let config = this.axiosConfig(user, {
+        "Content-Type": "application/json; charset=utf-8"
+      })
+
+      let body = {
+        account: user
+      }
+
+      this.axios.put('/node/user', body, config)
+        .then(res => {
+          // check HTTP response
+          if (res.status !== 200) {
+            reject("HTTP " + new Error(res.statusText))
+            return
+          }
+          // check the storage results
+          let results = res.data;
+          if (results.status !== 0) {
+            reject(new Error(results.message))
+            return
+          }
+          // check return type
           if (results.type !== "map") {
             reject(new Error("Wrong results type " + results.type + " expecting map."))
             return
           }
+          // check for Account record
+          if (!results.data[ user.userid ]) {
+            // console.log(JSON.stringify(results))
+            reject(new Error("Missing account record in results."))
+            return
+          }
 
-          // return account record
           resolve(results)
         })
         .catch(error => {

@@ -1,20 +1,20 @@
 /**
- * storage-client/lib/tracts.js
+ * storage/client/lib/engrams.js
  */
 
 import StorageAPI from './storage-api.js'
 import Roles from './types/roles.js'
 
-export default class Tracts extends StorageAPI {
+export default class Engrams extends StorageAPI {
 
   constructor(options) {
     super(options)
   }
 
-  store(tract) {
+  store(encoding) {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
-      if (!tract.urn) {
+      if (!encoding.urn) {
         reject(new Error('Invalid parameter expecting urn'))
         return
       }
@@ -27,9 +27,11 @@ export default class Tracts extends StorageAPI {
         "Content-Type": "application/json; charset=utf-8"
       })
 
-      let body = tract;
+      let body = {
+        engrams: encoding
+      }
 
-      this.axios.put('/node/tracts/' + tract.urn, body, config)
+      this.axios.put('/node/engrams/' + encoding.urn, body, config)
         .then(res => {
           // check HTTP res
           if (res.status !== 200) {
@@ -51,7 +53,7 @@ export default class Tracts extends StorageAPI {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
       if (!urn) {
-        reject(new Error('Invalid Tracts urn'))
+        reject(new Error('Invalid Engrams urn'))
         return
       }
       if (!this.$user.isAuthorized(Roles.Coder)) {
@@ -59,7 +61,7 @@ export default class Tracts extends StorageAPI {
         return
       }
 
-      this.axios.delete('/node/tracts/' + urn, this.axiosConfig())
+      this.axios.delete('/node/engrams/' + urn, this.axiosConfig())
         .then(res => {
           // check HTTP res
           if (res.status !== 200) {
@@ -92,7 +94,7 @@ export default class Tracts extends StorageAPI {
       // console.log("options " + JSON.stringify(options, null, 2))
       // console.log(urn)
       if (!urn) {
-        reject(new Error('Invalid Tracts urn'))
+        reject(new Error('Invalid Engrams urn'))
         return
       }
       if (!this.$user.isAuthorized(Roles.Public)) {
@@ -100,7 +102,7 @@ export default class Tracts extends StorageAPI {
         return
       }
 
-      let uri = '/node/tracts/' + urn + ((options && options.resolve) ? '?resolve=true' : '')
+      let uri = '/node/engrams/' + urn + ((options && options.resolve) ? '?resolve=true' : '')
       // console.log("uri " + uri)
 
       this.axios.get(uri, this.axiosConfig())
@@ -137,7 +139,7 @@ export default class Tracts extends StorageAPI {
         pattern: pattern
       }
 
-      this.axios.post('/node/tracts/', body, config)
+      this.axios.post('/node/engrams/', body, config)
         .then(res => {
           // check HTTP res
           if (res.status !== 200) {

@@ -4,7 +4,7 @@
 "use strict"
 
 import { login } from "../lib/client.js"
-import Engrams from "../../lib/engrams.js"
+import Engrams from "../../storage/client/engrams.js"
 
 console.log("=== tests: engrams retrieve")
 

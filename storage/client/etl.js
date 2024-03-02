@@ -1,36 +1,24 @@
 /**
- * storage-client/lib/notify.js
+ * storage/client/lib/etl.js
  */
 
 import StorageAPI from './storage-api.js'
 import Roles from './types/roles.js'
 
-/*
-message formats:
-
-the API server will fill-in the from: address
-{
-  "to": "drew@drewletcher.net",
-  "subject": "this is a notification",
-  "text": "This is the notification message."
-}
-
-*/
-export default class Notify extends StorageAPI {
+export default class ETL extends StorageAPI {
 
   constructor(options) {
     super(options)
   }
 
-  /**
-   *
-   * @param {*} message
-   * @returns
-   */
-  sendMessage(message) {
+  perform(tract, action, params) {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
-      if (!this.$user.isAuthorized([Roles.Guest, Roles.User, Roles.Notify])) {
+      if (typeof tract !== "string" && typeof tract !== "object") {
+        reject(new Error('Invalid tract'))
+        return
+      }
+      if (!this.$user.isAuthorized(Roles.Public)) {
         reject(new Error('Not Authorized'))
         return
       }
@@ -39,17 +27,23 @@ export default class Notify extends StorageAPI {
         "Content-Type": "application/json; charset=utf-8"
       })
 
-      let body = {
-        data: message
-      }
+      let uri = '/node/etl/'
+      let body = {}
+      if (typeof tract === "string")
+        uri += tract
+      else
+        body["tract"] = tract
+      if (action)
+        body[ "action" ] = action
+      if (params)
+        body[ "params" ] = params
 
-      this.axios.post('/api/notify', body, config)
+      this.axios.post(uri, body, config)
         .then(response => {
-          // console.log(JSON.stringify(response))
           if (response.status === 200)
             resolve(response.data)
           else
-            reject(response.statusText);
+            reject(response.statusText)
         })
         .catch(error => {
           // console.warn(error.message)

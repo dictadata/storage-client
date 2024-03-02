@@ -4,7 +4,7 @@
 "use strict"
 
 import { login } from "../lib/client.js"
-import Storage from "../../lib/storage.js"
+import Storage from "../../storage/client/storage.js"
 
 console.log("=== tests: storage retrieve")
 

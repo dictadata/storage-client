@@ -22,25 +22,37 @@ export default class Entry {
    */
   constructor(options) {
     // engrams properties from engrams.options.json
-    if (options.domain) this.domain = options.domain;
+    if (options.realm) this.realm = options.realm;
     if (options.name) this.name = options.name;
 
     if (options.type) this.type = options.type;
     if (options.source) this.source = options.source;
 
+    if (options.title) this.title = options.title;
+    if (options.description) this.description = options.description;
+
     if (options.roles) this.roles = options.roles;
     if (options.tags) this.tags = options.tags;
 
-    if (options.title) this.title = options.title;
-    if (options.description) this.description = options.description;
     if (options.notes) this.notes = options.notes;
+
+    if (options.urn) this.urn = options.urn;
   }
 
   get urn() {
-    if (this.domain)
-      return this.domain + ":" + this.name;
+    if (this.realm)
+      return this.realm + ":" + this.name;
     else
       return ":" + this.name;
   }
 
+  set urn(value) {
+    if (value.indexOf(":") < 0) {
+      this.realm = "";
+      this.name = value;
+    }
+    else {
+      [ this.realm, this.name ] = value.split(':');
+    }
+  }
 };

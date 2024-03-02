@@ -1,5 +1,5 @@
 /**
- * storage-client/lib/roles.js
+ * storage/client/lib/roles.js
  */
 'use strict'
 

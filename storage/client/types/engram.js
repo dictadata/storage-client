@@ -16,7 +16,7 @@
 import { default as SMT } from './smt.js'
 import { default as Field } from './field.js'
 import { default as Entry } from './entry.js'
-import { typeOf, hasOwnProperty, getCI, dotPick } from "../utils"
+import { typeOf, hasOwnProperty, getCI, dot } from "../utils"
 
 export default class Engram extends Entry {
 
@@ -293,7 +293,7 @@ export default class Engram extends Entry {
           if (this.caseInsensitive)
             value = getCI(construct, kname);
           else
-            value = dotPick(kname, construct);
+            value = dot.get(kname, construct);
 
           if (value !== undefined)
             uid += value;

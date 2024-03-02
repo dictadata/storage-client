@@ -1,5 +1,5 @@
 /**
- * /client/lib/storage-api.js
+ * storage/client/lib/storage-api.js
  *
  * Create an axios instance pointing to a dictadata/storage-node API server
  * with user authorization credentials.

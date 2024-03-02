@@ -4,7 +4,7 @@
 "use strict"
 
 import { login } from "../lib/client.js"
-import Storage from "../../lib/storage.js"
+import Storage from "../../storage/client/storage.js"
 
 const urn = ":es_foo_schema"
 

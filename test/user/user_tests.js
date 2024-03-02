@@ -3,10 +3,10 @@
  */
 "use strict"
 
-import StorageAPI from "../../lib/storage-api.js"
-import Account from "../../lib/account.js"
-import $user from '../../lib/user.js'
-import Accounts from "../../lib/accounts.js"
+import StorageAPI from "../../storage/client/storage-api.js"
+import Account from "../../storage/client/account.js"
+import $user from '../../storage/client/user.js'
+import Accounts from "../../storage/client/accounts.js"
 
 StorageAPI.baseURL = "http://dev.dictadata.net"
 /*

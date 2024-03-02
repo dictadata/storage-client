@@ -4,7 +4,7 @@
 "use strict"
 
 import { login } from "../lib/client.js"
-import Settings from "../../lib/settings.js"
+import Settings from "../../storage/client/settings.js"
 
 async function testSettings() {
 

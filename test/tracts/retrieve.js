@@ -4,7 +4,7 @@
 "use strict"
 
 import { login } from "../lib/client.js"
-import Tracts from "../../lib/tracts.js"
+import Tracts from "../../storage/client/tracts.js"
 
 console.log("=== tests: tracts retrieve")
 

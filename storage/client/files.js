@@ -1,5 +1,5 @@
 /**
- * storage-client/lib/import.js
+ * storage/client/lib/import.js
  */
 
 import StorageAPI from './storage-api.js'

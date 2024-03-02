@@ -4,7 +4,7 @@
 "use strict"
 
 import { login }from "../lib/client.js"
-import Accounts from "../../lib/accounts.js"
+import Accounts from "../../storage/client/accounts.js"
 
 /**
  * User

@@ -4,7 +4,7 @@
 "use strict"
 
 import { login } from "../lib/client.js"
-import Files from "../../lib/files.js"
+import Files from "../../storage/client/files.js"
 
 async function testFiles() {
 

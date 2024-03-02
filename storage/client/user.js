@@ -1,5 +1,5 @@
 /**
- * storage-client/lib/user.js
+ * storage/client/lib/user.js
  */
 import StorageAPI from './storage-api.js'
 import UserAPI from './user-api.js'
