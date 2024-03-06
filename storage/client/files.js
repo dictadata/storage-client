@@ -24,10 +24,10 @@ export default class Files extends StorageAPI {
       let config = this.axiosConfig()
 
       this.axios.get(url, config)
-        .then(response => {
+        .then(res => {
           // console.log("api returned")
-          // console.log(response)
-          resolve(response.data)
+          // console.log(res)
+          resolve(res.data)
         })
         .catch(err => {
           console.warn('api failed')
@@ -52,10 +52,10 @@ export default class Files extends StorageAPI {
       })
 
       this.axios.put('/files', data, config)
-        .then(response => {
+        .then(res => {
           // console.log("api returned")
-          // console.log(response)
-          resolve(response.data)
+          // console.log(res)
+          resolve(res.data)
         })
         .catch(err => {
           console.warn('api failed')
@@ -80,10 +80,10 @@ export default class Files extends StorageAPI {
       })
 
       this.axios.post('/files', formData, config)
-        .then(response => {
+        .then(res => {
           // console.log("api returned")
-          // console.log(response)
-          resolve(response.data)
+          // console.log(res)
+          resolve(res.data)
         })
         .catch(err => {
           console.warn('api failed')

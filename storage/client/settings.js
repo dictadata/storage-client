@@ -32,9 +32,9 @@ export default class Settings extends StorageAPI {
       }
 
       this.axios.get('/api/settings/' + key, this.axiosConfig())
-        .then(response => {
-          if (response.status === 200) {
-            let results = response.data
+        .then(res => {
+          if (res.status === 200) {
+            let results = res.data
             if (results.status !== 0)
               throw new Error(results.message)
             if (results.type !== 'map')
@@ -47,7 +47,7 @@ export default class Settings extends StorageAPI {
             resolve(results)
           }
           else
-            reject(response.statusText);
+            reject(res.statusText);
         })
         .catch(error => {
           // console.warn(error.message)
@@ -76,16 +76,16 @@ export default class Settings extends StorageAPI {
       }
 
       this.axios.put('/api/settings/' + key, body, config)
-        .then(response => {
-          if (response.status === 200) {
-            let results = response.data
+        .then(res => {
+          if (res.status === 200) {
+            let results = res.data
             if (results.status !== 0)
               throw new Error(results.message)
 
             resolve(results)
           }
           else
-            reject(response.statusText);
+            reject(res.statusText);
         })
         .catch(error => {
           // console.warn(error.message)

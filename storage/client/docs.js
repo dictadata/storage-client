@@ -43,12 +43,12 @@ export default class Docs extends StorageAPI {
       }
 
       this.axios.put('/api/docs/' + encodeURIComponent(doc.docid), body, config)
-        .then((response) => {
-          // console.log(response)
-          if (response.status === 200)
-            resolve(response.data)
+        .then((res) => {
+          // console.log(res)
+          if (res.status === 200)
+            resolve(res.data)
           else
-            reject(response.statusText)
+            reject(res.statusText)
         })
         .catch((error) => {
           reject(error.message)
@@ -64,12 +64,12 @@ export default class Docs extends StorageAPI {
       }
 
       this.axios.get('/api/docs/' + encodeURIComponent(docid), this.axiosConfig())
-        .then((response) => {
-          // console.log(response);
-          if (response.status === 200)
-            resolve(response.data[ docid ])
+        .then((res) => {
+          // console.log(res);
+          if (res.status === 200)
+            resolve(res.data[ docid ])
           else
-            reject(response.statusText)
+            reject(res.statusText)
         })
         .catch((error) => {
           reject(error.message)
@@ -85,9 +85,9 @@ export default class Docs extends StorageAPI {
       }
 
       this.axios.delete('/api/docs/' + encodeURIComponent(docid), this.axiosConfig())
-        .then((response) => {
-          // console.log(response);
-          let result = response.data
+        .then((res) => {
+          // console.log(res);
+          let result = res.data
           if (result === 'ok')
             resolve(result)
           else
@@ -115,12 +115,12 @@ export default class Docs extends StorageAPI {
       }
 
       this.axios.post('/api/docs', body, config)
-        .then((response) => {
-          // console.log("docs: ", JSON.stringify(response.data));
-          if (response.status === 200)
-            resolve(response.data)
+        .then((res) => {
+          // console.log("docs: ", JSON.stringify(res.data));
+          if (res.status === 200)
+            resolve(res.data)
           else
-            reject(response.statusText)
+            reject(res.statusText)
         })
         .catch((error) => {
           reject(error.message)

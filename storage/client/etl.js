@@ -39,11 +39,11 @@ export default class ETL extends StorageAPI {
         body[ "params" ] = params
 
       this.axios.post(uri, body, config)
-        .then(response => {
-          if (response.status === 200)
-            resolve(response.data)
+        .then(res => {
+          if (res.status === 200)
+            resolve(res.data)
           else
-            reject(response.statusText)
+            reject(res)
         })
         .catch(error => {
           // console.warn(error.message)
