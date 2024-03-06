@@ -1,18 +1,27 @@
 // storage/utils/dot
 "use strict";
 
-/**
- * utility function finding a object property using dot notation
- * @param {String} dotname property name using dot notation
- * @param {Object} construct object to pick
- */
+const typeOf = require("./typeOf");
+
 export default {
+  /**
+   * find an object property using dot notation
+   * @param {String} dotname property name using dot notation
+   * @param {Object} construct object to pick
+   * @returns the object property
+   */
   get: (dotname, construct) => {
     let props = dotname.split('.');
 
     let prop;
     try {
-      prop = props.reduce((obj, name) => obj[ name ], construct);
+      prop = props.reduce((prop, name) => {
+        let nv = name.split('=');
+        if (nv.length === 2)
+          return prop.find((value) => value[ nv[ 0 ] ] === nv[ 1 ]);
+        else
+          return prop[ name ];
+      }, construct);
     }
     catch (err) {
       console.warn(err.message);
@@ -21,26 +30,41 @@ export default {
     return prop;
   },
 
+  /**
+   * set an object property to value using dot notation
+   * @param {String} dotname property name using dot notation
+   * @param {Object} construct object to pick
+   * @param {*} value new value for property
+   * @returns true if successful, false if invalid dot notation for construct
+   */
   set: (dotname, construct, value) => {
-    let props = dotname.split('.');
-    let vname = props.pop();
+    let names = dotname.split(".");
+    let vname = names.pop();
 
     let prop = construct;
     try {
-      for (let name of props) {
-        if (!Object.prototype.hasOwnProperty.call(prop, name))
-          prop[ name ] = {};
-        prop = prop[ name ];
+      for (let name of names) {
+        let nv = name.split('=');
+        if (nv.length === 2)
+          prop = prop.find((value) => value[ nv[ 0 ] ] === nv[ 1 ]);
+        else {
+          if (!Object.prototype.hasOwnProperty.call(prop, name))
+            prop[ name ] = {};
+          prop = prop[ name ];
+        }
       }
     }
     catch (err) {
       console.warn(err.message);
     }
 
-    if (typeof prop !== "object")
+    if (typeOf(prop) === "array")
+      prop.push(value);
+    else if (typeOf(prop) === "object")
+      prop[ vname ] = value;
+    else
       return false;
 
-    prop[ vname ] = value;
     return true;
   }
 };
