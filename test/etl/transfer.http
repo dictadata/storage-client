@@ -1,19 +1,64 @@
-### with urn
-POST http://dev.dictadata.net/node/etl/foo:foo_transfer HTTP/1.1
-Authorization: Basic user user
-
 ### with tract
 POST http://dev.dictadata.net/node/etl HTTP/1.1
 Authorization: Basic user user
 Content-Type: application/json; charset=utf-8
 
 {
-  "tract": {
-    "origin": {
-      "smt": "foo:json_foofile"
-    },
-    "terminal": {
-      "smt": "json|stream:*|*|*"
+  "actions": [
+    {
+      "name": "mysql-json",
+      "action": "transfer",
+      "description": "transfer foo from mysql to res stream",
+      "origin": {
+        "smt": ":mysql_foo_schema"
+      },
+      "terminal": {
+        "smt": "json|stream:*|*|*"
+      }
     }
+  ]
+}
+
+### with urn
+POST http://dev.dictadata.net/node/etl/foo:foo_transfer HTTP/1.1
+Authorization: Basic user user
+
+### geography
+POST http://dev.dictadata.net/node/etl/dicta:geography HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "action": "boundaries",
+  "params": {
+    "tag": "boundary",
+    "lng": -91.4613761135469,
+    "lat": 41.65835958166854
+  }
+}
+
+### population
+POST http://dev.dictadata.net/node/etl/dicta:population HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "action": "06",
+  "params": {
+    "STATEFP": "19",
+    "COUNTYFP": "103"
+  }
+}
+
+### voter_registration
+POST http://dev.dictadata.net/node/etl/dicta:voter_registration HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "action": "00",
+  "params": {
+    "LSAD": "00",
+    "STATEFP": "19"
   }
 }

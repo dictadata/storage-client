@@ -1,0 +1,15 @@
+### store settings
+PUT http://dev.dictadata.net/api/settings/words HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
+  "hello": "world",
+  "guden": "dach",
+  "languages": [ "english", "german" ]
+}
+
+### recall settings
+GET http://dev.dictadata.net/api/settings/words HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8

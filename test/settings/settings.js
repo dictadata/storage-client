@@ -18,15 +18,21 @@ async function testSettings() {
       languages: [ 'english', 'german' ]
     }
 
+    let results;
+    console.log("--- recall settings")
+    console.log("key: " + key)
+    results = await settings.recall(key)
+    console.log("results: " + JSON.stringify(results))
+
     console.log("--- store settings")
-    console.log(JSON.stringify(props))
-    let results = await settings.store(key, props)
-    console.log(results.status + " " + results.message)
+    console.log("key: " + key + " props: " + JSON.stringify(props))
+    results = await settings.store(key, props)
+    console.log("results: " + JSON.stringify(results))
 
     console.log("--- recall settings")
+    console.log("key: " + key)
     results = await settings.recall(key)
-    console.log(results.status + " " + results.message)
-    console.log(JSON.stringify(results.data[key]))
+    console.log("results: " + JSON.stringify(results))
   }
   catch (err) {
     console.warn(err.message)
