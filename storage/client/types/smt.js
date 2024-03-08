@@ -5,7 +5,7 @@
  */
 "use strict";
 
-import { typeOf, hasOwnProperty } from "../utils"
+import { typeOf } from "../utils"
 
 export default class SMT {
   /**
@@ -32,8 +32,8 @@ export default class SMT {
     }
     else if (typeOf(smt) === "object") {
       // console.log("smt " + JSON.stringify(smt))
-      if (!hasOwnProperty(smt, "model") && !hasOwnProperty(smt, "locus")
-        && !hasOwnProperty(smt, "schema") && !hasOwnProperty(smt, "key"))
+      if (!Object.hasOwn(smt, "model") && !Object.hasOwn(smt, "locus")
+        && !Object.hasOwn(smt, "schema") && !Object.hasOwn(smt, "key"))
         throw new Error("Invalid parameter: smt");
 
       this.model = smt.model || '';

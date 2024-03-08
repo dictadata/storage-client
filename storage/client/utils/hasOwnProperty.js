@@ -7,6 +7,9 @@
  * @param {String} propertyName
  */
 export default function hasOwnProperty(obj, propertyName) {
+  if (obj)
+    throw "DEPRECATED";
+
   if (!obj || !propertyName) return false;
-  return Object.prototype.hasOwnProperty.call(obj, propertyName);
+  return Object.hasOwn(obj, propertyName);
 }

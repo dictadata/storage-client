@@ -81,7 +81,7 @@ export default class Tracts extends StorageAPI {
    *
    * @param {String} urn
    * @param {Object} options
-   * @param {Boolean} options.resolve_alias
+   * @param {Boolean} options.resolve
    * @returns
    */
   recall(urn, options) {

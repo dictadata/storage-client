@@ -3,7 +3,7 @@
  */
 
 import StorageAPI from './storage-api.js'
-import Account from './account.js'
+import Account from './types/account.js'
 import Roles from './types/roles.js'
 
 export default class UserAPI extends StorageAPI {

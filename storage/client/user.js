@@ -3,7 +3,7 @@
  */
 import StorageAPI from './storage-api.js'
 import UserAPI from './user-api.js'
-import Account from './account.js'
+import Account from './types/account.js'
 import Roles from './types/roles.js'
 import StorageResults from './types/storage-results.js'
 

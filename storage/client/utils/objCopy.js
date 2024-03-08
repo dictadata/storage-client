@@ -2,7 +2,6 @@
 "use strict";
 
 import typeOf from './typeOf.js'
-import hasOwnProperty from './hasOwnProperty.js'
 
 /**
  * Copy/replace source properties in target object.
@@ -21,7 +20,7 @@ export default function objCopy(target, ...source) {
       let srcType = typeOf(value);
 
       if (srcType === "object") {
-        if (!hasOwnProperty(target, key) || typeOf(target[key]) !== "object")
+        if (!Object.hasOwn(target, key) || typeOf(target[key]) !== "object")
           target[ key ] = {};  // replace
         objCopy(target[ key ], value);
       }

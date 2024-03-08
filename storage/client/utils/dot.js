@@ -1,7 +1,7 @@
 // storage/utils/dot
 "use strict";
 
-const typeOf = require("./typeOf");
+import typeOf from "./typeOf";
 
 export default {
   /**
@@ -48,7 +48,7 @@ export default {
         if (nv.length === 2)
           prop = prop.find((value) => value[ nv[ 0 ] ] === nv[ 1 ]);
         else {
-          if (!Object.prototype.hasOwnProperty.call(prop, name))
+          if (!Object.hasOwn(prop, name))
             prop[ name ] = {};
           prop = prop[ name ];
         }

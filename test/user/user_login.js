@@ -4,7 +4,7 @@
 "use strict"
 
 import StorageAPI from "../../storage/client/storage-api.js"
-import Account from "../../storage/client/account.js"
+import Account from "../../storage/client/types/account.js"
 import $user from '../../storage/client/user.js'
 
 StorageAPI.baseURL = "http://dev.dictadata.net"

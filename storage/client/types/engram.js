@@ -16,7 +16,7 @@
 import { default as SMT } from './smt.js'
 import { default as Field } from './field.js'
 import { default as Entry } from './entry.js'
-import { typeOf, hasOwnProperty, getCI, dot } from "../utils"
+import { typeOf, getCI, dot } from "../utils"
 
 export default class Engram extends Entry {
 
@@ -29,7 +29,7 @@ export default class Engram extends Entry {
     this.type = "engram";
 
     let smt = {};
-    if (typeOf(encoding) === "object" && hasOwnProperty(encoding, "smt")) {
+    if (typeOf(encoding) === "object" && Object.hasOwn(encoding, "smt")) {
       smt = new SMT(encoding.smt);
     }
     else {
@@ -51,7 +51,7 @@ export default class Engram extends Entry {
     this.fieldsMap = new Map;
     this.indices = {};
 
-    if (hasOwnProperty(encoding, "fields"))
+    if (Object.hasOwn(encoding, "fields"))
       this.encoding = encoding.fields;
   }
 

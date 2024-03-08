@@ -1,8 +1,7 @@
 // storage/types/StorageError
 "use strict";
 
-const { typeOf } = require("../utils");
-const StorageResults = require("./storage-results");
+import StorageResults from "./storage-results";
 
 module.exports = exports = class StorageError extends Error {
   constructor(status, ...params) {

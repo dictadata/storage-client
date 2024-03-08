@@ -2,7 +2,7 @@
  * client/account.js
  */
 
-import Roles from './types/roles.js'
+import Roles from './roles.js'
 
 export default class Account {
 

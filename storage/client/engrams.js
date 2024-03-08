@@ -83,7 +83,7 @@ export default class Engrams extends StorageAPI {
    *
    * @param {String} urn
    * @param {Object} options
-   * @param {Boolean} options.resolve_alias
+   * @param {Boolean} options.resolve
    * @returns
    */
   recall(urn, options) {
