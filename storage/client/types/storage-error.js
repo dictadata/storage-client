@@ -3,7 +3,7 @@
 
 import StorageResults from "./storage-results";
 
-module.exports = exports = class StorageError extends Error {
+export default class StorageError extends Error {
   constructor(status, ...params) {
     // Pass normal error arguments to parent constructor
     super(...params);
