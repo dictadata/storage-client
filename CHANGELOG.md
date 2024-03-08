@@ -1,5 +1,7 @@
 # CHANGELOG for @dictadata/client
 
+- version 0.9.22
+  - feature: parseFootnote function
 - version 0.9.21
   - feature: add etl API module
   - refactor: Engrams and Tracts API
