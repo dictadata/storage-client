@@ -1,5 +1,7 @@
 # CHANGELOG for @dictadata/client
 
+- version 0.9.23
+  - bug fix: replace commonjs module syntax
 - version 0.9.22
   - feature: parseFootnote function
 - version 0.9.21
