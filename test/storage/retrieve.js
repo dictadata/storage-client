@@ -6,16 +6,16 @@
 import { login } from "../lib/client.js"
 import Storage from "../../storage/client/storage.js"
 
-console.log("=== tests: storage retrieve")
+//console.log("=== tests: storage retrieve")
 
 async function test_retrieve(urn, field, value, op) {
-  console.log("retrieve " + urn)
+  //console.log("retrieve " + urn)
   let retCode = 0
 
   try {
     let storage = new Storage()
 
-    // console.log('call storage.retrieve')
+    //console.log('call storage.retrieve')
     let pattern = {
       "match": {},  // default is match all
       "count": 10
@@ -35,7 +35,7 @@ async function test_retrieve(urn, field, value, op) {
     if (results.status !== 0)
       throw new Error(results.message)
 
-    console.log(JSON.stringify(results.data))
+    //console.log(JSON.stringify(results.data))
   }
   catch (err) {
     console.warn(err)

@@ -6,10 +6,10 @@
 import { login } from "../lib/client.js"
 import Tracts from "../../storage/client/tracts.js"
 
-console.log("=== tests: tracts recall")
+//console.log("=== tests: tracts recall")
 
 async function test_recall(urn) {
-  console.log("recall " + urn)
+  //console.log("recall " + urn)
   let retCode = 0
 
   try {
@@ -19,7 +19,7 @@ async function test_recall(urn) {
     if (results.status !== 0)
       throw new Error(results.message)
 
-    console.log(JSON.stringify(results.data))
+    //console.log(JSON.stringify(results.data))
   }
   catch (err) {
     console.warn(err)

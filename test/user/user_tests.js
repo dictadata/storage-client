@@ -25,7 +25,7 @@ async function userTests() {
   let user = { userid, password }
   let account = new Account(user);
 
-  console.log("=== user register")
+  //console.log("=== user register")
   try {
     let results = await $user.register(account)
     if (results.status !== 0)
@@ -33,74 +33,74 @@ async function userTests() {
 
     account.update(results.data[ account.userid ])
 
-    console.log("user: " + JSON.stringify(user))
-    console.log()
-    console.log("results: " + JSON.stringify(account))
-    console.log()
-    console.log("$user: ", JSON.stringify($user))
-    console.log()
+    //console.log("user: " + JSON.stringify(user))
+    //console.log()
+    //console.log("results: " + JSON.stringify(account))
+    //console.log()
+    //console.log("$user: ", JSON.stringify($user))
+    //console.log()
   }
   catch (err) {
     console.warn(err.message)
   }
 
-  console.log("=== user login")
+  //console.log("=== user login")
   try {
     let results = await $user.login(user)
     if (results.status !== 0)
       throw new Error(results.message)
 
     $user.password = user.password  // since there is no auth handler in test mode
-    console.log("user: " + JSON.stringify(user))
-    console.log()
-    console.log("results: " + JSON.stringify(results.data[user.userid]))
-    console.log()
-    console.log("$user: ", JSON.stringify($user))
-    console.log()
+    //console.log("user: " + JSON.stringify(user))
+    //console.log()
+    //console.log("results: " + JSON.stringify(results.data[user.userid]))
+    //console.log()
+    //console.log("$user: ", JSON.stringify($user))
+    //console.log()
   }
   catch (err) {
     console.warn(err.message)
     return
   }
 
-  console.log("=== user store")
+  //console.log("=== user store")
   try {
     $user.profile.displayName = "Tester the Testy"
     let results = await $user.store()
     if (results.status !== 0)
       throw new Error(results.message)
 
-    console.log("user: " + JSON.stringify(user))
-    console.log()
-    console.log("results: " + JSON.stringify(results.data[$user.userid]))
-    console.log()
-    console.log("$user: ", JSON.stringify($user))
-    console.log()
+    //console.log("user: " + JSON.stringify(user))
+    //console.log()
+    //console.log("results: " + JSON.stringify(results.data[$user.userid]))
+    //console.log()
+    //console.log("$user: ", JSON.stringify($user))
+    //console.log()
   }
   catch (err) {
     console.warn(err.message)
     return
   }
 
-  console.log("=== user logout")
+  //console.log("=== user logout")
   try {
     let results = await $user.logout()
     if (results.status !== 0)
       throw new Error(results.message)
 
-    console.log("user: " + JSON.stringify(user))
-    console.log()
-    console.log("results: " + JSON.stringify(results.message))
-    console.log()
-    console.log("$user: ", JSON.stringify($user))
-    console.log()
+    //console.log("user: " + JSON.stringify(user))
+    //console.log()
+    //console.log("results: " + JSON.stringify(results.message))
+    //console.log()
+    //console.log("$user: ", JSON.stringify($user))
+    //console.log()
   }
   catch (err) {
     console.warn(err.message)
     return
   }
 
-  console.log("=== user dull")
+  //console.log("=== user dull")
   try {
     let results = await $user.login({ userid: "admin", password: "admin" })
     if (results.status !== 0)
@@ -112,12 +112,12 @@ async function userTests() {
     if (results.status !== 0)
       throw new Error(results.message)
 
-    console.log("user: " + JSON.stringify(user))
-    console.log()
-    console.log("results: " + JSON.stringify(results.message))
-    console.log()
-    console.log("$user: ", JSON.stringify($user))
-    console.log()
+    //console.log("user: " + JSON.stringify(user))
+    //console.log()
+    //console.log("results: " + JSON.stringify(results.message))
+    //console.log()
+    //console.log("$user: ", JSON.stringify($user))
+    //console.log()
 
     results = await $user.logout()
     if (results.status !== 0)
@@ -132,7 +132,7 @@ async function userTests() {
 
 // test runner
 (async function main() {
-  console.log("storage-client tests")
+  //console.log("storage-client tests")
   await userTests()
-  console.log("done.")
+  //console.log("done.")
 })()

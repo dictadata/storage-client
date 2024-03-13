@@ -10,9 +10,9 @@ StorageAPI.baseURL = "http://dev.dictadata.net"
 
 export async function login( user = { userid: "user", password: "user" }) {
   try {
-    console.log("--- user login")
+    //console.log("--- user login")
     let results = await $user.login(user)
-    console.log(results.message)
+    //console.log(results.message)
     return results
   }
   catch (err) {

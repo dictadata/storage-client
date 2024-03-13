@@ -8,16 +8,16 @@ import Storage from "../../storage/client/storage.js"
 
 const urn = ":es_foo_schema"
 
-console.log("=== tests: storage retrieve w/ search")
+//console.log("=== tests: storage retrieve w/ search")
 
 async function test_search(fields, value, op) {
-  console.log("search " + urn)
+  //console.log("search " + urn)
   let retCode = 0
 
   try {
     let storage = new Storage()
 
-    // console.log('call storage.retrieve')
+    //console.log('call storage.retrieve')
     let pattern = {
       "match": {},  // default is match all
       "count": 100
@@ -35,7 +35,7 @@ async function test_search(fields, value, op) {
     if (results.status !== 0)
       throw new Error(results.message)
 
-    console.log(JSON.stringify(results.data))
+    //console.log(JSON.stringify(results.data))
   }
   catch (err) {
     console.warn(err)

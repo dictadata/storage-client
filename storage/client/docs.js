@@ -44,7 +44,7 @@ export default class Docs extends StorageAPI {
 
       this.axios.put('/api/docs/' + encodeURIComponent(doc.docid), body, config)
         .then((res) => {
-          // console.log(res)
+          //console.log(res)
           if (res.status === 200)
             resolve(res.data)
           else
@@ -65,7 +65,7 @@ export default class Docs extends StorageAPI {
 
       this.axios.get('/api/docs/' + encodeURIComponent(docid), this.axiosConfig())
         .then((res) => {
-          // console.log(res);
+          //console.log(res);
           if (res.status === 200)
             resolve(res.data[ docid ])
           else
@@ -86,7 +86,7 @@ export default class Docs extends StorageAPI {
 
       this.axios.delete('/api/docs/' + encodeURIComponent(docid), this.axiosConfig())
         .then((res) => {
-          // console.log(res);
+          //console.log(res);
           let result = res.data
           if (result === 'ok')
             resolve(result)
@@ -116,7 +116,7 @@ export default class Docs extends StorageAPI {
 
       this.axios.post('/api/docs', body, config)
         .then((res) => {
-          // console.log("docs: ", JSON.stringify(res.data));
+          //console.log("docs: ", JSON.stringify(res.data));
           if (res.status === 200)
             resolve(res.data)
           else

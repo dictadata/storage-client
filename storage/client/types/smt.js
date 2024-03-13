@@ -31,7 +31,7 @@ export default class SMT {
       this.key = a[ 3 ] || '';
     }
     else if (typeOf(smt) === "object") {
-      // console.log("smt " + JSON.stringify(smt))
+      //console.log("smt " + JSON.stringify(smt))
       if (!Object.hasOwn(smt, "model") && !Object.hasOwn(smt, "locus")
         && !Object.hasOwn(smt, "schema") && !Object.hasOwn(smt, "key"))
         throw new Error("Invalid parameter: smt");

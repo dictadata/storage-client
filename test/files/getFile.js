@@ -13,9 +13,9 @@ async function testFiles() {
 
     let url = "https://www.dictadata.net/robots.txt"
 
-    console.log("--- get file")
+    //console.log("--- get file")
     let contents = await files.getFile(url)
-    console.log(contents)
+    //console.log(contents)
   }
   catch (err) {
     console.warn(err.message)
@@ -25,8 +25,8 @@ async function testFiles() {
 
 // test runner
 (async () => {
-  console.log("storage-client tests")
+  //console.log("storage-client tests")
   await login()
   await testFiles()
-  console.log("--- done")
+  //console.log("--- done")
 })()

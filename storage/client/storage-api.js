@@ -14,7 +14,7 @@ export default class StorageAPI {
     this.options = options || {}
 
     this.$user = StorageAPI.$user || { userid: "guest", password: "guest", isAuthenticated: false, isLocal: true }
-    console.log(this.$user.userid)
+    //console.log(this.$user.userid)
 
     this.axios = axios
   }

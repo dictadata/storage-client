@@ -27,7 +27,7 @@ function reviver(key, value) {
 }
 
 function test_1() {
-  console.log("test_1")
+  //console.log("test_1")
   const originalValue = new Map([
     [ "one", "this is one" ],
     [ "two", 200 ],
@@ -37,32 +37,32 @@ function test_1() {
     } ],
     [ "four", new Set([ "a", "b", "c" ]) ]
   ])
-  console.log(originalValue);
+  //console.log(originalValue);
 
   const str = JSON.stringify(originalValue, replacer);
-  console.log(str)
+  //console.log(str)
 
   const newValue = JSON.parse(str, reviver);
-  console.log(newValue);
+  //console.log(newValue);
 
-  console.log(" ");
+  //console.log(" ");
 }
 
 function test_2() {
-  console.log("test_2")
+  //console.log("test_2")
   const originalValue = new Map([ [ 'a', 1 ] ]);
-  console.log(originalValue);
+  //console.log(originalValue);
 
   const str = JSON.stringify(originalValue, replacer);
-  console.log(str)
+  //console.log(str)
 
   const newValue = JSON.parse(str, reviver);
-  console.log(newValue);
-  console.log(" ");
+  //console.log(newValue);
+  //console.log(" ");
 }
 
 function test_3() {
-  console.log("test_3")
+  //console.log("test_3")
   // Deep nesting with combination of Arrays, Objects and Maps
 
   const originalValue = [
@@ -72,14 +72,14 @@ function test_3() {
       }
     } ] ])
   ];
-  console.log(originalValue);
+  //console.log(originalValue);
 
   const str = JSON.stringify(originalValue, replacer);
-  console.log(str)
-  
+  //console.log(str)
+
   const newValue = JSON.parse(str, reviver);
-  console.log(newValue);
-  console.log(" ");
+  //console.log(newValue);
+  //console.log(" ");
 }
 
 test_1()

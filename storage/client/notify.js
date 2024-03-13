@@ -45,7 +45,7 @@ export default class Notify extends StorageAPI {
 
       this.axios.post('/api/notify', body, config)
         .then(res => {
-          // console.log(JSON.stringify(res))
+          //console.log(JSON.stringify(res))
           if (res.status === 200)
             resolve(res.data)
           else

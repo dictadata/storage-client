@@ -19,20 +19,20 @@ async function testSettings() {
     }
 
     let results;
-    console.log("--- recall settings")
-    console.log("key: " + key)
+    //console.log("--- recall settings")
+    //console.log("key: " + key)
     results = await settings.recall(key)
-    console.log("results: " + JSON.stringify(results))
+    //console.log("results: " + JSON.stringify(results))
 
-    console.log("--- store settings")
-    console.log("key: " + key + " props: " + JSON.stringify(props))
+    //console.log("--- store settings")
+    //console.log("key: " + key + " props: " + JSON.stringify(props))
     results = await settings.store(key, props)
-    console.log("results: " + JSON.stringify(results))
+    //console.log("results: " + JSON.stringify(results))
 
-    console.log("--- recall settings")
-    console.log("key: " + key)
+    //console.log("--- recall settings")
+    //console.log("key: " + key)
     results = await settings.recall(key)
-    console.log("results: " + JSON.stringify(results))
+    //console.log("results: " + JSON.stringify(results))
   }
   catch (err) {
     console.warn(err.message)
@@ -42,8 +42,8 @@ async function testSettings() {
 
 // test runner
 (async () => {
-  console.log("storage-client tests")
+  //console.log("storage-client tests")
   await login()
   await testSettings()
-  console.log("--- done")
+  //console.log("--- done")
 })()

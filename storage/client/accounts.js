@@ -127,7 +127,7 @@ export default class Accounts extends StorageAPI {
 
   recall(user) {
     return new Promise((resolve, reject) => {
-      // console.log(JSON.stringify(user))
+      //console.log(JSON.stringify(user))
       let url
       let config
       if (this.$user.isAuthorized([ Roles.Admin ])) {
@@ -162,7 +162,7 @@ export default class Accounts extends StorageAPI {
             return
           }
           if (!results.data[ user.userid ]) {
-            // console.log(JSON.stringify(results))
+            //console.log(JSON.stringify(results))
             reject(new Error("Missing account record in results."))
             return
           }
@@ -179,7 +179,7 @@ export default class Accounts extends StorageAPI {
 
   retrieve(pattern) {
     return new Promise((resolve, reject) => {
-      // console.log(JSON.stringify(user))
+      //console.log(JSON.stringify(user))
       if (!this.$user.isAuthorized([ Roles.Admin ])) {
         reject(new Error('Not Authorized'))
         return

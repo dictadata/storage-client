@@ -87,12 +87,12 @@ export default class Engrams extends StorageAPI {
    * @returns
    */
   recall(urn, options) {
-    // console.log(urn)
+    //console.log(urn)
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
-      // console.log("client.recall urn: " + urn)
-      // console.log("options " + JSON.stringify(options, null, 2))
-      // console.log(urn)
+      //console.log("client.recall urn: " + urn)
+      //console.log("options " + JSON.stringify(options, null, 2))
+      //console.log(urn)
       if (!urn) {
         reject(new Error('Invalid Engrams urn'))
         return
@@ -103,7 +103,7 @@ export default class Engrams extends StorageAPI {
       }
 
       let uri = '/node/engrams/' + urn + ((options && options.resolve) ? '?resolve=true' : '')
-      // console.log("uri " + uri)
+      //console.log("uri " + uri)
 
       this.axios.get(uri, this.axiosConfig())
         .then(res => {
@@ -126,7 +126,7 @@ export default class Engrams extends StorageAPI {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
       if (!this.$user.isAuthorized(Roles.User)) {
-        console.log('not making the call ' + JSON.stringify(this.$user))
+        //console.log('not making the call ' + JSON.stringify(this.$user))
         reject(new Error('Not Authorized'))
         return
       }
@@ -151,7 +151,7 @@ export default class Engrams extends StorageAPI {
         })
         .catch(error => {
           // console.warn(error.message)
-          // console.log("after the call")
+          //console.log("after the call")
           reject(error)
         })
     })

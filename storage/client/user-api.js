@@ -76,7 +76,7 @@ export default class UserAPI extends StorageAPI {
    */
   login(user) {
     return new Promise((resolve, reject) => {
-      // console.log(JSON.stringify(user))
+      //console.log(JSON.stringify(user))
       if (typeof user !== "object" || !user.userid || !user.password) {
         reject(new Error("Invalid parameter expected Account"))
         return
@@ -105,7 +105,7 @@ export default class UserAPI extends StorageAPI {
           }
           // check for account record
           if (!results.data[ user.userid ]) {
-            // console.log(JSON.stringify(results))
+            //console.log(JSON.stringify(results))
             reject(new Error("Missing account record in results."))
             return
           }
@@ -125,7 +125,7 @@ export default class UserAPI extends StorageAPI {
    */
   logout(user) {
     return new Promise((resolve, reject) => {
-      // console.log(JSON.stringify(user))
+      //console.log(JSON.stringify(user))
       if (!(user instanceof Account)) {
         reject(new Error("Invalid parameter expected Account"))
         return
@@ -164,7 +164,7 @@ export default class UserAPI extends StorageAPI {
    */
   store(user) {
     return new Promise((resolve, reject) => {
-      // console.log(JSON.stringify(user))
+      //console.log(JSON.stringify(user))
       if (!(user instanceof Account)) {
         reject(new Error("Invalid parameter expected Account"))
         return
@@ -202,7 +202,7 @@ export default class UserAPI extends StorageAPI {
           }
           // check for Account record
           if (!results.data[ user.userid ]) {
-            // console.log(JSON.stringify(results))
+            //console.log(JSON.stringify(results))
             reject(new Error("Missing account record in results."))
             return
           }

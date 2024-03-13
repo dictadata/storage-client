@@ -12,7 +12,7 @@ export default class Files extends StorageAPI {
   }
 
   getFile(url) {
-    // console.log("getFile")
+    //console.log("getFile")
 
     return new Promise((resolve, reject) => {
       if (!this.$user.isAuthorized([ Roles.Guest, Roles.User ])) {
@@ -25,8 +25,8 @@ export default class Files extends StorageAPI {
 
       this.axios.get(url, config)
         .then(res => {
-          // console.log("api returned")
-          // console.log(res)
+          //console.log("api returned")
+          //console.log(res)
           resolve(res.data)
         })
         .catch(err => {
@@ -38,7 +38,7 @@ export default class Files extends StorageAPI {
   }
 
   putFile(url, data) {
-    // console.log("putFile")
+    //console.log("putFile")
 
     return new Promise((resolve, reject) => {
       if (!this.$user.isAuthorized([ Roles.User, Roles.ETL ])) {
@@ -53,8 +53,8 @@ export default class Files extends StorageAPI {
 
       this.axios.put('/files', data, config)
         .then(res => {
-          // console.log("api returned")
-          // console.log(res)
+          //console.log("api returned")
+          //console.log(res)
           resolve(res.data)
         })
         .catch(err => {
@@ -66,7 +66,7 @@ export default class Files extends StorageAPI {
   }
 
   upload(formData) {
-    // console.log("upload")
+    //console.log("upload")
 
     return new Promise((resolve, reject) => {
       if (!this.$user.isAuthorized([ Roles.User, Roles.ETL ])) {
@@ -81,8 +81,8 @@ export default class Files extends StorageAPI {
 
       this.axios.post('/files', formData, config)
         .then(res => {
-          // console.log("api returned")
-          // console.log(res)
+          //console.log("api returned")
+          //console.log(res)
           resolve(res.data)
         })
         .catch(err => {

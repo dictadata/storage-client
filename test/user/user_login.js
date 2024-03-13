@@ -10,7 +10,7 @@ import $user from '../../storage/client/user.js'
 StorageAPI.baseURL = "http://dev.dictadata.net"
 
 async function test_1() {
-  console.log("--- $user.login")
+  //console.log("--- $user.login")
 
   try {
     let user = { userid: "user", password: "user" }
@@ -19,12 +19,12 @@ async function test_1() {
     if (results.status !== 0)
       throw new Error(results.message)
 
-    console.log("results: " + JSON.stringify(results.data[user.userid]))
-    console.log()
-    console.log("$user: " + JSON.stringify($user))
-    console.log()
-    console.log("isAuthenticated: " + $user.isAuthenticated)
-    console.log("isLocal: " + $user.isLocal)
+    //console.log("results: " + JSON.stringify(results.data[user.userid]))
+    //console.log()
+    //console.log("$user: " + JSON.stringify($user))
+    //console.log()
+    //console.log("isAuthenticated: " + $user.isAuthenticated)
+    //console.log("isLocal: " + $user.isLocal)
   }
   catch (err) {
     console.warn("error: " + err.message);
@@ -32,7 +32,7 @@ async function test_1() {
 }
 
 async function test_2() {
-  console.log("--- $user.changeUser")
+  //console.log("--- $user.changeUser")
 
   try {
     let user = { userid: "user", password: "user" }
@@ -41,12 +41,12 @@ async function test_2() {
     if (results.status !== 0)
       throw new Error(results.message)
 
-    console.log("results: " + JSON.stringify(results.data[user.userid]))
-    console.log()
-    console.log("$user: " + JSON.stringify($user))
-    console.log()
-    console.log("isAuthenticated: " + $user.isAuthenticated)
-    console.log("isLocal: " + $user.isLocal)
+    //console.log("results: " + JSON.stringify(results.data[user.userid]))
+    //console.log()
+    //console.log("$user: " + JSON.stringify($user))
+    //console.log()
+    //console.log("isAuthenticated: " + $user.isAuthenticated)
+    //console.log("isLocal: " + $user.isLocal)
   }
   catch (err) {
     console.warn("error: " + err.message);
@@ -54,11 +54,11 @@ async function test_2() {
 }
 
 (async () => {
-  console.log("=== test: $user logins")
-  console.log("$user: " + JSON.stringify($user))
+  //console.log("=== test: $user logins")
+  //console.log("$user: " + JSON.stringify($user))
 
   if (await test_1()) return
-  console.log()
+  //console.log()
   if (await test_2()) return
-  console.log("done.")
+  //console.log("done.")
 })()

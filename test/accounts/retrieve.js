@@ -12,14 +12,14 @@ import Accounts from "../../storage/client/accounts.js"
 async function retrieveGuests() {
 
   try {
-    console.log("--- accounts with role 'Guest'")
+    //console.log("--- accounts with role 'Guest'")
     let accounts = new Accounts()
 
     let results = await accounts.retrieve({ match: { roles: [ "Guest" ] } })
-    console.log(results.status + " " + results.message)
+    //console.log(results.status + " " + results.message)
 
     for (let [ name, account ] of Object.entries(results.data)) {
-      console.log(name)
+      //console.log(name)
     }
   }
   catch (err) {
@@ -31,9 +31,9 @@ async function retrieveGuests() {
 
 // test runner
 (async () => {
-  console.log("accounts retrieve tests")
+  //console.log("accounts retrieve tests")
   await login({ userid: "admin", password: "admin" })
 
   await retrieveGuests()
-  console.log("--- done")
+  //console.log("--- done")
 })()

@@ -6,21 +6,21 @@
 import { login } from "../lib/client.js"
 import ETL from "../../storage/client/etl.js"
 
-console.log("=== tests: ETL transfer")
+//console.log("=== tests: ETL transfer")
 
 async function test_transfer(tract, action, params) {
-  console.log("transfer: " + tract)
+  //console.log("transfer: " + tract)
   let retCode = 0
 
   try {
     let etl = new ETL()
 
-    // console.log('call etl.perform')
+    //console.log('call etl.perform')
     let results = await etl.perform(tract, action, params)
     if (results.status !== 200)
       throw new Error(results.message)
 
-    console.log("results.data: " + results.data.length);
+    //console.log("results.data: " + results.data.length);
   }
   catch (err) {
     console.warn(err)

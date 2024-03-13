@@ -6,7 +6,7 @@
 import { login } from "../lib/client.js"
 import Storage from "../../storage/client/storage.js"
 
-console.log("=== tests: storage recall")
+//console.log("=== tests: storage recall")
 
 function replacer(key, value) {
   if (value instanceof Map) {
@@ -19,13 +19,13 @@ function replacer(key, value) {
 }
 
 async function test_recall(urn, keyValue) {
-  console.log("recall " + urn)
+  //console.log("recall " + urn)
   let retCode = 0
 
   try {
     let storage = new Storage()
 
-    // console.log('call storage.retrieve')
+    //console.log('call storage.retrieve')
     let pattern = {
       "match": {
       },
@@ -40,7 +40,7 @@ async function test_recall(urn, keyValue) {
     if (results.status !== 0)
       throw new Error(results.message)
 
-    console.log(urn + " " + JSON.stringify(results.data, replacer))
+    //console.log(urn + " " + JSON.stringify(results.data, replacer))
   }
   catch (err) {
     console.warn(err)
