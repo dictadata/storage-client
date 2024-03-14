@@ -1,7 +1,7 @@
 // storage/utils/dot
 "use strict";
 
-import typeOf from "./typeOf";
+import typeOf from "./typeOf.js";
 
 export default {
   /**
