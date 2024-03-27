@@ -4,7 +4,7 @@ Authorization: Basic user user
 Content-Type: application/json; charset=utf-8
 
 {
-  "actions": [
+  "fibers": [
     {
       "name": "mysql-json",
       "action": "transfer",
@@ -29,7 +29,7 @@ Authorization: Basic user user
 Content-Type: application/json; charset=utf-8
 
 {
-  "action": "boundaries",
+  "fiber": "boundaries",
   "params": {
     "tag": "boundary",
     "lng": -91.4613761135469,
@@ -43,7 +43,7 @@ Authorization: Basic user user
 Content-Type: application/json; charset=utf-8
 
 {
-  "action": "06",
+  "fiber": "06",
   "params": {
     "STATEFP": "19",
     "COUNTYFP": "103"
@@ -56,7 +56,7 @@ Authorization: Basic user user
 Content-Type: application/json; charset=utf-8
 
 {
-  "action": "00",
+  "fiber": "00",
   "params": {
     "LSAD": "00",
     "STATEFP": "19"

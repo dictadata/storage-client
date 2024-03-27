@@ -8,7 +8,7 @@ import ETL from "../../storage/client/etl.js"
 
 //console.log("=== tests: ETL transfer")
 
-async function test_transfer(tract, action, params) {
+async function test_transfer(tract, fiber, params) {
   //console.log("transfer: " + tract)
   let retCode = 0
 
@@ -16,7 +16,7 @@ async function test_transfer(tract, action, params) {
     let etl = new ETL()
 
     //console.log('call etl.perform')
-    let results = await etl.perform(tract, action, params)
+    let results = await etl.perform(tract, fiber, params)
     if (results.status !== 200)
       throw new Error(results.message)
 

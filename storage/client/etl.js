@@ -11,7 +11,7 @@ export default class ETL extends StorageAPI {
     super(options)
   }
 
-  perform(tract, action, params) {
+  perform(tract, fiber, params) {
     // eslint-disable-next-line space-in-parens
     return new Promise((resolve, reject) => {
       if (typeof tract !== "string" && typeof tract !== "object") {
@@ -33,8 +33,8 @@ export default class ETL extends StorageAPI {
         uri += tract
       else
         body["tract"] = tract
-      if (action)
-        body[ "action" ] = action
+      if (fiber)
+        body[ "fiber" ] = fiber
       if (params)
         body[ "params" ] = params
 

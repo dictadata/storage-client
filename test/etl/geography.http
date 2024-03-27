@@ -1,10 +1,21 @@
-### with urn
-POST http://dev.dictadata.net/node/etl/dicta:geography HTTP/1.1
+### recall state boundary
+POST http://dev.dictadata.net/node/etl/dicta:geography_latlng?fiber=00 HTTP/1.1
 Authorization: Basic user user
 Content-Type: application/json; charset=utf-8
 
 {
-  "action": "boundaries",
+  "params": {
+    "lng": -91.4613761135469,
+    "lat": 41.65835958166854
+  }
+}
+
+### search for all features
+POST http://dev.dictadata.net/node/etl/dicta:geography_latlng?fiber=search HTTP/1.1
+Authorization: Basic user user
+Content-Type: application/json; charset=utf-8
+
+{
   "params": {
     "tag": "boundary",
     "lng": -91.4613761135469,
