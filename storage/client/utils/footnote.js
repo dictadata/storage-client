@@ -8,6 +8,8 @@
  * @returns Object with properties note and link, { note: "", link: "" }
  */
 export function parse(footnote) {
+  if (typeof footnote !== "string")
+    return {};
 
   let results = footnote.match(/\[(.*)\](?:\((.*)\))*/)
 
@@ -22,9 +24,11 @@ export function parse(footnote) {
 /**
  *
  * @param {String} footnote
- * @returns Object with properties note and link, { note: "", link: "" }
+ * @returns string with the text of the footnote
  */
 export function text(footnote) {
+  if (typeof footnote !== "string")
+    return "";
 
   let results = footnote.match(/\[(.*)\](?:\((.*)\))*/)
 
@@ -34,9 +38,11 @@ export function text(footnote) {
 /**
  *
  * @param {String} footnote
- * @returns Object with properties note and link, { note: "", link: "" }
+ * @returns string with the footnote hyperlink
  */
 export function hyperlink(footnote) {
+  if (typeof footnote !== "string")
+    return "";
 
   let results = footnote.match(/\[(.*)\](?:\((.*)\))*/)
 
