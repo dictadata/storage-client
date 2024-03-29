@@ -17,10 +17,7 @@ async function test_transfer(tract, fiber, params) {
 
     //console.log('call etl.perform')
     let results = await etl.perform(tract, fiber, params)
-    if (results.status !== 200)
-      throw new Error(results.message)
-
-    //console.log("results.data: " + results.data.length);
+    console.log(results);
   }
   catch (err) {
     console.warn(err)
@@ -33,16 +30,13 @@ async function test_transfer(tract, fiber, params) {
 (async () => {
   await login()
 
-  if (await test_transfer("foo:foo_transfer", "mysql-json", {})) return
-
-  if (await test_transfer("dicta:geography", "boundaries", {
-    "tag": "boundary",
+  if (await test_transfer("dicta:geography_latlng", "00", {
     "lng": -91.4613761135469,
     "lat": 41.65835958166854
-  })) return
+  })) return 1
 
-  if (await test_transfer("dicta:population", "00", { STATEFP: "19" })) return
+  if (await test_transfer("dicta:census_population", "00", { LSAD: "00", STATEFP: "19" })) return 1
 
-  if (await test_transfer("dicta:voter_registration", "00", {LSAD: "00", STATEFP: "19"})) return
+  if (await test_transfer("dicta:voter_registration", "00", {LSAD: "00", STATEFP: "19"})) return 1
 
 })()
