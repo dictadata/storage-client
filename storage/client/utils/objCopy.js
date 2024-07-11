@@ -16,6 +16,9 @@ import typeOf from './typeOf.js'
 export default function objCopy(target, ...source) {
 
   for (const src of source) {
+    if (typeof src !== "object")
+      continue;
+
     for (let [ key, value ] of Object.entries(src)) {
       let srcType = typeOf(value);
 
@@ -23,9 +26,6 @@ export default function objCopy(target, ...source) {
         if (!Object.hasOwn(target, key) || typeOf(target[key]) !== "object")
           target[ key ] = {};  // replace
         objCopy(target[ key ], value);
-      }
-      else if ([ "date", "regexp" ].includes(srcType)) {
-        target[ key ] = value;
       }
       else if (srcType === "array") {
         target[ key ] = new Array();  // replace
@@ -50,6 +50,12 @@ export default function objCopy(target, ...source) {
             target[ key ].add(objCopy({}, item));
           else
             target[ key ].add(item);
+      }
+      else if (srcType === "date") {
+        target[ key ] = new Date(value);
+      }
+      else if (srcType === "regexp") {
+        target[ key ] = new RegExp(value);
       }
       else if (srcType !== "function") {
         target[ key ] = value;
