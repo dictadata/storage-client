@@ -293,7 +293,7 @@ export default class Engram extends Entry {
           if (this.caseInsensitive)
             value = getCI(construct, kname);
           else
-            value = dot.get(kname, construct);
+            value = dot.get(construct, kname);
 
           if (value !== undefined)
             uid += value;

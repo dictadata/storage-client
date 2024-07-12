@@ -5,27 +5,42 @@ let obj = {
   foo: {
     bar: {
       baz: "hello"
-    }
+    },
+    counts: [
+      {
+        ray: "sting",
+        say: "car"
+       },
+      {
+        ray: "gun",
+        more: {
+          say: "store"
+        }
+       }
+    ]
   }
 }
 
-//console.log("t1 = " + dot.get("t1", obj));
-//console.log("baz = " + dot.get("foo.bar.baz", obj));
+console.log("t1 = " + dot.get(obj, "t1"));
+console.log("baz = " + dot.get(obj, "foo.bar.baz"));
 
-//console.log("biz = " + dot.get("foo.bar.biz", obj));
-//console.log("set: " + dot.set("foo.bar.biz", obj, "world"));
-//console.log("biz = " + dot.get("foo.bar.biz", obj));
+console.log("ray = " + JSON.stringify(dot.get(obj, "foo.counts.ray=sting")))
+console.log("say = " + dot.get(obj, "foo.counts.ray=gun.more.say"))
 
-//console.log("set: " + dot.set("t2", obj, "bottom"));
-//console.log("t2 = " + dot.get("t2", obj));
+console.log("biz = " + dot.get(obj, "foo.bar.biz"));
+console.log("set: " + dot.set(obj, "foo.bar.biz", "world"));
+console.log("biz = " + dot.get(obj, "foo.bar.biz"));
 
-//console.log("set: " + dot.set("foo.level.expand", obj, true));
-//console.log("expand = " + dot.get("foo.level.expand", obj));
-//console.log("set: " + dot.set("foo.level", obj, "II"));
-//console.log("expand = " + dot.get("foo.level.expand", obj));
+console.log("set: " + dot.set(obj, "t2", "bottom"));
+console.log("t2 = " + dot.get(obj, "t2"));
+
+console.log("set: " + dot.set(obj, "foo.level.expand", true));
+console.log("expand = " + dot.get(obj, "foo.level.expand"));
+console.log("set: " + dot.set(obj, "foo.level", "II"));
+console.log("expand = " + dot.get(obj, "foo.level.expand"));
 
 let slop = "stringy";
-//console.log("stray = " + dot.get("foo.stray", slop));
-//console.log("set = " + dot.set("foo.stray", slop, "drip"));
+console.log("stray = " + dot.get(slop, "foo.stray"));
+console.log("set = " + dot.set(slop, "foo.stray", "drip"));
 
-//console.log(JSON.stringify(obj,null,2));
+console.log(JSON.stringify(obj,null,2));

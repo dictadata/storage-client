@@ -4,18 +4,49 @@
 import typeOf from "./typeOf.js";
 
 export default {
+
+  /**
+   * find an object property using dot notation
+   * @param {Object} construct object to pick
+   * @param {String} dotname property name using dot notation
+   * @returns the object property
+   */
+  has: (construct, dotname) => {
+    let props = dotname.split('.');
+
+    let prop;
+    try {
+      prop = props.reduce((prop, name) => {
+        if (typeof prop !== "object")
+          return prop;
+        let nv = name.split('=');
+        if (nv.length === 2)
+          return prop.find((value) => value[ nv[ 0 ] ] === nv[ 1 ]);
+        else
+          return prop[ name ];
+      }, construct);
+    }
+    catch (err) {
+      console.warn(err.message);
+    }
+
+    return prop !== undefined;
+  },
+
   /**
    * find an object property using dot notation
    * @param {String} dotname property name using dot notation
    * @param {Object} construct object to pick
    * @returns the object property
    */
-  get: (dotname, construct) => {
+  get: (construct, dotname) => {
     let props = dotname.split('.');
 
     let prop;
     try {
       prop = props.reduce((prop, name) => {
+        if (typeof prop !== "object")
+          return prop;
         let nv = name.split('=');
         if (nv.length === 2)
           return prop.find((value) => value[ nv[ 0 ] ] === nv[ 1 ]);
@@ -37,7 +68,7 @@ export default {
    * @param {*} value new value for property
    * @returns true if successful, false if invalid dot notation for construct
    */
-  set: (dotname, construct, value) => {
+  set: (construct, dotname, value) => {
     let names = dotname.split(".");
     let vname = names.pop();
 
