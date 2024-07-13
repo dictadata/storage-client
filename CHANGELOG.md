@@ -1,5 +1,10 @@
 # CHANGELOG for @dictadata/client
 
+- version 0.9.26
+  - feature: add evaluate() and match() utils
+  - refactor: refactor dot has/get/set
+  - bug fix: objCopy handle undefined values
+  - updated: dependencies
 - version 0.9.25
   - refactor: rename ETL tract.actions to tract.fibers
 - version 0.9.24
